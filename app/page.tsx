@@ -1,8 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Users, Target, AlertTriangle, Shield, Vote, Zap, Globe } from "lucide-react"
-import { PledgeCounter } from "@/components/pledge-counter"
+import { ArrowRight, Users, Target, Vote, Zap, Globe, MapPin } from "lucide-react"
 import { HistoricalReelectionChart } from "@/components/charts/historical-reelection-chart"
 import { CongressionalApprovalChart } from "@/components/charts/congressional-approval-chart"
 
@@ -15,23 +14,25 @@ export default function HomePage() {
         <div className="container mx-auto container-padding relative">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 animate-in fade-in slide-in-from-left-8 duration-1000">
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight text-white">
-                Our Government Should Work for Us.
+              <div className="text-center lg:text-left mb-8">
+                <div className="text-2xl md:text-3xl font-bold text-red-400 mb-2">IF THEY'RE IN, THEY'RE OUT</div>
+                <div className="text-xl md:text-2xl font-semibold text-white">VOTE IN A FRESH 535</div>
+              </div>
+
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
+                Congress: 18% Approval.
                 <br />
-                <span className="text-gradient-red">It's Time for a System Reset.</span>
+                <span className="text-gradient-red">95% Reelection Rate.</span>
               </h1>
-              <p className="text-xl md:text-2xl text-slate-300 leading-relaxed max-w-prose">
-                This is a non-partisan civic movement to restore a government that is responsive to the American people.
-                While our nation faces urgent challenges—from economic instability and rising healthcare costs to a
-                climbing national debt—our current system is unable to produce effective solutions. By replacing every
-                member of Congress, we can reset the system and ensure our representatives are focused on solving
-                problems, not preserving their careers.
+              <p className="text-lg md:text-xl text-slate-300 leading-relaxed max-w-prose">
+                $34.5 trillion national debt. Healthcare costs up 158% since 2000. Housing prices up 47% since 2020.
+                Congress passed 27 bills in 2023—fewest in decades. Replace all 535 incumbents in one election cycle.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button asChild size="lg" variant="destructive">
                   <Link href="/pledge">
                     <Target className="h-5 w-5 mr-2" />
-                    Take the Pledge
+                    Take the Fresh 535 Pledge
                   </Link>
                 </Button>
                 <Button
@@ -49,11 +50,11 @@ export default function HomePage() {
             </div>
             <div className="relative hidden lg:block animate-in fade-in slide-in-from-right-8 duration-1000">
               <Image
-                src="/fresh-535-logo-white.png"
+                src="/brand-logo.png"
                 alt="Fresh 535 Logo"
-                width={500}
-                height={500}
-                className="w-full max-w-md mx-auto drop-shadow-2xl"
+                width={400}
+                height={400}
+                className="w-full max-w-sm mx-auto drop-shadow-2xl"
                 priority
               />
               <div className="absolute inset-0 bg-red-500/10 rounded-full blur-3xl -z-10" />
@@ -62,35 +63,41 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Pledge Counter Section */}
-      <section className="bg-brand-charcoal text-brand-cream border-y border-slate-800">
-        <div className="container mx-auto container-padding py-12">
-          <PledgeCounter />
-        </div>
-      </section>
-
       {/* The Problem Section */}
       <section className="section-padding">
         <div className="container mx-auto container-padding">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl mb-4">An Unresponsive System</h2>
+          <div className="text-center max-w-4xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-4xl mb-4">The Numbers Don't Lie</h2>
             <p className="text-lg text-slate-600">
-              The foundation of a healthy republic is a government that responds to the needs of its citizens. Today,
-              that connection is severed. Public trust in Congress is at historic lows, yet the institution remains
-              unchanged, with incumbents winning reelection at rates that defy logic. This isn't a partisan issue; it's
-              a systemic problem that affects every American by leaving critical national challenges—like our $34
-              trillion national debt, crumbling infrastructure, and soaring healthcare costs—unaddressed.
+              Congress approval: 18% (Gallup, 2024). House incumbent reelection: 95% (2022). Senate incumbent
+              reelection: 84% (2022). Bills passed 2023: 27 (lowest since 1995). National debt increase: $7.8 trillion
+              under current Congress.
             </p>
           </div>
+
+          <div className="text-center mb-12">
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="border-2 border-red-600 text-red-600 hover:bg-red-600 hover:text-white bg-transparent"
+            >
+              <Link href="/my-district">
+                <MapPin className="h-5 w-5 mr-2" />
+                Check Your Representative's Record
+              </Link>
+            </Button>
+          </div>
+
           <div className="grid md:grid-cols-2 gap-8">
             <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-              <h3 className="text-2xl mb-4 text-center">Public Trust Has Collapsed...</h3>
+              <h3 className="text-2xl mb-4 text-center">Congressional Approval: Historic Low</h3>
               <div className="h-80 border rounded-lg p-4 bg-white shadow-lg">
                 <CongressionalApprovalChart />
               </div>
             </div>
             <div className="animate-in fade-in slide-in-from-bottom-4 duration-500" style={{ animationDelay: "200ms" }}>
-              <h3 className="text-2xl mb-4 text-center">...But Reelection is Nearly Guaranteed</h3>
+              <h3 className="text-2xl mb-4 text-center">Incumbent Reelection: 95% Despite Failure</h3>
               <div className="h-80 border rounded-lg p-4 bg-white shadow-lg">
                 <HistoricalReelectionChart />
               </div>
@@ -99,76 +106,45 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* The Threat Section */}
-      <section className="section-padding bg-brand-navy text-brand-cream">
-        <div className="container mx-auto container-padding">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <h2 className="text-3xl md:text-4xl text-white">The Cost of an Unresponsive System</h2>
-              <p className="text-slate-300 max-w-prose text-lg">
-                When a government stops solving problems for its people, it creates a vacuum that extremist ideologies
-                are eager to fill. Highly-organized groups see this widespread frustration not as a problem to be
-                solved, but as an opportunity. Their detailed blueprints, like Project 2025, are a direct threat to
-                American democracy, and an unresponsive Congress is incapable of mounting an effective defense.
-              </p>
-              <Button asChild variant="secondary">
-                <Link href="/about">
-                  <AlertTriangle className="h-4 w-4 mr-2" />
-                  Analyze the Threat
-                </Link>
-              </Button>
-            </div>
-            <div className="flex justify-center">
-              <div className="relative">
-                <Shield size={160} className="text-red-500/20" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <AlertTriangle size={80} className="text-red-500/50 animate-pulse" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works Section */}
-      <section className="section-padding">
+      {/* The Strategy Section */}
+      <section className="section-padding bg-slate-50">
         <div className="container mx-auto container-padding">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl mb-4">A Simple, Powerful System Reset</h2>
+            <h2 className="text-3xl md:text-4xl mb-4">Simple Strategy: If They're In, They're Out</h2>
             <p className="text-lg text-slate-600">
-              We don't need to reform the system from the inside. We need to reset it using the power we already have as
-              voters. The strategy is direct, non-partisan, and effective.
+              Primary elections: 15-25% turnout. General elections: 55-60% turnout. Coordinated 20% bloc vote defeats
+              95% of incumbents. No constitutional amendment required.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8 text-center">
-            <div className="space-y-3 p-6 border rounded-lg hover:shadow-xl transition-shadow">
+            <div className="space-y-3 p-6 bg-white border rounded-lg hover:shadow-xl transition-shadow">
               <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto">
                 <Vote className="h-8 w-8 text-accent" />
               </div>
-              <h3 className="text-xl font-semibold">1. Vote Them Out</h3>
+              <h3 className="text-xl font-semibold">Step 1: Primary Elections</h3>
               <p className="text-slate-600">
-                In every primary and general election, vote against the incumbent. It doesn't matter which party they
-                belong to. The goal is 100% turnover, creating a clean slate.
+                Vote for any challenger against the sitting representative. Party affiliation irrelevant. Incumbent
+                status is disqualifying.
               </p>
             </div>
-            <div className="space-y-3 p-6 border rounded-lg hover:shadow-xl transition-shadow">
+            <div className="space-y-3 p-6 bg-white border rounded-lg hover:shadow-xl transition-shadow">
               <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto">
                 <Zap className="h-8 w-8 text-accent" />
               </div>
-              <h3 className="text-xl font-semibold">2. Force Accountability</h3>
+              <h3 className="text-xl font-semibold">Step 2: General Elections</h3>
               <p className="text-slate-600">
-                A new Congress, fully aware that it can be entirely replaced, will be immediately and powerfully
-                accountable to voters, not to donors or party leadership.
+                If incumbent wins primary, vote for opposing party candidate, third-party, or independent. Policy
+                positions secondary to removal.
               </p>
             </div>
-            <div className="space-y-3 p-6 border rounded-lg hover:shadow-xl transition-shadow">
+            <div className="space-y-3 p-6 bg-white border rounded-lg hover:shadow-xl transition-shadow">
               <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto">
                 <Globe className="h-8 w-8 text-accent" />
               </div>
-              <h3 className="text-xl font-semibold">3. Restore Democracy</h3>
+              <h3 className="text-xl font-semibold">Result: Complete Reset</h3>
               <p className="text-slate-600">
-                This action breaks the cycle of corruption and special interest capture. It forces a return to a
-                government that is of the people, by the people, and for the people.
+                New Congress with zero seniority, zero committee chairs, zero lobbyist relationships. Immediate
+                accountability to voters.
               </p>
             </div>
           </div>
@@ -176,19 +152,24 @@ export default function HomePage() {
       </section>
 
       {/* Call to Action */}
-      <section className="section-padding bg-slate-100 border-t">
+      <section className="section-padding bg-brand-navy text-white">
         <div className="container mx-auto container-padding text-center">
-          <h2 className="text-3xl md:text-4xl max-w-2xl mx-auto mb-4">Your Vote is the Only Tool That Matters.</h2>
-          <p className="text-lg text-slate-600 max-w-3xl mx-auto mb-8">
-            This isn't about left vs. right. It's about restoring a functional government. Join a coalition of voters
-            from across the political spectrum who are ready to demand change.
-          </p>
-          <Button asChild size="lg" variant="destructive">
-            <Link href="/pledge">
-              <Users className="h-5 w-5 mr-2" />
-              I'm Ready. Take Me to the Pledge.
-            </Link>
-          </Button>
+          <div className="max-w-4xl mx-auto">
+            <div className="text-3xl md:text-4xl font-bold text-red-400 mb-6">VOTE IN A FRESH 535</div>
+            <h2 className="text-2xl md:text-3xl mb-4">
+              535 Incumbents Created These Problems. 535 Challengers Can Solve Them.
+            </h2>
+            <p className="text-lg text-slate-300 mb-8">
+              18% approval. 95% reelection. $34.5 trillion debt. The math is clear: replace all 535 or accept system
+              collapse.
+            </p>
+            <Button asChild size="lg" variant="destructive">
+              <Link href="/pledge">
+                <Users className="h-5 w-5 mr-2" />
+                Take the Fresh 535 Pledge
+              </Link>
+            </Button>
+          </div>
         </div>
       </section>
     </>

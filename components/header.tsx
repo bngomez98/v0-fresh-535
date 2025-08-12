@@ -20,9 +20,10 @@ export function Header() {
 
   const navItems = [
     { href: "/", label: "Home" },
-    { href: "/about", label: "The Crisis" },
+    { href: "/my-district", label: "My District" },
+    { href: "/analysis", label: "The Problem" },
     { href: "/solution", label: "The Solution" },
-    { href: "/data", label: "Evidence" },
+    { href: "/data", label: "Data & Evidence" },
     { href: "/resources", label: "Resources" },
     { href: "/faq", label: "FAQ" },
   ]
