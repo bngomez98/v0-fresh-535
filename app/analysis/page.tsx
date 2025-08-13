@@ -1,83 +1,63 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { AlertTriangle, Target, FileText } from "lucide-react"
+import { AlertTriangle, Target, FileText, BookOpen, BarChart3 } from "lucide-react"
 import { HistoricalReelectionChart } from "@/components/charts/historical-reelection-chart"
 import { CongressionalApprovalChart } from "@/components/charts/congressional-approval-chart"
 import { CampaignSpendingChart } from "@/components/charts/campaign-spending-chart"
 import { LegislativeProductivityChart } from "@/components/charts/legislative-productivity-chart"
+import { ShareButtons } from "@/components/share-buttons"
+import { redirect } from "next/navigation"
 
 export default function AnalysisPage() {
+  redirect("/problem")
   return (
     <div className="bg-white py-16 md:py-24">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-              Evidence: The Case for a System Reset
+              The Problem: Why Congress Doesn't Work
             </h1>
             <p className="text-xl text-slate-700 leading-relaxed max-w-4xl mx-auto">
-              A comprehensive, data-driven examination of the U.S. Congress's unresponsiveness, the direct effects on
-              the American people, and why a complete electoral reset is the most logical solution.
+              Academic research and current data prove that incumbency advantage has systematically destroyed electoral
+              accountability, creating an unresponsive system that requires complete replacement to restore democratic
+              function.
             </p>
           </div>
 
-          {/* Executive Summary */}
+          {/* Data & Evidence Section */}
           <section className="mb-16">
-            <div className="bg-slate-50 border-l-4 border-blue-600 p-8 rounded-r-lg">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6 flex items-center">
-                <FileText className="h-8 w-8 mr-3 text-blue-600" />
-                Executive Summary
+            <div className="bg-brand-navy text-brand-cream p-8 rounded-lg mb-8">
+              <h2 className="text-3xl font-bold mb-6 flex items-center">
+                <BarChart3 className="h-8 w-8 mr-3" />
+                Data & Evidence
               </h2>
-
-              <div className="prose prose-lg max-w-none text-slate-800">
-                <p>
-                  The United States Congress is operating in a way that is disconnected from the needs and desires of
-                  the American people. This is not a partisan assertion, but a conclusion supported by decades of public
-                  opinion and electoral data. A profound gap between citizen sentiment and legislative outcomes, fueled
-                  by a flawed institutional incentive structure, has led to a government that is ineffective at solving
-                  the nation's most pressing problems, including fiscal instability, rising healthcare costs, and
-                  strategic economic challenges.
-                </p>
-                <p>
-                  This analysis demonstrates through key metrics how this unresponsiveness directly impacts Americans.
-                  The institutional environment also creates an opening for extremist, anti-democratic movements that
-                  seek to capitalize on public frustration. The data shows that without a fundamental reset of the
-                  legislative branch, the country faces continued governmental inaction and an increasing risk to its
-                  democratic foundations.
-                </p>
-                <p className="font-semibold">
-                  The most direct and effective solution is a complete turnover of congressional personnel, achieved
-                  through coordinated, non-partisan voter action.
-                </p>
-              </div>
+              <p className="text-xl opacity-90 mb-4">
+                The numbers don't lie. Congressional approval sits at historic lows while reelection rates remain near
+                historic highs. This mathematical impossibility proves the system is broken.
+              </p>
             </div>
-          </section>
-
-          {/* Part I: The Data of Dysfunction */}
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8">Part I: The Data of Dysfunction</h2>
 
             <div className="space-y-12">
               <Card className="overflow-hidden">
                 <CardHeader>
-                  <CardTitle>The Great Disconnect: Approval vs. Reelection</CardTitle>
+                  <CardTitle>The Accountability Gap: Performance vs. Job Security</CardTitle>
                   <p className="text-slate-600">
-                    The most damning evidence of a broken system is when performance metrics plummet while job security
-                    remains absolute.
+                    When approval ratings and reelection rates move in opposite directions, democracy has failed.
                   </p>
                 </CardHeader>
                 <CardContent>
                   <div className="grid md:grid-cols-2 gap-8">
                     <div>
-                      <h4 className="text-lg font-semibold text-center mb-2">Congressional Approval Rating</h4>
+                      <h4 className="text-lg font-semibold text-center mb-2">Congressional Approval: 18%</h4>
                       <div className="h-80 border rounded-lg p-4 bg-white">
                         <CongressionalApprovalChart />
                       </div>
                       <p className="text-sm text-slate-600 mt-2 text-center">Source: Gallup Historical Trends</p>
                     </div>
                     <div>
-                      <h4 className="text-lg font-semibold text-center mb-2">Incumbent Reelection Rate</h4>
+                      <h4 className="text-lg font-semibold text-center mb-2">Incumbent Reelection: 95%</h4>
                       <div className="h-80 border rounded-lg p-4 bg-white">
                         <HistoricalReelectionChart />
                       </div>
@@ -86,22 +66,14 @@ export default function AnalysisPage() {
                       </p>
                     </div>
                   </div>
-                  <div className="mt-6 prose max-w-none">
-                    <p>
-                      This chart pairing reveals a system that is fundamentally not self-correcting. Despite over a
-                      decade of approval ratings below 30%, the reelection rate for incumbents who seek another term has
-                      rarely dipped below 90%. This indicates that voters' widespread dissatisfaction has virtually no
-                      impact on electoral outcomes, a hallmark of an unresponsive and unaccountable institution.
-                    </p>
-                  </div>
                 </CardContent>
               </Card>
 
               <Card className="overflow-hidden">
                 <CardHeader>
-                  <CardTitle>The Financial Barrier to Entry</CardTitle>
+                  <CardTitle>The Money Advantage: Why Challengers Can't Win</CardTitle>
                   <p className="text-slate-600">
-                    Electoral competition is stifled by a massive and growing financial advantage for incumbents.
+                    Incumbents raise 3-5x more than challengers, creating an insurmountable barrier to competition.
                   </p>
                 </CardHeader>
                 <CardContent>
@@ -111,23 +83,14 @@ export default function AnalysisPage() {
                   <p className="text-sm text-slate-600 mt-2 text-center">
                     Source: Federal Election Commission, Center for Responsive Politics
                   </p>
-                  <div className="mt-6 prose max-w-none">
-                    <p>
-                      The data shows a consistent and widening gap between the fundraising capabilities of incumbents
-                      and their challengers. This financial disparity creates an almost insurmountable barrier,
-                      discouraging qualified challengers from running and ensuring that most races are not financially
-                      competitive. This system rewards access to wealthy donors over connection to constituents.
-                    </p>
-                  </div>
                 </CardContent>
               </Card>
 
               <Card className="overflow-hidden">
                 <CardHeader>
-                  <CardTitle>The Decline of Legislative Productivity</CardTitle>
+                  <CardTitle>Legislative Collapse: Getting Nothing Done</CardTitle>
                   <p className="text-slate-600">
-                    As partisanship has increased and accountability has decreased, the core function of
-                    Congress—passing laws—has atrophied.
+                    When representatives can't be fired, they stop working. Legislative productivity has plummeted.
                   </p>
                 </CardHeader>
                 <CardContent>
@@ -137,56 +100,101 @@ export default function AnalysisPage() {
                   <p className="text-sm text-slate-600 mt-2 text-center">
                     Source: Pew Research Center analysis of Congressional data
                   </p>
-                  <div className="mt-6 prose max-w-none">
-                    <p>
-                      While the number of laws passed is not a perfect measure of effectiveness, the long-term trend
-                      shows a significant decline from the late 20th century. For the American people, this translates
-                      directly to unaddressed national priorities. The national debt climbs without a serious fiscal
-                      plan. Healthcare and prescription drug costs continue to rise. Our infrastructure ages without a
-                      coherent, long-term modernization strategy. Key economic and national security challenges go
-                      unmet. The institution is demonstrably less effective at its core function: solving problems
-                      through legislation.
-                    </p>
-                  </div>
                 </CardContent>
               </Card>
             </div>
           </section>
 
-          {/* Part II: The Consequence */}
+          {/* Academic Foundation */}
           <section className="mb-16">
-            <div className="bg-red-50 border-l-4 border-red-500 p-8 rounded-r-lg">
-              <h2 className="text-3xl font-bold text-red-900 mb-6 flex items-center">
-                <AlertTriangle className="h-8 w-8 mr-3" />
-                Part II: The Consequence - An Authoritarian Opening
+            <div className="bg-blue-50 border-l-4 border-blue-600 p-8 rounded-r-lg">
+              <h2 className="text-3xl font-bold text-slate-900 mb-6 flex items-center">
+                <BookOpen className="h-8 w-8 mr-3 text-blue-600" />
+                Academic Research
               </h2>
               <div className="prose prose-lg max-w-none text-slate-800">
-                <p>
-                  The vacuum created by a failed legislature is the ideal environment for anti-democratic movements to
-                  thrive. Widespread, legitimate public anger is a powerful political force. When mainstream
-                  institutions fail to channel this energy constructively, extremist ideologies will.
+                <p className="font-semibold mb-4">
+                  "Systemic Consequences of Incumbency Advantage in U.S. House Elections"
+                  <br />
+                  <span className="font-normal text-slate-600">
+                    Gary King (Harvard) & Andrew Gelman (UC Berkeley), American Journal of Political Science, 1991
+                  </span>
                 </p>
                 <p>
-                  Highly-organized and well-funded groups have prepared comprehensive plans, such as Project 2025, to
-                  exploit this very crisis. These are not simply policy proposals; they are detailed roadmaps for
-                  dismantling the administrative state, concentrating power in the executive, and eroding the checks and
-                  balances that protect the republic. They market themselves as the solution to the "swamp," while their
-                  true aim is to replace a dysfunctional democracy with an efficient autocracy.
+                  This landmark study analyzed 40 years of congressional election data and documented the systematic
+                  destruction of electoral accountability. Key findings:
                 </p>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li>
+                    <strong>1,000% increase in incumbency advantage:</strong> Rose from 1% (1946-48) to 11% (1984-86)
+                  </li>
+                  <li>
+                    <strong>43% decline in electoral responsiveness:</strong> Dropped from 2.3 to 1.3 over 40 years
+                  </li>
+                  <li>
+                    <strong>System became mathematically unresponsive</strong> to voter preferences
+                  </li>
+                </ul>
                 <p className="font-semibold">
-                  A Congress that cannot govern cannot defend the Constitution. The failure of the legislative branch is
-                  a direct enabler of the authoritarian threat to the executive and judicial branches.
+                  The research proves that high incumbency retention rates are not due to voter satisfaction, but to
+                  structural advantages that have created a permanently unaccountable political class.
                 </p>
               </div>
             </div>
           </section>
 
-          {/* Part III: The Solution */}
-          <section className="text-center bg-slate-900 text-white p-12 rounded-lg">
-            <h2 className="text-3xl font-bold mb-6">Part III: The Only Viable Path Forward</h2>
-            <p className="text-xl mb-8 max-w-3xl mx-auto">
-              The data is clear: the system is not self-correcting. Incremental reforms have failed. The only remaining
-              option is a peaceful, constitutional, and complete reset of the institution.
+          {/* Current Crisis */}
+          <section className="mb-16">
+            <div className="bg-red-50 border-l-4 border-red-500 p-8 rounded-r-lg">
+              <h2 className="text-3xl font-bold text-red-900 mb-6 flex items-center">
+                <AlertTriangle className="h-8 w-8 mr-3" />
+                The Current Crisis
+              </h2>
+              <div className="prose prose-lg max-w-none text-slate-800">
+                <p>
+                  The academic research predicted exactly what we see today: a Congress completely disconnected from
+                  public will. Current metrics confirm the complete breakdown of electoral accountability:
+                </p>
+                <div className="grid md:grid-cols-2 gap-6 my-6">
+                  <div className="bg-white p-4 rounded border">
+                    <h4 className="font-bold text-red-600">Performance Metrics</h4>
+                    <ul className="text-sm space-y-1 mt-2">
+                      <li>• Congressional approval: 18% (Gallup 2024)</li>
+                      <li>• Bills passed 2023: 27 (lowest since 1995)</li>
+                      <li>• National debt: $34.5 trillion</li>
+                      <li>• Healthcare costs: +158% since 2000</li>
+                      <li>• Housing prices: +47% since 2020</li>
+                    </ul>
+                  </div>
+                  <div className="bg-white p-4 rounded border">
+                    <h4 className="font-bold text-green-600">Job Security Metrics</h4>
+                    <ul className="text-sm space-y-1 mt-2">
+                      <li>• House incumbent reelection: 95% (2022)</li>
+                      <li>• Senate incumbent reelection: 84% (2022)</li>
+                      <li>• Primary challenge success: &lt;5%</li>
+                      <li>• Average tenure: 9.7 years House, 11.2 years Senate</li>
+                      <li>• Fundraising advantage: 3:1 over challengers</li>
+                    </ul>
+                  </div>
+                </div>
+                <p className="font-semibold">
+                  When representatives have near-guaranteed job security despite historic disapproval, the electoral
+                  system has ceased to function as an accountability mechanism.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* The Solution */}
+          <section className="text-center bg-brand-navy text-white p-12 rounded-lg mb-16">
+            <h2 className="text-3xl font-bold mb-6">The Mathematical Solution</h2>
+            <p className="text-xl mb-4 max-w-3xl mx-auto">
+              Academic research proves that removing incumbency advantage restores electoral responsiveness. Complete
+              replacement is the only method that eliminates structural advantages simultaneously.
+            </p>
+            <p className="text-lg mb-8 max-w-3xl mx-auto opacity-90">
+              Primary turnout: 15-25%. Coordinated 20% bloc vote defeats 95% of incumbents mathematically. No
+              constitutional amendment required. Immediate restoration of electoral accountability.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -208,6 +216,15 @@ export default function AnalysisPage() {
                 </Link>
               </Button>
             </div>
+          </section>
+
+          {/* Share Section */}
+          <section className="text-center bg-slate-50 p-8 rounded-lg">
+            <h2 className="text-2xl font-bold mb-4">Share This Analysis</h2>
+            <p className="text-lg text-slate-600 mb-6">
+              Help others understand why congressional replacement is necessary for democracy.
+            </p>
+            <ShareButtons />
           </section>
         </div>
       </div>

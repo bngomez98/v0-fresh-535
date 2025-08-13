@@ -307,7 +307,6 @@ Best,
                 <CardContent className="p-6 text-center">
                   <h3 className="font-semibold text-blue-900 mb-2">Need Custom Assets?</h3>
                   <p className="text-blue-800 text-sm mb-4">
-                    Contact us if you need custom graphics, presentations, or other materials for your outreach efforts.
                   </p>
                   <Button variant="outline" className="border-blue-300 text-blue-700 hover:bg-blue-100 bg-transparent">
                     Contact Us
