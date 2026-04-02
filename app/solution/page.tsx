@@ -1,4 +1,5 @@
 import type React from "react"
+import type { Metadata } from "next"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -16,6 +17,15 @@ import {
 } from "lucide-react"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { ShareButtons } from "@/components/share-buttons"
+
+export const metadata: Metadata = {
+  title: "The Fresh 535 Strategy | Coordinated Voter Accountability",
+  description:
+    "See how Fresh 535's coordinated voting strategy aims to replace all incumbent members of Congress and restore electoral accountability.",
+  alternates: {
+    canonical: "/solution",
+  },
+}
 
 export default function SolutionPage() {
   return (

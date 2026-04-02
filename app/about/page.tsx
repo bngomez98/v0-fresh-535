@@ -1,7 +1,17 @@
 import Link from "next/link"
+import type { Metadata } from "next"
 import { Button } from "@/components/ui/button"
 import { AlertTriangle, Target } from "lucide-react"
 import { ImpactMetrics } from "@/components/impact-metrics"
+
+export const metadata: Metadata = {
+  title: "About Fresh 535 | Why Congress Needs a System Reset",
+  description:
+    "Learn why Fresh 535 argues for a full congressional reset and how incumbency-driven dysfunction threatens democratic accountability.",
+  alternates: {
+    canonical: "/about",
+  },
+}
 
 export default function AboutPage() {
   return (

@@ -1,7 +1,17 @@
 import type React from "react"
+import type { Metadata } from "next"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Heart, TrendingUp, Users, Megaphone } from "lucide-react"
+
+export const metadata: Metadata = {
+  title: "Donate to Fresh 535 | Fund Congressional Accountability",
+  description:
+    "Support Fresh 535's grassroots effort to restore congressional accountability through voter education, data research, and organizing tools.",
+  alternates: {
+    canonical: "/donate",
+  },
+}
 
 export default function DonatePage() {
   return (

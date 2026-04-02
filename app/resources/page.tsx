@@ -1,5 +1,15 @@
+import type { Metadata } from "next"
 import { ResourceCard, type Resource } from "@/components/resource-card"
 import { ShareButtons } from "@/components/share-buttons"
+
+export const metadata: Metadata = {
+  title: "Resources | Fresh 535 Flyers, Data Packets, and Media Assets",
+  description:
+    "Download and share official Fresh 535 resources, including printable flyers, data packets, and social media assets.",
+  alternates: {
+    canonical: "/resources",
+  },
+}
 
 const resources: Resource[] = [
   {

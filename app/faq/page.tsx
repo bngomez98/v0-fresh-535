@@ -1,7 +1,17 @@
 import Link from "next/link"
+import type { Metadata } from "next"
 import { Button } from "@/components/ui/button"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { ShareButtons } from "@/components/share-buttons"
+
+export const metadata: Metadata = {
+  title: "FAQ | Fresh 535 Movement Questions Answered",
+  description:
+    "Read frequently asked questions about Fresh 535, including strategy, legality, nonpartisan positioning, and how to participate.",
+  alternates: {
+    canonical: "/faq",
+  },
+}
 
 export default function FAQPage() {
   return (

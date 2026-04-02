@@ -1,7 +1,17 @@
 import type React from "react"
+import type { Metadata } from "next"
 import { ContactForm } from "@/components/contact-form"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Mail, MessageSquare, Users, FileText } from "lucide-react"
+
+export const metadata: Metadata = {
+  title: "Contact Fresh 535 | Media, Volunteer, and General Inquiries",
+  description:
+    "Contact Fresh 535 for media requests, volunteer opportunities, research questions, or general inquiries about congressional accountability.",
+  alternates: {
+    canonical: "/contact",
+  },
+}
 
 export default function ContactPage() {
   return (

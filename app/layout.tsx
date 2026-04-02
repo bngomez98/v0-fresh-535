@@ -22,9 +22,13 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://fresh535.org"),
   title: "Fresh 535 — A Movement for Congressional Accountability",
   description:
     "A non-partisan civic movement to restore functional governance by replacing all 535 members of Congress with new, uncaptured representatives.",
+  alternates: {
+    canonical: "/",
+  },
   keywords: [
     "Fresh 535",
     "congressional accountability",

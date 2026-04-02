@@ -1,9 +1,19 @@
 import Link from "next/link"
 import Image from "next/image"
+import type { Metadata } from "next"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Users, Target, Vote, Zap, Globe, MapPin } from 'lucide-react'
 import { HistoricalReelectionChart } from "@/components/charts/historical-reelection-chart"
 import { CongressionalApprovalChart } from "@/components/charts/congressional-approval-chart"
+
+export const metadata: Metadata = {
+  title: "Fresh 535 | Replace All Incumbents in Congress",
+  description:
+    "Join Fresh 535, a non-partisan movement to restore congressional accountability by voting out all 535 incumbents and electing new representatives.",
+  alternates: {
+    canonical: "/",
+  },
+}
 
 export default function HomePage() {
   return (

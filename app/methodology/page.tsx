@@ -1,5 +1,15 @@
+import type { Metadata } from "next"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { ExternalLink, Database, Shield, GitBranch } from "lucide-react"
+
+export const metadata: Metadata = {
+  title: "Methodology | Fresh 535 Research and Data Sources",
+  description:
+    "Review Fresh 535's research methodology, data sources, validation process, and limitations behind its congressional accountability analysis.",
+  alternates: {
+    canonical: "/methodology",
+  },
+}
 
 export default function MethodologyPage() {
   return (
