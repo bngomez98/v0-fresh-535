@@ -7,48 +7,48 @@ export function ResearchData() {
       <Card>
         <CardHeader className="pb-3">
           <CardTitle className="text-lg flex items-center">
-            <TrendingUp className="h-5 w-5 mr-2 text-red-500" />
+            <TrendingUp className="h-5 w-5 mr-2 text-destructive" />
             Incumbency Advantage
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="text-3xl font-bold text-red-600 mb-2">1,000%</div>
-          <p className="text-sm text-slate-600">
+          <div className="text-3xl font-bold text-destructive mb-2">1,000%</div>
+          <p className="text-sm text-muted-foreground">
             Increase from 1% (1946) to 11% (1986). Current data suggests 15%+ advantage.
           </p>
-          <p className="text-xs text-slate-500 mt-2">Source: King & Gelman, Harvard/UC Berkeley</p>
+          <p className="text-xs text-muted-foreground/70 mt-2">Source: King & Gelman, Harvard/UC Berkeley</p>
         </CardContent>
       </Card>
 
       <Card>
         <CardHeader className="pb-3">
           <CardTitle className="text-lg flex items-center">
-            <TrendingDown className="h-5 w-5 mr-2 text-blue-500" />
+            <TrendingDown className="h-5 w-5 mr-2 text-primary" />
             Electoral Responsiveness
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="text-3xl font-bold text-blue-600 mb-2">43%</div>
-          <p className="text-sm text-slate-600">
+          <div className="text-3xl font-bold text-primary mb-2">43%</div>
+          <p className="text-sm text-muted-foreground">
             Decline from 2.3 to 1.3 over 40 years. System mathematically unresponsive.
           </p>
-          <p className="text-xs text-slate-500 mt-2">Source: King & Gelman, Harvard/UC Berkeley</p>
+          <p className="text-xs text-muted-foreground/70 mt-2">Source: King & Gelman, Harvard/UC Berkeley</p>
         </CardContent>
       </Card>
 
       <Card>
         <CardHeader className="pb-3">
           <CardTitle className="text-lg flex items-center">
-            <BookOpen className="h-5 w-5 mr-2 text-green-500" />
+            <BookOpen className="h-5 w-5 mr-2 text-chart-2" />
             Partisan Bias
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="text-3xl font-bold text-green-600 mb-2">100%</div>
-          <p className="text-sm text-slate-600">
+          <div className="text-3xl font-bold text-chart-2 mb-2">100%</div>
+          <p className="text-sm text-muted-foreground">
             Incumbency advantage explains virtually all partisan bias trends since 1940s.
           </p>
-          <p className="text-xs text-slate-500 mt-2">Source: King & Gelman, Harvard/UC Berkeley</p>
+          <p className="text-xs text-muted-foreground/70 mt-2">Source: King & Gelman, Harvard/UC Berkeley</p>
         </CardContent>
       </Card>
     </div>

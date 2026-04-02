@@ -32,7 +32,7 @@ const data = [
 const CustomTooltip = ({ active, payload, label }: TooltipProps<ValueType, NameType>) => {
   if (active && payload && payload.length) {
     return (
-      <div className="bg-white p-2 border rounded-lg shadow-lg">
+      <div className="bg-card p-2 border rounded-lg shadow-lg">
         <p className="font-bold text-sm">{`Year: ${label}`}</p>
         <p className="text-primary text-sm">{`Reelection Rate: ${payload[0].value}%`}</p>
       </div>
@@ -45,9 +45,9 @@ export function HistoricalReelectionChart() {
   return (
     <ResponsiveContainer width="100%" height="100%">
       <BarChart data={data} margin={{ top: 5, right: 20, left: -10, bottom: 5 }}>
-        <CartesianGrid strokeDasharray="3 3" stroke="rgba(0, 0, 0, 0.1)" />
-        <XAxis dataKey="year" tick={{ fill: "#475569", fontSize: 12 }} />
-        <YAxis domain={[70, 100]} tickFormatter={(value) => `${value}%`} tick={{ fill: "#475569", fontSize: 12 }} />
+        <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+        <XAxis dataKey="year" tick={{ fill: "hsl(var(--muted-foreground))", fontSize: 12 }} />
+        <YAxis domain={[70, 100]} tickFormatter={(value) => `${value}%`} tick={{ fill: "hsl(var(--muted-foreground))", fontSize: 12 }} />
         <Tooltip content={<CustomTooltip />} cursor={{ fill: "hsla(var(--primary), 0.1)" }} />
         <Bar dataKey="rate" fill="hsl(var(--primary))" />
       </BarChart>
