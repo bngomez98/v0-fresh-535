@@ -150,6 +150,8 @@
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-inter);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   h1,
   h2,
@@ -162,6 +164,9 @@
   }
   html {
     scroll-behavior: smooth;
+  }
+  img {
+    @apply select-none;
   }
 }
 
@@ -218,11 +223,37 @@
   @apply px-4 sm:px-6 lg:px-8;
 }
 .glass-header {
-  @apply bg-background/80 backdrop-blur-lg;
+  @apply bg-background/85 backdrop-blur-xl;
 }
 .text-gradient-red {
   background-image: linear-gradient(to right, oklch(0.6 0.22 25), oklch(0.45 0.22 25));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+/* Professional card elevations */
+.card-elevated {
+  @apply bg-card rounded-xl border shadow-sm;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+.card-elevated:hover {
+  @apply shadow-md;
+  transform: translateY(-2px);
+}
+
+/* Subtle section divider */
+.section-divider {
+  @apply w-16 h-1 bg-accent/60 mx-auto rounded-full;
+}
+
+/* Page header consistent styling */
+.page-header {
+  @apply text-center mb-16;
+}
+.page-header h1 {
+  @apply text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4;
+}
+.page-header p {
+  @apply text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto;
 }
