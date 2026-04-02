@@ -8,8 +8,8 @@ export default function DataPage() {
     <div className="bg-background py-16 md:py-24">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+          <div className="page-header">
+            <h1>
               Congressional Failure: Complete Documentation
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
@@ -20,7 +20,8 @@ export default function DataPage() {
 
           {/* Key Statistics Grid */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold text-foreground mb-8 text-center">System Failure Metrics</h2>
+            <h2 className="text-3xl font-bold text-foreground mb-2 text-center">System Failure Metrics</h2>
+            <div className="section-divider mb-10" />
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
               <Card className="text-center border-2 border-destructive/20 bg-destructive/5">
@@ -71,7 +72,8 @@ export default function DataPage() {
 
           {/* Downloadable Resources */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold text-foreground mb-8 text-center">Complete Documentation Package</h2>
+            <h2 className="text-3xl font-bold text-foreground mb-2 text-center">Complete Documentation Package</h2>
+            <div className="section-divider mb-10" />
 
             <div className="grid md:grid-cols-2 gap-8">
               <Card className="border-2 border-border hover:border-primary transition-colors">
@@ -158,7 +160,8 @@ export default function DataPage() {
 
           {/* Movement Progress */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold text-foreground mb-8 text-center">Fresh 535 Movement Progress</h2>
+            <h2 className="text-3xl font-bold text-foreground mb-2 text-center">Fresh 535 Movement Progress</h2>
+            <div className="section-divider mb-10" />
 
             <div className="grid md:grid-cols-3 gap-6 mb-8">
               <Card className="text-center border-2 border-green-100">
@@ -167,8 +170,8 @@ export default function DataPage() {
                   <CardTitle className="text-3xl font-bold text-green-600">47,832</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-slate-600 font-semibold">Americans Pledged</p>
-                  <p className="text-sm text-slate-500">Target: 47.3 million (20% of registered voters)</p>
+                  <p className="text-foreground font-semibold">Americans Pledged</p>
+                  <p className="text-sm text-muted-foreground">Target: 47.3 million (20% of registered voters)</p>
                 </CardContent>
               </Card>
 
@@ -178,8 +181,8 @@ export default function DataPage() {
                   <CardTitle className="text-3xl font-bold text-blue-600">435</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-slate-600 font-semibold">Districts with Pledgers</p>
-                  <p className="text-sm text-slate-500">All 435 House districts represented</p>
+                  <p className="text-foreground font-semibold">Districts with Pledgers</p>
+                  <p className="text-sm text-muted-foreground">All 435 House districts represented</p>
                 </CardContent>
               </Card>
 
@@ -189,15 +192,15 @@ export default function DataPage() {
                   <CardTitle className="text-3xl font-bold text-purple-600">0.1%</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-slate-600 font-semibold">Progress to Target</p>
-                  <p className="text-sm text-slate-500">47,832 of 47.3 million needed</p>
+                  <p className="text-foreground font-semibold">Progress to Target</p>
+                  <p className="text-sm text-muted-foreground">47,832 of 47.3 million needed</p>
                 </CardContent>
               </Card>
             </div>
           </section>
 
           {/* Call to Action */}
-          <section className="text-center bg-primary text-primary-foreground p-12 rounded-lg">
+          <section className="text-center bg-primary text-primary-foreground p-12 rounded-xl">
             <h2 className="text-3xl font-bold mb-6">The Data is Clear: Complete Replacement Required</h2>
             <p className="text-xl mb-8 max-w-3xl mx-auto">
               18% approval proves they failed. 95% reelection proves the system protects failure. $34.5 trillion debt

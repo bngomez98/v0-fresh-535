@@ -4,41 +4,49 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 
 export default function SolutionPage() {
   return (
-    <div className="bg-white pt-24 pb-16">
+    <div className="bg-background py-16 md:py-24">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-4">The Strategy for Accountability</h1>
-            <p className="text-xl text-stone-600">
+          <div className="page-header">
+            <h1>The Strategy for Accountability</h1>
+            <p className="text-xl text-muted-foreground">
               A detailed guide to the Fresh 535 movement's theory of change and practical application.
             </p>
           </div>
 
           <section className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-8">How It Works: A Three-Step Process</h2>
-            <div className="grid md:grid-cols-3 gap-12 text-center">
-              <div className="space-y-3">
-                <Target className="h-10 w-10 text-blue-700 mx-auto" />
-                <h3 className="text-xl font-bold">Step 1: Identify</h3>
-                <p className="text-stone-600">In any federal election, find the incumbent on your ballot. They are the current officeholder running for reelection.</p>
+            <h2 className="text-3xl font-bold text-center mb-2">How It Works: A Three-Step Process</h2>
+            <div className="section-divider mb-10" />
+            <div className="grid md:grid-cols-3 gap-8 text-center">
+              <div className="bg-card rounded-xl border p-8 shadow-sm hover:shadow-md transition-shadow duration-200">
+                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-5">
+                  <Target className="h-7 w-7 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold mb-3">Step 1: Identify</h3>
+                <p className="text-muted-foreground leading-relaxed">In any federal election, find the incumbent on your ballot. They are the current officeholder running for reelection.</p>
               </div>
-              <div className="space-y-3">
-                <Users className="h-10 w-10 text-blue-700 mx-auto" />
-                <h3 className="text-xl font-bold">Step 2: Replace</h3>
-                <p className="text-stone-600">Vote for any non-incumbent challenger. The goal is turnover, not endorsement.</p>
+              <div className="bg-card rounded-xl border p-8 shadow-sm hover:shadow-md transition-shadow duration-200">
+                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-5">
+                  <Users className="h-7 w-7 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold mb-3">Step 2: Replace</h3>
+                <p className="text-muted-foreground leading-relaxed">Vote for any non-incumbent challenger. The goal is turnover, not endorsement.</p>
               </div>
-              <div className="space-y-3">
-                <Lightbulb className="h-10 w-10 text-blue-700 mx-auto" />
-                <h3 className="text-xl font-bold">Step 3: Reset</h3>
-                <p className="text-stone-600">This action, when coordinated, creates a legislature that serves voters, not parties.</p>
+              <div className="bg-card rounded-xl border p-8 shadow-sm hover:shadow-md transition-shadow duration-200">
+                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-5">
+                  <Lightbulb className="h-7 w-7 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold mb-3">Step 3: Reset</h3>
+                <p className="text-muted-foreground leading-relaxed">This action, when coordinated, creates a legislature that serves voters, not parties.</p>
               </div>
             </div>
           </section>
 
           <section className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-8">
+            <h2 className="text-3xl font-bold text-center mb-2">
               The Theory of Change: The Power of a Coordinated Minority
             </h2>
+            <div className="section-divider mb-10" />
             <div className="prose prose-lg max-w-none">
               <p>
                 The Fresh 535 strategy is effective because it leverages core democratic principles in a system that has
@@ -71,7 +79,8 @@ export default function SolutionPage() {
           </section>
 
           <section className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-8">Anticipated Outcomes & Strategic Trajectory</h2>
+            <h2 className="text-3xl font-bold text-center mb-2">Anticipated Outcomes & Strategic Trajectory</h2>
+            <div className="section-divider mb-10" />
             <div className="space-y-6">
               <OutcomePhase
                 phase="Phase 1: Short-Term (1-2 Election Cycles)"
@@ -104,37 +113,38 @@ export default function SolutionPage() {
           </section>
 
           <section className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-8">Implementation Plan</h2>
+            <h2 className="text-3xl font-bold text-center mb-2">Implementation Plan</h2>
+            <div className="section-divider mb-10" />
             <div className="grid md:grid-cols-3 gap-8">
-              <div>
-                <h3 className="text-xl font-semibold mb-2">Phase A: Mobilize</h3>
-                <ul className="list-disc pl-5 text-stone-600 space-y-1">
+              <div className="bg-card rounded-xl border p-6 shadow-sm">
+                <h3 className="text-xl font-semibold mb-3">Phase A: Mobilize</h3>
+                <ul className="list-disc pl-5 text-muted-foreground space-y-1.5">
                   <li>Pledge capture and reminder workflow</li>
                   <li>District-focused share kits</li>
                   <li>Volunteer onboarding</li>
                 </ul>
               </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-2">Phase B: Target</h3>
-                <ul className="list-disc pl-5 text-stone-600 space-y-1">
+              <div className="bg-card rounded-xl border p-6 shadow-sm">
+                <h3 className="text-xl font-semibold mb-3">Phase B: Target</h3>
+                <ul className="list-disc pl-5 text-muted-foreground space-y-1.5">
                   <li>Primary calendar map and turnout goals</li>
                   <li>Incumbent risk score (beta)</li>
                   <li>Localized messaging</li>
                 </ul>
               </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-2">Phase C: Execute</h3>
-                <ul className="list-disc pl-5 text-stone-600 space-y-1">
+              <div className="bg-card rounded-xl border p-6 shadow-sm">
+                <h3 className="text-xl font-semibold mb-3">Phase C: Execute</h3>
+                <ul className="list-disc pl-5 text-muted-foreground space-y-1.5">
                   <li>Vote reminders and early-vote prompts</li>
                   <li>Field reports and rapid adjustments</li>
                   <li>Post-election analysis and debrief</li>
                 </ul>
               </div>
             </div>
-            <div className="text-center mt-8">
+            <div className="text-center mt-10">
               <a
                 href="/pledge"
-                className="inline-flex items-center px-6 py-3 rounded-md bg-blue-700 text-white font-semibold"
+                className="inline-flex items-center px-8 py-3 rounded-md bg-primary text-primary-foreground font-semibold transition-all duration-200 hover:bg-primary/90"
               >
                 Join the Coordinated Vote
               </a>
@@ -142,13 +152,14 @@ export default function SolutionPage() {
           </section>
 
           <section>
-            <h2 className="text-3xl font-bold text-center mb-8">Addressing Common Objections</h2>
+            <h2 className="text-3xl font-bold text-center mb-2">Addressing Common Objections</h2>
+            <div className="section-divider mb-10" />
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="item-1">
                 <AccordionTrigger className="text-lg">
                   Doesn't this risk replacing experienced legislators with unqualified amateurs?
                 </AccordionTrigger>
-                <AccordionContent className="text-stone-600">
+                <AccordionContent className="text-muted-foreground">
                   The data shows that the "experience" of the current Congress has produced legislative paralysis and record-low public
                   trust. The expertise acquired is often in navigating D.C. fundraising, not effective governance. New members bring fresh perspectives and a direct connection to the voters who just elected them.
                 </AccordionContent>
@@ -157,7 +168,7 @@ export default function SolutionPage() {
                 <AccordionTrigger className="text-lg">
                   What if the challenger is an extremist or holds dangerous views?
                 </AccordionTrigger>
-                <AccordionContent className="text-stone-600">
+                <AccordionContent className="text-muted-foreground">
                   Fresh 535 is an instruction to vote against the incumbent, not an endorsement of the challenger. As districts become more competitive, more qualified candidates are incentivized to run. The risk of electing a poor challenger is outweighed by the certainty of continued institutional failure under the status quo.
                 </AccordionContent>
               </AccordionItem>
@@ -165,7 +176,7 @@ export default function SolutionPage() {
                 <AccordionTrigger className="text-lg">
                   Will this weaken Congress relative to the executive branch?
                 </AccordionTrigger>
-                <AccordionContent className="text-stone-600">
+                <AccordionContent className="text-muted-foreground">
                   Institutional knowledge resides not just in members, but in professional committee staff and the Congressional Research Service. High turnover breaks up entrenched power structures that contribute to gridlock. A more responsive Congress is a stronger check on executive power than a paralyzed but experienced one.
                 </AccordionContent>
               </AccordionItem>
@@ -180,10 +191,10 @@ export default function SolutionPage() {
 
 
 const OutcomePhase = ({ phase, title, points }: { phase: string; title: string; points: string[] }) => (
-  <div className="border-l-4 border-blue-700 pl-6 py-4">
-    <p className="text-sm font-semibold text-blue-700 uppercase tracking-wider">{phase}</p>
+  <div className="border-l-4 border-primary pl-6 py-4">
+    <p className="text-sm font-semibold text-primary uppercase tracking-wider">{phase}</p>
     <h3 className="text-2xl font-bold mt-1 mb-3">{title}</h3>
-    <ul className="list-disc pl-5 space-y-1 text-slate-600">
+    <ul className="list-disc pl-5 space-y-1.5 text-muted-foreground">
       {points.map((point, index) => (
         <li key={index}>{point}</li>
       ))}

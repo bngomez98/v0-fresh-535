@@ -8,15 +8,15 @@ export default function DonatePage() {
     <div className="bg-muted py-16 md:py-24">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-4">Fuel the Movement</h1>
+          <div className="page-header">
+            <h1>Fuel the Movement</h1>
             <p className="text-xl text-muted-foreground">
               Your contribution directly funds our mission to restore congressional accountability. We are a 100%
               grassroots-funded organization and do not accept corporate or PAC money.
             </p>
           </div>
 
-          <Card className="bg-card shadow-lg">
+          <Card className="bg-card shadow-md">
             <CardHeader className="text-center">
               <CardTitle className="text-3xl">Make a One-Time Donation</CardTitle>
               <CardDescription>Choose an amount or enter your own.</CardDescription>
@@ -47,7 +47,8 @@ export default function DonatePage() {
           </Card>
 
           <div className="mt-16">
-            <h2 className="text-3xl font-bold text-center mb-8">Where Your Donation Goes</h2>
+            <h2 className="text-3xl font-bold text-center mb-2">Where Your Donation Goes</h2>
+            <div className="section-divider mb-10" />
             <div className="grid md:grid-cols-3 gap-8 text-center">
               <ImpactCard
                 icon={<Megaphone className="h-8 w-8 text-primary" />}
@@ -67,7 +68,7 @@ export default function DonatePage() {
             </div>
           </div>
 
-          <div className="mt-16 text-center bg-card p-8 rounded-lg border">
+          <div className="mt-16 text-center bg-card p-8 rounded-xl border shadow-sm">
             <h2 className="text-3xl font-bold mb-4">Financial Transparency</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               We are committed to the highest standard of transparency. All of our organizational financial records,
@@ -83,9 +84,9 @@ export default function DonatePage() {
 }
 
 const ImpactCard = ({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) => (
-  <div className="bg-card p-6 rounded-lg border shadow-sm">
+  <div className="bg-card p-6 rounded-xl border shadow-sm hover:shadow-md transition-shadow duration-200">
     <div className="flex justify-center mb-4">{icon}</div>
     <h3 className="text-xl font-semibold mb-2">{title}</h3>
-    <p className="text-muted-foreground">{description}</p>
+    <p className="text-muted-foreground leading-relaxed">{description}</p>
   </div>
 )

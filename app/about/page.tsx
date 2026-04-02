@@ -8,8 +8,8 @@ export default function AboutPage() {
     <div className="bg-background py-16 md:py-24">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">The Need for a System Reset</h1>
+          <div className="page-header">
+            <h1>The Need for a System Reset</h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
               American democracy is built on the principle of a government accountable to its people. When that
               connection weakens, the system ceases to function for the majority. This is the challenge we face today: a
@@ -19,9 +19,10 @@ export default function AboutPage() {
 
           {/* The Core Problem */}
           <section className="mb-20">
-            <h2 className="text-3xl font-bold text-foreground mb-8 text-center">The Anatomy of Failure</h2>
-            <div className="space-y-8">
-              <div className="bg-card p-8 rounded-lg border shadow-sm">
+            <h2 className="text-3xl font-bold text-foreground mb-2 text-center">The Anatomy of Failure</h2>
+            <div className="section-divider mb-10" />
+            <div className="space-y-6">
+              <div className="bg-card p-8 rounded-xl border shadow-sm">
                 <h3 className="text-2xl font-bold text-foreground mb-4">A System Unresponsive to the People</h3>
                 <p className="text-lg text-muted-foreground mb-4">
                   Over decades, the priorities of Congress have shifted. Representatives now spend an inordinate amount
@@ -36,7 +37,7 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <div className="bg-card p-8 rounded-lg border shadow-sm">
+              <div className="bg-card p-8 rounded-xl border shadow-sm">
                 <h3 className="text-2xl font-bold text-foreground mb-4">The Self-Preservation Loop</h3>
                 <p className="text-lg text-muted-foreground mb-4">
                   Despite historically low approval ratings, incumbents are reelected over 95% of the time. This is not
@@ -53,7 +54,7 @@ export default function AboutPage() {
 
           {/* The Authoritarian Threat */}
           <section className="mb-20">
-            <div className="bg-destructive/10 border border-destructive/20 rounded-lg p-8">
+            <div className="bg-destructive/10 border border-destructive/20 rounded-xl p-8">
               <div className="flex items-center mb-6">
                 <AlertTriangle className="h-8 w-8 text-destructive mr-3" />
                 <h2 className="text-3xl font-bold text-destructive">The Consequence of an Unresponsive System</h2>
@@ -72,7 +73,7 @@ export default function AboutPage() {
                   power, effectively replacing our system of government with one based on authoritarian control.
                 </p>
 
-                <p className="text-lg font-semibold text-destructive bg-background p-4 rounded-lg border border-destructive/20">
+                <p className="text-lg font-semibold text-destructive bg-background p-4 rounded-xl border border-destructive/20">
                   This authoritarian risk is not the cause of our problems; it is the direct consequence of a system
                   that has stopped delivering for the American people.
                 </p>
@@ -82,13 +83,14 @@ export default function AboutPage() {
 
           {/* The Numbers */}
           <section className="mb-20">
-            <h2 className="text-3xl font-bold text-foreground mb-8 text-center">The Data of Dysfunction</h2>
+            <h2 className="text-3xl font-bold text-foreground mb-2 text-center">The Data of Dysfunction</h2>
+            <div className="section-divider mb-10" />
             <ImpactMetrics />
           </section>
 
           {/* The Solution Intro */}
           <section className="mb-16">
-            <div className="bg-secondary border border-border rounded-lg p-8 text-center shadow-sm">
+            <div className="bg-secondary border border-border rounded-xl p-8 text-center shadow-sm">
               <div className="flex justify-center mb-6">
                 <Target className="h-12 w-12 text-primary" />
               </div>

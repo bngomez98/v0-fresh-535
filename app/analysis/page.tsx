@@ -11,8 +11,8 @@ export default function AnalysisPage() {
     <div className="bg-background py-16 md:py-24">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+          <div className="page-header">
+            <h1>
               Academic Evidence: The Case for Complete Congressional Replacement
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed max-w-4xl mx-auto">
@@ -24,7 +24,7 @@ export default function AnalysisPage() {
 
           {/* Academic Foundation */}
           <section className="mb-16">
-            <div className="bg-card border-l-4 border-primary p-8 rounded-r-lg shadow-sm">
+            <div className="bg-card border-l-4 border-primary p-8 rounded-r-xl shadow-sm">
               <h2 className="text-3xl font-bold text-foreground mb-6 flex items-center">
                 <BookOpen className="h-8 w-8 mr-3 text-primary" />
                 Academic Foundation
@@ -65,7 +65,7 @@ export default function AnalysisPage() {
 
           {/* Executive Summary */}
           <section className="mb-16">
-            <div className="bg-card border-l-4 border-destructive p-8 rounded-r-lg shadow-sm">
+            <div className="bg-card border-l-4 border-destructive p-8 rounded-r-xl shadow-sm">
               <h2 className="text-3xl font-bold text-foreground mb-6 flex items-center">
                 <FileText className="h-8 w-8 mr-3 text-destructive" />
                 Current Crisis: 2025 Data
@@ -77,9 +77,9 @@ export default function AnalysisPage() {
                   public will. Current metrics confirm the complete breakdown of electoral accountability:
                 </p>
                 <div className="grid md:grid-cols-2 gap-6 my-6">
-                  <div className="bg-background p-4 rounded border">
+                  <div className="bg-background p-5 rounded-xl border">
                     <h4 className="font-bold text-destructive">Performance Metrics</h4>
-                    <ul className="text-sm space-y-1 mt-2">
+                    <ul className="text-sm space-y-1.5 mt-2">
                       <li>• Congressional approval: 18% (Gallup 2024)</li>
                       <li>• Bills passed 2023: 27 (lowest since 1995)</li>
                       <li>• National debt: $34.5 trillion (+$7.8T under current Congress)</li>
@@ -87,9 +87,9 @@ export default function AnalysisPage() {
                       <li>• Housing prices: +47% since 2020</li>
                     </ul>
                   </div>
-                  <div className="bg-background p-4 rounded border">
+                  <div className="bg-background p-5 rounded-xl border">
                     <h4 className="font-bold text-chart-2">Job Security Metrics</h4>
-                    <ul className="text-sm space-y-1 mt-2">
+                    <ul className="text-sm space-y-1.5 mt-2">
                       <li>• House incumbent reelection: 95% (2022)</li>
                       <li>• Senate incumbent reelection: 84% (2022)</li>
                       <li>• Primary challenge success: &lt;5%</li>
@@ -120,14 +120,14 @@ export default function AnalysisPage() {
                 <div className="grid md:grid-cols-2 gap-8">
                   <div>
                     <h4 className="text-lg font-semibold text-center mb-2">Congressional Approval: 18%</h4>
-                    <div className="h-80 border rounded-lg p-4 bg-background">
+                    <div className="h-80 border rounded-xl p-4 bg-background">
                       <CongressionalApprovalChart />
                     </div>
                     <p className="text-sm text-muted-foreground mt-2 text-center">Source: Gallup Historical Trends</p>
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold text-center mb-2">Incumbent Reelection: 95%</h4>
-                    <div className="h-80 border rounded-lg p-4 bg-background">
+                    <div className="h-80 border rounded-xl p-4 bg-background">
                       <HistoricalReelectionChart />
                     </div>
                     <p className="text-sm text-muted-foreground mt-2 text-center">
@@ -147,7 +147,7 @@ export default function AnalysisPage() {
                   King-Gelman identified structural advantages as the root cause. Current fundraising data confirms
                   their prediction of permanent incumbent advantage.
                 </p>
-                <div className="h-96 border rounded-lg p-4 bg-background">
+                <div className="h-96 border rounded-xl p-4 bg-background">
                   <CampaignSpendingChart />
                 </div>
                 <p className="text-sm text-muted-foreground mt-2 text-center">
@@ -165,7 +165,7 @@ export default function AnalysisPage() {
                   King-Gelman predicted that extreme incumbency advantage would reduce legislative effectiveness.
                   Current productivity data confirms this prediction.
                 </p>
-                <div className="h-96 border rounded-lg p-4 bg-background">
+                <div className="h-96 border rounded-xl p-4 bg-background">
                   <LegislativeProductivityChart />
                 </div>
                 <p className="text-sm text-muted-foreground mt-2 text-center">
@@ -181,7 +181,7 @@ export default function AnalysisPage() {
 
           {/* Part II: The Consequence */}
           <section className="mb-16">
-            <div className="bg-destructive/10 border-l-4 border-destructive p-8 rounded-r-lg">
+            <div className="bg-destructive/10 border-l-4 border-destructive p-8 rounded-r-xl">
               <h2 className="text-3xl font-bold text-destructive mb-6 flex items-center">
                 <AlertTriangle className="h-8 w-8 mr-3" />
                 Part II: Democratic Collapse Risk
@@ -211,7 +211,7 @@ export default function AnalysisPage() {
           </section>
 
           {/* Part III: The Solution */}
-          <section className="text-center bg-primary text-primary-foreground p-12 rounded-lg">
+          <section className="text-center bg-primary text-primary-foreground p-12 rounded-xl">
             <h2 className="text-3xl font-bold mb-6">Part III: Mathematical Solution</h2>
             <p className="text-xl mb-4 max-w-3xl mx-auto">
               King-Gelman research proves that removing incumbency advantage restores electoral responsiveness. Complete
