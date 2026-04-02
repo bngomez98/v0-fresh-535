@@ -4,9 +4,9 @@ import { cache } from "react"
 
 // Check if Supabase environment variables are available
 export const isSupabaseConfigured =
-  typeof process.env.SUPABASE_NEXT_PUBLIC_SUPABASE_URL === "string" &&
+  typeof process.env.NEXT_PUBLIC_SUPABASE_URL === "string" &&
   process.env.NEXT_PUBLIC_SUPABASE_URL.length > 0 &&
-  typeof proSUPABASE_NEXT_PUBLIC_SUPABASE_ANON_KEY_ANON_KEY === "string" &&
+  typeof process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY === "string" &&
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY.length > 0
 
 // Create a cached version of the Supabase client for Server Components
