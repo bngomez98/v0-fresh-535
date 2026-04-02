@@ -137,7 +137,7 @@ export function PledgeForm() {
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="grid md:grid-cols-2 gap-6">
         <div>
-          <Label htmlFor="firstName" className="text-sm font-medium text-slate-700">
+          <Label htmlFor="firstName" className="text-sm font-medium text-foreground">
             First Name *
           </Label>
           <Input
@@ -147,13 +147,13 @@ export function PledgeForm() {
             required
             value={formData.firstName}
             onChange={handleChange}
-            className="mt-1"
+            className="mt-1.5"
             placeholder="Enter your first name"
           />
         </div>
 
         <div>
-          <Label htmlFor="lastName" className="text-sm font-medium text-slate-700">
+          <Label htmlFor="lastName" className="text-sm font-medium text-foreground">
             Last Name *
           </Label>
           <Input
@@ -163,14 +163,14 @@ export function PledgeForm() {
             required
             value={formData.lastName}
             onChange={handleChange}
-            className="mt-1"
+            className="mt-1.5"
             placeholder="Enter your last name"
           />
         </div>
       </div>
 
       <div>
-        <Label htmlFor="email" className="text-sm font-medium text-slate-700">
+        <Label htmlFor="email" className="text-sm font-medium text-foreground">
           Email Address *
         </Label>
         <Input
@@ -180,17 +180,17 @@ export function PledgeForm() {
           required
           value={formData.email}
           onChange={handleChange}
-          className="mt-1"
+          className="mt-1.5"
           placeholder="Enter your email address"
         />
-        <p className="text-xs text-slate-500 mt-1">
+        <p className="text-xs text-muted-foreground mt-1.5">
           We'll use this to send you election reminders and voter resources.
         </p>
       </div>
 
       <div className="grid md:grid-cols-2 gap-6">
         <div>
-          <Label htmlFor="state" className="text-sm font-medium text-slate-700">
+          <Label htmlFor="state" className="text-sm font-medium text-foreground">
             State *
           </Label>
           <select
@@ -199,7 +199,7 @@ export function PledgeForm() {
             required
             value={formData.state}
             onChange={handleChange}
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+            className="mt-1.5 block w-full px-3 py-2 border border-input rounded-md bg-background text-foreground shadow-sm focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 transition-colors"
           >
             <option value="">Select your state</option>
             {US_STATES.map((state) => (
@@ -211,7 +211,7 @@ export function PledgeForm() {
         </div>
 
         <div>
-          <Label htmlFor="zipCode" className="text-sm font-medium text-slate-700">
+          <Label htmlFor="zipCode" className="text-sm font-medium text-foreground">
             ZIP Code *
           </Label>
           <Input
@@ -221,7 +221,7 @@ export function PledgeForm() {
             required
             value={formData.zipCode}
             onChange={handleChange}
-            className="mt-1"
+            className="mt-1.5"
             placeholder="Enter your ZIP code"
             pattern="[0-9]{5}(-[0-9]{4})?"
           />
@@ -229,7 +229,7 @@ export function PledgeForm() {
       </div>
 
       <div>
-        <Label htmlFor="comments" className="text-sm font-medium text-slate-700">
+        <Label htmlFor="comments" className="text-sm font-medium text-foreground">
           Comments (Optional)
         </Label>
         <Textarea
@@ -237,15 +237,15 @@ export function PledgeForm() {
           name="comments"
           value={formData.comments}
           onChange={handleChange}
-          className="mt-1"
+          className="mt-1.5"
           placeholder="Tell us why you're taking the pledge..."
           rows={4}
         />
       </div>
 
-      <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
-        <h3 className="font-semibold text-blue-900 mb-2">Your Pledge:</h3>
-        <p className="text-sm text-blue-800 italic">
+      <div className="bg-primary/5 p-5 rounded-xl border border-primary/15">
+        <h3 className="font-semibold text-primary mb-2">Your Pledge:</h3>
+        <p className="text-sm text-foreground/80 italic leading-relaxed">
           "I pledge to vote against every incumbent member of Congress in every election until we achieve complete
           congressional turnover. I will vote for any qualified challenger over any incumbent, regardless of party
           affiliation, because accountability matters more than ideology."
@@ -263,7 +263,7 @@ export function PledgeForm() {
         )}
       </Button>
 
-      <p className="text-xs text-slate-500 text-center">
+      <p className="text-xs text-muted-foreground text-center">
         By submitting this form, you agree to receive election reminders and movement updates. You can unsubscribe at
         any time. We will never sell or share your information.
       </p>

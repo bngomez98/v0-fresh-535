@@ -8,8 +8,8 @@ export default function ContactPage() {
     <div className="bg-background py-16 md:py-24">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-4">Contact Fresh 535</h1>
+          <div className="page-header">
+            <h1>Contact Fresh 535</h1>
             <p className="text-xl text-muted-foreground">
               Get in touch with questions, feedback, media inquiries, or volunteer opportunities.
             </p>
@@ -52,8 +52,8 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <div className="mt-16 bg-muted rounded-xl p-8">
-            <h2 className="text-2xl font-bold mb-6 text-center">Frequently Asked Questions</h2>
+          <div className="mt-16 bg-muted rounded-xl p-10">
+            <h2 className="text-2xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div>
                 <h4 className="font-bold text-primary mb-2">Response Time</h4>

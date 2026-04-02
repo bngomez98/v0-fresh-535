@@ -7,8 +7,8 @@ export default function FAQPage() {
     <div className="bg-background py-16 md:py-24">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-4">Frequently Asked Questions</h1>
+          <div className="page-header">
+            <h1>Frequently Asked Questions</h1>
             <p className="text-xl text-muted-foreground">
               Common questions about the Fresh 535 movement, strategy, and implementation.
             </p>
@@ -182,7 +182,7 @@ export default function FAQPage() {
             </AccordionItem>
           </Accordion>
 
-          <div className="text-center mt-16 bg-muted rounded-xl p-8">
+          <div className="text-center mt-16 bg-muted rounded-xl p-10">
             <h2 className="text-2xl font-bold mb-4">Still have questions?</h2>
             <p className="text-lg text-muted-foreground mb-6">
               We're here to help. Contact us with any questions not covered here.

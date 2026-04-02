@@ -10,27 +10,26 @@ export default function HomePage() {
     <>
       {/* Hero Section */}
       <section className="relative section-padding overflow-hidden bg-brand-navy text-brand-cream">
-        <div className="absolute inset-0 bg-grid-pattern opacity-10" />
+        <div className="absolute inset-0 bg-grid-pattern opacity-5" />
         <div className="container mx-auto container-padding relative">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6 animate-in fade-in slide-in-from-left-8 duration-1000">
-              <div className="text-center lg:text-left mb-8">
-                <div className="text-2xl md:text-3xl font-bold text-red-400 mb-2">IF THEY'RE IN, THEY'RE OUT</div>
-                <div className="text-xl md:text-2xl font-semibold text-white">VOTE IN A FRESH 535</div>
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8 animate-in fade-in slide-in-from-left-8 duration-1000">
+              <div className="text-center lg:text-left">
+                <div className="inline-block text-sm font-semibold tracking-widest uppercase text-red-400 mb-3 border border-red-400/30 rounded-full px-4 py-1.5">
+                  If They're In, They're Out
+                </div>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white mt-4">
+                  Your Vote Doesn't Count.
+                  <br />
+                  <span className="text-gradient-red">We're Changing That.</span>
+                </h1>
               </div>
-
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
-                Your Vote Doesn't Count.
-                <br />
-                <span className="text-gradient-red">We're Changing That.</span>
-              </h1>
               <p className="text-lg md:text-xl text-slate-300 leading-relaxed max-w-prose">
-                 The political system is undeniably rigged against the will of the people. 
-              Despite a dismal 18% public approval rating, congressional incumbents astonishingly maintain a 95% reelection rate. 
-              This stark disparity means your elected representative can afford to ignore your concerns, knowing their position is virtually guaranteed regardless of their performance. 
-              Fresh 535 offers a revolutionary solution, engaging voters across the nation to collectively unseat every single incumbent in one election,
-              dismantling the broken cycle, and restoring true accountability to our government.
-
+                The political system is undeniably rigged against the will of the people.
+                Despite a dismal 18% public approval rating, congressional incumbents astonishingly maintain a 95% reelection rate.
+                This stark disparity means your elected representative can afford to ignore your concerns, knowing their position is virtually guaranteed regardless of their performance.
+                Fresh 535 offers a revolutionary solution, engaging voters across the nation to collectively unseat every single incumbent in one election,
+                dismantling the broken cycle, and restoring true accountability to our government.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button asChild size="lg" variant="destructive">
@@ -43,7 +42,7 @@ export default function HomePage() {
                   asChild
                   variant="outline"
                   size="lg"
-                  className="bg-transparent text-white border-slate-400 hover:bg-white hover:text-brand-navy"
+                  className="bg-transparent text-white border-slate-500 hover:bg-white hover:text-brand-navy"
                 >
                   <Link href="/solution">
                     See How We Win
@@ -52,7 +51,7 @@ export default function HomePage() {
                 </Button>
               </div>
             </div>
-            <div className="relative hidden lg:block animate-in fade-in slide-in-from-right-8 duration-1000">
+            <div className="relative hidden lg:flex items-center justify-center animate-in fade-in slide-in-from-right-8 duration-1000">
               <Image
                 src="/brand-logo.png"
                 alt="Fresh 535 Logo"
@@ -71,8 +70,9 @@ export default function HomePage() {
       <section className="section-padding">
         <div className="container mx-auto container-padding">
           <div className="text-center max-w-4xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl mb-4">Why Your Representative Ignores You</h2>
-            <p className="text-lg text-slate-600">
+            <h2 className="text-3xl md:text-4xl mb-6">Why Your Representative Ignores You</h2>
+            <div className="section-divider mb-6" />
+            <p className="text-lg text-muted-foreground leading-relaxed">
               They know they'll win. 95% of House incumbents get reelected even with 18% approval. They've built an
               unbeatable system of name recognition, gerrymandered districts, and donor networks. Only coordinated voter
               action can break it.
@@ -84,7 +84,7 @@ export default function HomePage() {
               asChild
               size="lg"
               variant="outline"
-              className="border-2 border-red-600 text-red-600 hover:bg-red-600 hover:text-white bg-transparent"
+              className="border-2 border-destructive text-destructive hover:bg-destructive hover:text-white bg-transparent"
             >
               <Link href="/my-district">
                 <MapPin className="h-5 w-5 mr-2" />
@@ -93,22 +93,22 @@ export default function HomePage() {
             </Button>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-10">
             <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
               <h3 className="text-2xl mb-4 text-center">They Don't Care What You Think</h3>
-              <div className="h-80 border rounded-lg p-4 bg-white shadow-lg">
+              <div className="h-80 border rounded-xl p-4 bg-white shadow-sm">
                 <CongressionalApprovalChart />
               </div>
-              <p className="text-sm text-slate-600 mt-2 text-center">
+              <p className="text-sm text-muted-foreground mt-3 text-center">
                 18% approval but they keep getting reelected. The system is broken.
               </p>
             </div>
             <div className="animate-in fade-in slide-in-from-bottom-4 duration-500" style={{ animationDelay: "200ms" }}>
               <h3 className="text-2xl mb-4 text-center">They Know They Can't Lose</h3>
-              <div className="h-80 border rounded-lg p-4 bg-white shadow-lg">
+              <div className="h-80 border rounded-xl p-4 bg-white shadow-sm">
                 <HistoricalReelectionChart />
               </div>
-              <p className="text-sm text-slate-600 mt-2 text-center">
+              <p className="text-sm text-muted-foreground mt-3 text-center">
                 A 95% reelection rate means your vote is meaningless under the current system.
               </p>
             </div>
@@ -117,34 +117,41 @@ export default function HomePage() {
       </section>
 
       {/* The Strategy Section */}
-      <section className="section-padding bg-slate-50">
+      <section className="section-padding bg-secondary/50">
         <div className="container mx-auto container-padding">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl md:text-4xl mb-4">How We Take Back Control</h2>
-            <p className="text-lg text-slate-600">
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <h2 className="text-3xl md:text-4xl mb-6">How We Take Back Control</h2>
+            <div className="section-divider mb-6" />
+            <p className="text-lg text-muted-foreground leading-relaxed">
               Primary elections have 15-25% turnout, and general elections have 55-60% turnout. A coordinated 20% of
               voters can defeat any incumbent. Fresh 535 coordinates that 20% to fire all 535 in one election cycle.
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-12 text-center max-w-5xl mx-auto">
-            <div className="space-y-3">
-              <Vote className="h-10 w-10 text-accent mx-auto" />
-              <h3 className="text-xl font-semibold">Primary: Vote Them Out</h3>
-              <p className="text-slate-600">
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div className="bg-card rounded-xl border p-8 text-center shadow-sm hover:shadow-md transition-shadow duration-200">
+              <div className="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-5">
+                <Vote className="h-7 w-7 text-accent" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Primary: Vote Them Out</h3>
+              <p className="text-muted-foreground leading-relaxed">
                 Vote for any challenger against your incumbent. Low turnout means we don't need many voters to win.
               </p>
             </div>
-            <div className="space-y-3">
-              <Zap className="h-10 w-10 text-accent mx-auto" />
-              <h3 className="text-xl font-semibold">General: Finish the Job</h3>
-              <p className="text-slate-600">
+            <div className="bg-card rounded-xl border p-8 text-center shadow-sm hover:shadow-md transition-shadow duration-200">
+              <div className="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-5">
+                <Zap className="h-7 w-7 text-accent" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3">General: Finish the Job</h3>
+              <p className="text-muted-foreground leading-relaxed">
                 If they survive the primary, vote for their opponent. Party doesn't matter.
               </p>
             </div>
-            <div className="space-y-3">
-              <Globe className="h-10 w-10 text-accent mx-auto" />
-              <h3 className="text-xl font-semibold">Victory: They Work for Us</h3>
-              <p className="text-slate-600">
+            <div className="bg-card rounded-xl border p-8 text-center shadow-sm hover:shadow-md transition-shadow duration-200">
+              <div className="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-5">
+                <Globe className="h-7 w-7 text-accent" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Victory: They Work for Us</h3>
+              <p className="text-muted-foreground leading-relaxed">
                 New representatives with no seniority, no lobbyist connections. They'll need your vote to survive.
               </p>
             </div>
@@ -156,9 +163,11 @@ export default function HomePage() {
       <section className="section-padding bg-brand-navy text-white">
         <div className="container mx-auto container-padding text-center">
           <div className="max-w-4xl mx-auto">
-            <div className="text-3xl md:text-4xl font-bold text-red-400 mb-6">VOTE IN A FRESH 535</div>
-            <h2 className="text-2xl md:text-3xl mb-4">The Movement Is Growing. Join Before It's Too Late.</h2>
-            <p className="text-lg text-slate-300 mb-8">
+            <div className="inline-block text-sm font-semibold tracking-widest uppercase text-red-400 mb-4 border border-red-400/30 rounded-full px-4 py-1.5">
+              Vote in a Fresh 535
+            </div>
+            <h2 className="text-3xl md:text-4xl mb-6 text-white">The Movement Is Growing. Join Before It's Too Late.</h2>
+            <p className="text-lg text-slate-300 mb-10 leading-relaxed max-w-2xl mx-auto">
               Every day more voters realize their representatives don't represent them. Fresh 535 gives them a way to
               fight back. Join now and help coordinate the largest voter rebellion in American history.
             </p>

@@ -10,7 +10,7 @@ export default function PledgePage() {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <div className="bg-primary text-primary-foreground rounded-lg p-8 mb-12 shadow-lg">
+            <div className="bg-primary text-primary-foreground rounded-xl p-8 md:p-10 mb-12 shadow-lg">
               <h1 className="text-4xl md:text-5xl font-bold mb-6">Pledge to Reset the System</h1>
               <p className="text-xl leading-relaxed mb-8 opacity-90">
                 Join thousands of Americans in a simple, powerful act to restore a government that works for the people.
@@ -22,7 +22,7 @@ export default function PledgePage() {
 
           {/* The Pledge */}
           <section className="mb-16">
-            <div className="bg-secondary border-l-4 border-primary p-8 rounded-r-lg shadow-sm">
+            <div className="bg-secondary border-l-4 border-primary p-8 rounded-r-xl shadow-sm">
               <h2 className="text-3xl font-bold text-primary mb-6">The Fresh 535 Pledge</h2>
               <div className="prose prose-lg max-w-none text-foreground">
                 <blockquote className="text-xl italic text-primary border-l-4 border-primary/30 pl-6 mb-6">
@@ -41,7 +41,8 @@ export default function PledgePage() {
 
           {/* Why This Matters */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold text-foreground mb-8 text-center">Why Your Pledge Matters</h2>
+            <h2 className="text-3xl font-bold text-foreground mb-2 text-center">Why Your Pledge Matters</h2>
+            <div className="section-divider mb-10" />
 
             <div className="grid md:grid-cols-2 gap-8 mb-8">
               <Card className="border-2 border-destructive/20 hover:shadow-lg transition-shadow">
@@ -100,7 +101,7 @@ export default function PledgePage() {
 
           {/* Pledge Form */}
           <section className="mb-16" id="pledge-form">
-            <div className="bg-card border-2 border-primary/20 rounded-lg p-8 shadow-xl">
+            <div className="bg-card border-2 border-primary/20 rounded-xl p-8 shadow-md">
               <h2 className="text-3xl font-bold text-foreground mb-6 text-center">Make Your Commitment Official</h2>
               <p className="text-lg text-muted-foreground text-center mb-8">
                 Join the movement to restore congressional accountability. Your information helps us track momentum and
@@ -112,28 +113,29 @@ export default function PledgePage() {
 
           {/* What Happens Next */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold text-foreground mb-8 text-center">What Happens After You Pledge</h2>
+            <h2 className="text-3xl font-bold text-foreground mb-2 text-center">What Happens After You Pledge</h2>
+            <div className="section-divider mb-10" />
 
             <div className="space-y-6">
-              <div className="bg-card p-6 rounded-lg border shadow-sm">
+              <div className="bg-card p-6 rounded-xl border shadow-sm">
                 <h3 className="text-xl font-bold text-foreground mb-3">1. You'll Receive Resources</h3>
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground leading-relaxed">
                   Get access to voter guides, district-specific information, and tools to help you make informed
                   decisions in every election. We'll help you easily identify incumbents on your ballot.
                 </p>
               </div>
 
-              <div className="bg-card p-6 rounded-lg border shadow-sm">
+              <div className="bg-card p-6 rounded-xl border shadow-sm">
                 <h3 className="text-xl font-bold text-foreground mb-3">2. You'll Get Election Reminders</h3>
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground leading-relaxed">
                   We'll notify you about upcoming primary and general elections in your area, where your vote has
                   maximum impact. You'll never miss an opportunity to hold incumbents accountable.
                 </p>
               </div>
 
-              <div className="bg-card p-6 rounded-lg border shadow-sm">
+              <div className="bg-card p-6 rounded-xl border shadow-sm">
                 <h3 className="text-xl font-bold text-foreground mb-3">3. You'll Help Build the Movement</h3>
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground leading-relaxed">
                   Your pledge adds to our growing numbers, showing politicians and the media that an organized,
                   cross-partisan opposition is building. As our movement grows, incumbents will start to take notice and
                   change their behavior.
@@ -143,7 +145,7 @@ export default function PledgePage() {
           </section>
 
           {/* Share Section */}
-          <section className="text-center bg-primary text-primary-foreground p-12 rounded-lg">
+          <section className="text-center bg-primary text-primary-foreground p-12 rounded-xl">
             <h2 className="text-3xl font-bold mb-6">Spread the Movement</h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
               Every person who takes the pledge brings us closer to the critical mass needed for complete congressional

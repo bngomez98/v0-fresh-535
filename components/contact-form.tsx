@@ -40,7 +40,7 @@ export function ContactForm() {
 
   if (isSubmitted) {
     return (
-      <div className="bg-green-50 border border-green-200 rounded-lg p-6 text-center">
+      <div className="bg-green-50 border border-green-200 rounded-xl p-6 text-center">
         <h3 className="text-xl font-bold text-green-800 mb-2">Message Sent!</h3>
         <p className="text-green-700">Thank you for reaching out. We'll get back to you within 48 hours.</p>
       </div>
@@ -48,7 +48,7 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit} className="space-y-5">
       <div className="grid md:grid-cols-2 gap-4">
         <Input type="text" placeholder="Your name" value={name} onChange={(e) => setName(e.target.value)} required />
         <Input
@@ -95,7 +95,7 @@ export function ContactForm() {
         {isSubmitting ? "Sending..." : "Send Message"}
       </Button>
 
-      <p className="text-xs text-slate-500 text-center">
+      <p className="text-xs text-muted-foreground text-center">
         We respect your privacy. Your information is used solely for responding to your inquiry and is never shared or
         sold.
       </p>
