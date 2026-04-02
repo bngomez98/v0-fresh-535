@@ -1,8 +1,20 @@
 import type { NextRequest } from 'next/server'
 import { updateSession } from '@/lib/supabase/middleware'
 
+function getSupabaseOrigin() {
+  const configuredUrl = process.env.NEXT_PUBLIC_SUPABASE_URL?.trim()
+  if (!configuredUrl) return ''
+
+  try {
+    return new URL(configuredUrl).origin
+  } catch {
+    return ''
+  }
+}
+
 export async function middleware(request: NextRequest) {
   const response = await updateSession(request)
+  const supabaseOrigin = getSupabaseOrigin()
 
   // Add security headers
   // Prevent clickjacking
@@ -20,7 +32,7 @@ export async function middleware(request: NextRequest) {
   // Content Security Policy
   response.headers.set(
     'Content-Security-Policy',
-    `default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self'${process.env.NEXT_PUBLIC_SUPABASE_URL ? ` ${process.env.NEXT_PUBLIC_SUPABASE_URL}` : ''};`
+    `default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self'${supabaseOrigin ? ` ${supabaseOrigin}` : ''};`
   )
 
   return response
