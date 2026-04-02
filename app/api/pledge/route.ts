@@ -1,6 +1,28 @@
 import { type NextRequest, NextResponse } from "next/server"
 import { supabase } from "@/lib/supabase"
 
+export async function GET() {
+  try {
+    // Get the total count of pledges
+    const { count, error } = await supabase
+      .from('pledges')
+      .select('*', { count: 'exact', head: true })
+
+    if (error) {
+      console.error("Supabase error:", error)
+      return NextResponse.json(
+        { error: "Failed to fetch pledge count" },
+        { status: 500 }
+      )
+    }
+
+    return NextResponse.json({ count: count || 0 }, { status: 200 })
+  } catch (error) {
+    console.error("Error fetching pledge count:", error)
+    return NextResponse.json({ error: "Internal server error" }, { status: 500 })
+  }
+}
+
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
