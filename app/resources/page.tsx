@@ -19,7 +19,7 @@ const resources: Resource[] = [
     title: "Primary Logo Pack",
     description: "Official Fresh 535 logos (PNG, SVG) for use on light and dark backgrounds.",
     previewUrl: "/brand-logo.png",
-    link: "/fresh-535-logo.png",
+    link: "/brand-logo.png",
     type: "Digital Asset",
   },
   {

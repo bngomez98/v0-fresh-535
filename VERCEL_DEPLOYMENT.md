@@ -5,7 +5,7 @@ This guide will walk you through deploying your Fresh 535 application to Vercel.
 ## Prerequisites
 
 - [ ] A Vercel account (sign up at https://vercel.com)
-- [ ] A Supabase project with credentials (see `SETUP_CHECKLIST.md`)
+- [ ] A Supabase project with credentials (see `SUPABASE_INTEGRATION.md`)
 - [ ] GitHub repository access
 - [ ] Node.js 18+ installed locally (for testing)
 
@@ -29,7 +29,7 @@ Before deploying to Vercel, ensure your Supabase project is ready:
    - Project URL
    - Anon/Public API Key
 
-For detailed Supabase setup, see `SETUP_CHECKLIST.md`.
+For detailed Supabase setup, see `SUPABASE_INTEGRATION.md`.
 
 ### 2. Connect Repository to Vercel
 

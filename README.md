@@ -62,14 +62,12 @@ See [.env.example](./.env.example) for details.
 
 This application uses Supabase for data storage. Follow the setup guide:
 
-1. See [SETUP_CHECKLIST.md](./SETUP_CHECKLIST.md) for complete Supabase setup
-2. See [SUPABASE_INTEGRATION.md](./SUPABASE_INTEGRATION.md) for technical details
+1. See [SUPABASE_INTEGRATION.md](./SUPABASE_INTEGRATION.md) for complete Supabase setup and technical details
 
 ## 📚 Documentation
 
 - [Vercel Deployment Guide](./VERCEL_DEPLOYMENT.md) - Deploy to Vercel
-- [Supabase Setup Checklist](./SETUP_CHECKLIST.md) - Database configuration
-- [Supabase Integration](./SUPABASE_INTEGRATION.md) - Technical implementation
+- [Supabase Integration](./SUPABASE_INTEGRATION.md) - Database setup and technical implementation
 
 ## 🛠️ Available Scripts
 
