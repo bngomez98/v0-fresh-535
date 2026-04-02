@@ -18,19 +18,6 @@ const nextConfig = {
       },
     ]
   },
-  async headers() {
-    return [
-      {
-        source: "/analysis",
-        headers: [
-          {
-            key: "X-Robots-Tag",
-            value: "noindex",
-          },
-        ],
-      },
-    ]
-  },
 }
 
 export default nextConfig
