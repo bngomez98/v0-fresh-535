@@ -6,7 +6,6 @@ export default function Head() {
         name="description"
         content="Find your congressional district and current federal representatives to evaluate incumbency and accountability."
       />
-      <link rel="canonical" href="https://fresh535.org/my-district" />
     </>
   )
 }
