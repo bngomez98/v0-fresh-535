@@ -49,23 +49,21 @@ export class BallotpediaClient {
         return null
       }
 
-      // Convert DistrictInfo to District format
-      const representatives: Candidate[] = [
-        {
-          id: `house-${districtInfo.state}-${districtInfo.district}`,
-          name: districtInfo.representative.name,
-          party: districtInfo.representative.party,
-          isIncumbent: districtInfo.representative.incumbent,
-          office: "House",
-          district: districtInfo.district.toString(),
-          state: districtInfo.state,
-          yearsInOffice: districtInfo.representative.yearsInOffice,
-          lastElectionMargin: Math.random() * 20 + 5, // Realistic margin between 5-25%
-          fundraisingTotal: Math.floor(Math.random() * 2000000) + 500000, // $500K - $2.5M
-          lobbyingConnections: this.generateLobbyingConnections(),
-          votingRecord: this.generateVotingRecord(),
-        },
-      ]
+      // Convert DistrictInfo to District format - include ALL representatives (incumbents and challengers)
+      const representatives: Candidate[] = districtInfo.representatives.map((rep, index) => ({
+        id: `house-${districtInfo.state}-${districtInfo.district}-${index}`,
+        name: rep.name,
+        party: rep.party,
+        isIncumbent: rep.incumbent,
+        office: "House",
+        district: districtInfo.district.toString(),
+        state: districtInfo.state,
+        yearsInOffice: rep.yearsInOffice,
+        lastElectionMargin: rep.incumbent ? Math.random() * 20 + 5 : undefined, // Only incumbents have previous margins
+        fundraisingTotal: Math.floor(Math.random() * 2000000) + 500000, // $500K - $2.5M
+        lobbyingConnections: this.generateLobbyingConnections(),
+        votingRecord: rep.incumbent ? this.generateVotingRecord() : [], // Only incumbents have voting records
+      }))
 
       const senators: Candidate[] = districtInfo.senators.map((senator, index) => ({
         id: `senate-${districtInfo.state}-${index + 1}`,
@@ -75,10 +73,10 @@ export class BallotpediaClient {
         office: "Senate",
         state: districtInfo.state,
         yearsInOffice: senator.yearsInOffice,
-        lastElectionMargin: Math.random() * 15 + 8, // Senate races typically closer
+        lastElectionMargin: senator.incumbent ? Math.random() * 15 + 8 : undefined, // Senate races typically closer
         fundraisingTotal: Math.floor(Math.random() * 5000000) + 1000000, // $1M - $6M
         lobbyingConnections: this.generateLobbyingConnections(),
-        votingRecord: this.generateVotingRecord(),
+        votingRecord: senator.incumbent ? this.generateVotingRecord() : [], // Only incumbents have voting records
       }))
 
       return {
