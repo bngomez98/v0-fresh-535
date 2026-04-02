@@ -53,9 +53,9 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200 relative ${
+                className={`px-3 py-2 text-sm font-medium rounded-md transition-all duration-200 relative ${
                   pathname === item.href
-                    ? "text-primary bg-primary/5"
+                    ? "text-primary bg-primary/10"
                     : "text-muted-foreground hover:text-primary hover:bg-primary/5"
                 }`}
               >
@@ -65,13 +65,13 @@ export function Header() {
           </div>
 
           <div className="hidden lg:flex items-center space-x-2">
-            <Button variant="outline" size="sm" asChild className="bg-transparent">
+            <Button variant="outline" size="sm" asChild className="bg-transparent btn-professional">
               <Link href="/donate">
                 <Heart className="h-4 w-4 mr-1.5" />
                 Donate
               </Link>
             </Button>
-            <Button asChild size="sm" variant="destructive">
+            <Button asChild size="sm" variant="destructive" className="btn-professional">
               <Link href="/pledge">
                 <Users className="h-4 w-4 mr-1.5" />
                 Take the Pledge
@@ -107,13 +107,13 @@ export function Header() {
               </Link>
             ))}
             <div className="flex flex-col space-y-2.5 pt-4 mt-2 border-t">
-              <Button variant="outline" className="w-full bg-transparent" asChild>
+              <Button variant="outline" className="w-full bg-transparent btn-professional" asChild>
                 <Link href="/donate">
                   <Heart className="h-4 w-4 mr-1.5" />
                   Donate
                 </Link>
               </Button>
-              <Button variant="destructive" className="w-full" asChild>
+              <Button variant="destructive" className="w-full btn-professional" asChild>
                 <Link href="/pledge">
                   <Users className="h-4 w-4 mr-1.5" />
                   Take the Pledge

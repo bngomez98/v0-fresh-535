@@ -43,7 +43,7 @@ export function Footer() {
               We're a movement to replace all 535 members of Congress. Every incumbent must go so we can rebuild a
               government that actually works for regular people, not just special interests.
             </p>
-            <Button asChild variant="secondary" size="sm">
+            <Button asChild variant="secondary" size="sm" className="btn-professional">
               <Link href="/pledge">Join Us</Link>
             </Button>
           </div>
@@ -56,7 +56,7 @@ export function Footer() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-slate-400 hover:text-white transition-colors duration-200 text-sm"
+                      className="text-slate-400 hover:text-white transition-all duration-200 text-sm hover:translate-x-1 inline-block"
                     >
                       {link.label}
                     </Link>
