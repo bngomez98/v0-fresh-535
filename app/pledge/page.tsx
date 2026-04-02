@@ -11,7 +11,7 @@ export default function PledgePage() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <div className="bg-primary text-primary-foreground rounded-xl p-8 md:p-10 mb-12 shadow-lg">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">Pledge to Reset the System</h1>
+              <h1 className="text-4xl md:text-5xl font-bold mb-6">Pledge to Reset the System</h1>
               <p className="text-xl leading-relaxed mb-8 opacity-90">
                 Join thousands of Americans in a simple, powerful act to restore a government that works for the people.
                 Your pledge is a commitment to vote for a complete reset of Congress.
