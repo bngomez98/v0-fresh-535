@@ -45,7 +45,7 @@ export function Header() {
               className="transition-transform duration-300 group-hover:scale-110"
               priority
             />
-            <span className="text-xl font-semibold tracking-tight text-primary font-inter">FRESH 535</span>
+            <span className="text-xl font-semibold tracking-tight text-primary font-sans">FRESH 535</span>
           </Link>
 
           <div className="hidden lg:flex items-center space-x-6">
