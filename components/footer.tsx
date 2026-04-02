@@ -67,9 +67,18 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="border-t border-slate-700/50 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500 gap-2">
+        <div className="border-t border-slate-700/50 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500 gap-4">
           <p>&copy; {new Date().getFullYear()} Fresh 535. All rights reserved.</p>
-          <p>A grassroots movement to make Congress work again.</p>
+          <div className="flex gap-4 flex-wrap justify-center">
+            <Link href="/privacy" className="hover:text-white transition-colors">
+              Privacy Policy
+            </Link>
+            <span className="text-slate-700">|</span>
+            <Link href="/terms" className="hover:text-white transition-colors">
+              Terms of Service
+            </Link>
+          </div>
+          <p className="hidden md:block">A grassroots movement to make Congress work again.</p>
         </div>
       </div>
     </footer>
