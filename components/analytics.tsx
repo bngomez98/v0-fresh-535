@@ -9,7 +9,7 @@ export function Analytics() {
   useEffect(() => {
     // Google Analytics
     if (typeof window !== "undefined" && window.gtag) {
-      window.gtag("config", "GA_MEASUREMENT_ID", {
+      window.gtag("config", "G-9QXW6S19X4", {
         page_path: pathname,
       })
     }

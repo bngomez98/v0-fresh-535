@@ -1,9 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { supabase } from '@/lib/supabase'
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
-    const { name, email, subject, message } = body
+    const { name, email, subject, category, message } = body
 
     // Validate required fields
     if (!name || !email || !subject || !message) {
@@ -22,22 +23,38 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Here you would typically:
-    // 1. Save to database
-    // 2. Send email notification to admin
-    // 3. Send confirmation email to user
-    // 4. Log for analytics
+    // Save contact message to Supabase
+    const { data, error } = await supabase
+      .from('contact_messages')
+      .insert({
+        name: name,
+        email: email,
+        subject: subject,
+        category: category || null,
+        message: message,
+        ip_address: request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || null,
+        user_agent: request.headers.get('user-agent') || null,
+      })
+      .select()
+      .single()
 
-    console.log('New contact form submission:', {
-      name,
+    if (error) {
+      console.error('Supabase error:', error)
+      return NextResponse.json(
+        { error: 'Failed to send message. Please try again.' },
+        { status: 500 }
+      )
+    }
+
+    console.log('New contact message saved to database:', {
+      messageId: data.id,
       email,
       subject,
-      message,
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString(),
     })
 
     return NextResponse.json(
-      { message: 'Message sent successfully' },
+      { message: 'Message sent successfully', messageId: data.id },
       { status: 200 }
     )
   } catch (error) {

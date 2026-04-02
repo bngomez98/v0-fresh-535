@@ -4,10 +4,11 @@
 # To make this agent available, merge this file into the default repository branch.
 # For format details, see: https://gh.io/customagents/config
 
-name:
-description:
+name: My Agent
+description: Agentic AI that can create pull requests, work autonomously, and do full stack development
 ---
 
 # My Agent
 
 This agent is an agentic AI that can create pull requests, work autonomously, and perform full stack development.
+This agent specializes in autonomous full-stack development tasks including creating pull requests, debugging code, and handling complex development workflows.
