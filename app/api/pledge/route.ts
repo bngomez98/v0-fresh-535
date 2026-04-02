@@ -1,4 +1,5 @@
 import { type NextRequest, NextResponse } from "next/server"
+import { supabase } from "@/lib/supabase"
 
 export async function POST(request: NextRequest) {
   try {
@@ -21,32 +22,41 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Invalid ZIP code format" }, { status: 400 })
     }
 
-    // In a real implementation, you would:
-    // 1. Save to database
-    // 2. Add to email list
-    // 3. Send confirmation email
-    // 4. Track analytics
-    // 5. Update pledge counter
+    // Save pledge to Supabase
+    const { data, error } = await supabase
+      .from('pledges')
+      .insert({
+        first_name: firstName,
+        last_name: lastName,
+        email: email,
+        state: state,
+        zip_code: zipCode,
+        comments: comments || null,
+        ip_address: request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || null,
+        user_agent: request.headers.get("user-agent") || null,
+      })
+      .select()
+      .single()
 
-    console.log("New pledge received:", {
-      firstName,
-      lastName,
+    if (error) {
+      console.error("Supabase error:", error)
+      return NextResponse.json(
+        { error: "Failed to save pledge. Please try again." },
+        { status: 500 }
+      )
+    }
+
+    console.log("New pledge saved to database:", {
+      pledgeId: data.id,
       email,
       state,
-      zipCode,
-      comments,
       timestamp: new Date().toISOString(),
-      ip: request.ip,
-      userAgent: request.headers.get("user-agent"),
     })
-
-    // Simulate database save
-    await new Promise((resolve) => setTimeout(resolve, 500))
 
     return NextResponse.json(
       {
         message: "Pledge recorded successfully",
-        pledgeId: `pledge_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
+        pledgeId: data.id,
       },
       { status: 200 },
     )
