@@ -10,4 +10,5 @@ description: Agentic AI that can create pull requests, work autonomously, and do
 
 # My Agent
 
+This agent is an agentic AI that can create pull requests, work autonomously, and perform full stack development.
 This agent specializes in autonomous full-stack development tasks including creating pull requests, debugging code, and handling complex development workflows.

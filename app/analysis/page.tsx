@@ -43,16 +43,16 @@ export default function AnalysisPage() {
                 </p>
                 <ul className="list-disc pl-6 space-y-2">
                   <li>
-                    <strong>1,000% increase in incumbency advantage:</strong> Rose from 1% (1946-48) to 11% (1984-86)
+                    <strong>1,000% increase in incumbency advantage:</strong> It rose from 1% (1946-48) to 11% (1984-86).
                   </li>
                   <li>
-                    <strong>43% decline in electoral responsiveness:</strong> Dropped from 2.3 to 1.3 over 40 years
+                    <strong>43% decline in electoral responsiveness:</strong> It dropped from 2.3 to 1.3 over 40 years.
                   </li>
                   <li>
-                    <strong>Incumbency explains virtually all partisan bias trends</strong> since the 1940s
+                    <strong>Incumbency explains virtually all partisan bias trends</strong> since the 1940s.
                   </li>
                   <li>
-                    <strong>System became mathematically unresponsive</strong> to voter preferences
+                    <strong>The system became mathematically unresponsive</strong> to voter preferences.
                   </li>
                 </ul>
                 <p className="font-semibold">

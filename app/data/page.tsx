@@ -83,8 +83,7 @@ export default function DataPage() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground mb-4">
-                    Mathematical analysis of congressional failure. Statistical proof of incumbency protection. Fresh
-                    535 execution strategy with electoral mathematics.
+                    This document provides a mathematical analysis of congressional failure, statistical proof of incumbency protection, and the Fresh 535 execution strategy with electoral mathematics.
                   </p>
                   <Button asChild className="w-full">
                     <Link href="/api/download?resource=white-paper" target="_blank">
@@ -104,8 +103,7 @@ export default function DataPage() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground mb-4">
-                    District-by-district incumbent performance data. Voting records, donor lists, approval ratings,
-                    reelection margins, legislative productivity metrics.
+                    This packet includes district-by-district incumbent performance data, voting records, donor lists, approval ratings, reelection margins, and legislative productivity metrics.
                   </p>
                   <Button asChild variant="outline" className="w-full bg-transparent">
                     <Link href="/api/download?resource=data-packet" target="_blank">
@@ -125,8 +123,7 @@ export default function DataPage() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground mb-4">
-                    Printable flyers, social media graphics, presentation slides, talking points, legal compliance
-                    guides, voter registration materials.
+                    This toolkit contains printable flyers, social media graphics, presentation slides, talking points, legal compliance guides, and voter registration materials.
                   </p>
                   <Button asChild variant="outline" className="w-full bg-transparent">
                     <Link href="/api/download?resource=organizing-toolkit" target="_blank">
@@ -146,8 +143,7 @@ export default function DataPage() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground mb-4">
-                    Step-by-step instructions for primary and general election voting. State-specific requirements,
-                    timeline, legal compliance, tactical considerations.
+                    This guide provides step-by-step instructions for primary and general election voting, including state-specific requirements, timelines, legal compliance, and tactical considerations.
                   </p>
                   <Button asChild variant="outline" className="w-full bg-transparent">
                     <Link href="/api/download?resource=voter-guide" target="_blank">
