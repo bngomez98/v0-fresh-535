@@ -12,8 +12,6 @@ const routes = [
   "/donate",
   "/resources",
   "/my-district",
-  "/resources/flyer",
-  "/resources/data-packet",
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
