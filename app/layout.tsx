@@ -15,12 +15,14 @@ const inter = Inter({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-inter",
+  fallback: ["system-ui", "arial"],
 })
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-playfair",
+  fallback: ["Georgia", "serif"],
 })
 
 export const metadata: Metadata = {

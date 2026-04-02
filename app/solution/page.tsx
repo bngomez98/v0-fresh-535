@@ -18,25 +18,25 @@ export default function SolutionPage() {
             <h2 className="text-3xl font-bold text-center mb-2">How It Works: A Three-Step Process</h2>
             <div className="section-divider mb-10" />
             <div className="grid md:grid-cols-3 gap-8 text-center">
-              <div className="bg-card rounded-xl border p-8 shadow-sm hover:shadow-md transition-shadow duration-200">
-                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-5">
-                  <Target className="h-7 w-7 text-primary" />
+              <div className="interactive-card p-8">
+                <div className="w-16 h-16 rounded-full bg-gradient-bg-primary flex items-center justify-center mx-auto mb-6 shadow-lg">
+                  <Target className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold mb-3">Step 1: Identify</h3>
+                <h3 className="text-xl font-bold mb-4">Step 1: Identify</h3>
                 <p className="text-muted-foreground leading-relaxed">In any federal election, find the incumbent on your ballot. They are the current officeholder running for reelection.</p>
               </div>
-              <div className="bg-card rounded-xl border p-8 shadow-sm hover:shadow-md transition-shadow duration-200">
-                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-5">
-                  <Users className="h-7 w-7 text-primary" />
+              <div className="interactive-card p-8">
+                <div className="w-16 h-16 rounded-full bg-gradient-bg-primary flex items-center justify-center mx-auto mb-6 shadow-lg">
+                  <Users className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold mb-3">Step 2: Replace</h3>
+                <h3 className="text-xl font-bold mb-4">Step 2: Replace</h3>
                 <p className="text-muted-foreground leading-relaxed">Vote for any non-incumbent challenger. The goal is turnover, not endorsement.</p>
               </div>
-              <div className="bg-card rounded-xl border p-8 shadow-sm hover:shadow-md transition-shadow duration-200">
-                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-5">
-                  <Lightbulb className="h-7 w-7 text-primary" />
+              <div className="interactive-card p-8">
+                <div className="w-16 h-16 rounded-full bg-gradient-bg-primary flex items-center justify-center mx-auto mb-6 shadow-lg">
+                  <Lightbulb className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold mb-3">Step 3: Reset</h3>
+                <h3 className="text-xl font-bold mb-4">Step 3: Reset</h3>
                 <p className="text-muted-foreground leading-relaxed">This action, when coordinated, creates a legislature that serves voters, not parties.</p>
               </div>
             </div>
@@ -116,25 +116,25 @@ export default function SolutionPage() {
             <h2 className="text-3xl font-bold text-center mb-2">Implementation Plan</h2>
             <div className="section-divider mb-10" />
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-card rounded-xl border p-6 shadow-sm">
-                <h3 className="text-xl font-semibold mb-3">Phase A: Mobilize</h3>
-                <ul className="list-disc pl-5 text-muted-foreground space-y-1.5">
+              <div className="section-card">
+                <h3 className="text-xl font-semibold mb-4">Phase A: Mobilize</h3>
+                <ul className="list-disc pl-5 text-muted-foreground space-y-2 leading-relaxed">
                   <li>Pledge capture and reminder workflow</li>
                   <li>District-focused share kits</li>
                   <li>Volunteer onboarding</li>
                 </ul>
               </div>
-              <div className="bg-card rounded-xl border p-6 shadow-sm">
-                <h3 className="text-xl font-semibold mb-3">Phase B: Target</h3>
-                <ul className="list-disc pl-5 text-muted-foreground space-y-1.5">
+              <div className="section-card">
+                <h3 className="text-xl font-semibold mb-4">Phase B: Target</h3>
+                <ul className="list-disc pl-5 text-muted-foreground space-y-2 leading-relaxed">
                   <li>Primary calendar map and turnout goals</li>
                   <li>Incumbent risk score (beta)</li>
                   <li>Localized messaging</li>
                 </ul>
               </div>
-              <div className="bg-card rounded-xl border p-6 shadow-sm">
-                <h3 className="text-xl font-semibold mb-3">Phase C: Execute</h3>
-                <ul className="list-disc pl-5 text-muted-foreground space-y-1.5">
+              <div className="section-card">
+                <h3 className="text-xl font-semibold mb-4">Phase C: Execute</h3>
+                <ul className="list-disc pl-5 text-muted-foreground space-y-2 leading-relaxed">
                   <li>Vote reminders and early-vote prompts</li>
                   <li>Field reports and rapid adjustments</li>
                   <li>Post-election analysis and debrief</li>
@@ -142,12 +142,9 @@ export default function SolutionPage() {
               </div>
             </div>
             <div className="text-center mt-10">
-              <a
-                href="/pledge"
-                className="inline-flex items-center px-8 py-3 rounded-md bg-primary text-primary-foreground font-semibold transition-all duration-200 hover:bg-primary/90"
-              >
-                Join the Coordinated Vote
-              </a>
+              <Button asChild size="lg" className="btn-professional">
+                <Link href="/pledge">Join the Coordinated Vote</Link>
+              </Button>
             </div>
           </section>
 
