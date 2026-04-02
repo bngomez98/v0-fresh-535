@@ -190,6 +190,7 @@ export default function TermsPage() {
             </ul>
           </section>
         </div>
+        </div>
       </div>
     </div>
   )

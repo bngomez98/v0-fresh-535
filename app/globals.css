@@ -4,6 +4,9 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  --font-inter: "Inter", "Helvetica Neue", system-ui, -apple-system, sans-serif;
+  --font-playfair: "Playfair Display", "Times New Roman", serif;
+
   /* Brand Cream */
   --background: oklch(0.97 0.015 80);
   /* Brand Charcoal */
