@@ -16,10 +16,10 @@ export async function updateSession(request: NextRequest) {
     })
   }
 
-  const res = NextResponse.next()
+  const authResponse = NextResponse.next()
 
   // Create a Supabase client configured to use cookies
-  const supabase = createMiddlewareClient({ req: request, res })
+  const supabase = createMiddlewareClient({ req: request, res: authResponse })
 
   // Check if this is an auth callback
   const requestUrl = new URL(request.url)
@@ -30,7 +30,7 @@ export async function updateSession(request: NextRequest) {
     await supabase.auth.exchangeCodeForSession(code)
     // Redirect to home page after successful auth
     const redirectResponse = NextResponse.redirect(new URL("/", request.url))
-    res.cookies.getAll().forEach((cookie) => {
+    authResponse.cookies.getAll().forEach((cookie) => {
       redirectResponse.cookies.set(cookie)
     })
     return redirectResponse
@@ -56,5 +56,5 @@ export async function updateSession(request: NextRequest) {
     }
   }
 
-  return res
+  return authResponse
 }
