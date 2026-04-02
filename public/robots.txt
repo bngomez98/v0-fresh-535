@@ -1,0 +1,84 @@
+# robots.txt for Fresh 535 website
+
+# Allow major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# Block AI crawlers and LLM data collectors
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: cohere-ai
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
+
+User-agent: YouBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Block generic scrapers
+User-agent: scrapy
+Disallow: /
+
+User-agent: phantomjs
+Disallow: /
+
+User-agent: HeadlessChrome
+Disallow: /
+
+User-agent: puppeteer
+Disallow: /
+
+User-agent: playwright
+Disallow: /
+
+User-agent: selenium
+Disallow: /
+
+# Default rule for all other bots
+User-agent: *
+Disallow: /api/
+Disallow: /_next/
+
+# Sitemap location (if you create one later)
+# Sitemap: https://yourdomain.com/sitemap.xml
