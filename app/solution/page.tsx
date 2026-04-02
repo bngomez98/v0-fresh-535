@@ -1,6 +1,5 @@
 import type React from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Lightbulb, Target, Users, ShieldQuestion } from "lucide-react"
+import { Lightbulb, Target, Users } from "lucide-react"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 
 export default function SolutionPage() {
@@ -17,22 +16,22 @@ export default function SolutionPage() {
 
           <section className="mb-16">
             <h2 className="text-3xl font-bold text-center mb-8">How It Works: A Three-Step Process</h2>
-            <div className="grid md:grid-cols-3 gap-8 text-center">
-              <StepCard
-                icon={<Target className="h-10 w-10 text-blue-700" />}
-                title="Step 1: Identify"
-                description="In any federal election (House or Senate), find the incumbent on your ballot. They are the current officeholder running for reelection."
-              />
-              <StepCard
-                icon={<Users className="h-10 w-10 text-blue-700" />}
-                title="Step 2: Replace"
-                description="Vote for any non-incumbent challenger. The goal is turnover, not endorsement. This applies to both primary and general elections."
-              />
-              <StepCard
-                icon={<Lightbulb className="h-10 w-10 text-blue-700" />}
-                title="Step 3: Reset"
-                description="This action, when coordinated, creates a legislature of representatives who know they serve at the pleasure of the voters, not the party."
-              />
+            <div className="grid md:grid-cols-3 gap-12 text-center">
+              <div className="space-y-3">
+                <Target className="h-10 w-10 text-blue-700 mx-auto" />
+                <h3 className="text-xl font-bold">Step 1: Identify</h3>
+                <p className="text-stone-600">In any federal election, find the incumbent on your ballot. They are the current officeholder running for reelection.</p>
+              </div>
+              <div className="space-y-3">
+                <Users className="h-10 w-10 text-blue-700 mx-auto" />
+                <h3 className="text-xl font-bold">Step 2: Replace</h3>
+                <p className="text-stone-600">Vote for any non-incumbent challenger. The goal is turnover, not endorsement.</p>
+              </div>
+              <div className="space-y-3">
+                <Lightbulb className="h-10 w-10 text-blue-700 mx-auto" />
+                <h3 className="text-xl font-bold">Step 3: Reset</h3>
+                <p className="text-stone-600">This action, when coordinated, creates a legislature that serves voters, not parties.</p>
+              </div>
             </div>
           </section>
 
@@ -143,59 +142,34 @@ export default function SolutionPage() {
           </section>
 
           <section>
-            <h2 className="text-3xl font-bold text-center mb-8">Addressing Sophisticated Objections</h2>
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-3">
-                  <ShieldQuestion className="text-blue-700" /> Answering Your Questions
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <Accordion type="single" collapsible className="w-full">
-                  <AccordionItem value="item-1">
-                    <AccordionTrigger className="text-lg">
-                      Doesn't this strategy risk replacing experienced legislators with unqualified amateurs?
-                    </AccordionTrigger>
-                    <AccordionContent className="prose prose-stone max-w-none">
-                      This objection equates incumbency with valuable expertise. However, the data shows that the
-                      "experience" of the current Congress has produced legislative paralysis and record-low public
-                      trust. The expertise acquired is often in navigating the D.C. fundraising system and internal
-                      party politics, not in effective governance. New members bring fresh perspectives and, most
-                      importantly, a direct connection to the voters who just elected them, rather than decades of
-                      allegiance to a broken system.
-                    </AccordionContent>
-                  </AccordionItem>
-                  <AccordionItem value="item-2">
-                    <AccordionTrigger className="text-lg">
-                      What if the challenger is an extremist or holds dangerous views?
-                    </AccordionTrigger>
-                    <AccordionContent className="prose prose-stone max-w-none">
-                      The Fresh 535 movement is an instruction to vote against the incumbent, not an endorsement of the
-                      challenger. The quality of challengers is a separate issue that will improve over time as
-                      districts become more competitive. When a seat is seen as "winnable," more qualified, mainstream
-                      candidates are incentivized to run. In the short term, even a less-than-ideal challenger serves
-                      the primary purpose: to break the cycle of incumbency and prove that no seat is safe. The risk of
-                      electing a poor challenger is outweighed by the certainty of continued institutional failure under
-                      the status quo.
-                    </AccordionContent>
-                  </AccordionItem>
-                  <AccordionItem value="item-3">
-                    <AccordionTrigger className="text-lg">
-                      Will this cause a loss of "institutional memory" and weaken Congress relative to the executive
-                      branch?
-                    </AccordionTrigger>
-                    <AccordionContent className="prose prose-stone max-w-none">
-                      This is a valid concern. However, institutional knowledge resides not just in members, but also in
-                      professional committee staff, the Congressional Research Service, and other non-partisan bodies.
-                      High turnover may initially create challenges, but it also breaks up entrenched power structures
-                      and committee fiefdoms that contribute to gridlock. A more responsive, dynamic Congress, even if
-                      less tenured, is arguably a stronger check on executive power than a paralyzed but experienced
-                      one.
-                    </AccordionContent>
-                  </AccordionItem>
-                </Accordion>
-              </CardContent>
-            </Card>
+            <h2 className="text-3xl font-bold text-center mb-8">Addressing Common Objections</h2>
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="item-1">
+                <AccordionTrigger className="text-lg">
+                  Doesn't this risk replacing experienced legislators with unqualified amateurs?
+                </AccordionTrigger>
+                <AccordionContent className="text-stone-600">
+                  The data shows that the "experience" of the current Congress has produced legislative paralysis and record-low public
+                  trust. The expertise acquired is often in navigating D.C. fundraising, not effective governance. New members bring fresh perspectives and a direct connection to the voters who just elected them.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2">
+                <AccordionTrigger className="text-lg">
+                  What if the challenger is an extremist or holds dangerous views?
+                </AccordionTrigger>
+                <AccordionContent className="text-stone-600">
+                  Fresh 535 is an instruction to vote against the incumbent, not an endorsement of the challenger. As districts become more competitive, more qualified candidates are incentivized to run. The risk of electing a poor challenger is outweighed by the certainty of continued institutional failure under the status quo.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-3">
+                <AccordionTrigger className="text-lg">
+                  Will this weaken Congress relative to the executive branch?
+                </AccordionTrigger>
+                <AccordionContent className="text-stone-600">
+                  Institutional knowledge resides not just in members, but in professional committee staff and the Congressional Research Service. High turnover breaks up entrenched power structures that contribute to gridlock. A more responsive Congress is a stronger check on executive power than a paralyzed but experienced one.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </section>
         </div>
       </div>
@@ -203,13 +177,7 @@ export default function SolutionPage() {
   )
 }
 
-const StepCard = ({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) => (
-  <div className="flex flex-col items-center">
-    {icon}
-    <h3 className="text-xl font-bold my-4">{title}</h3>
-    <p className="text-stone-600">{description}</p>
-  </div>
-)
+
 
 const OutcomePhase = ({ phase, title, points }: { phase: string; title: string; points: string[] }) => (
   <div className="border-l-4 border-blue-700 pl-6 py-4">
