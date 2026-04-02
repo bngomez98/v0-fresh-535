@@ -6,7 +6,8 @@ import "./globals.css"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Toaster } from "@/components/ui/toaster"
-import { Analytics } from "@/components/analytics"
+import { CustomAnalytics } from "@/components/analytics"
+import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import { ScrollToTop } from "@/components/scroll-to-top"
 
@@ -99,6 +100,7 @@ export default function RootLayout({
           <main className="pt-20">{children}</main>
           <Footer />
           <Toaster />
+          <CustomAnalytics />
           <Analytics />
         </Suspense>
       </body>
