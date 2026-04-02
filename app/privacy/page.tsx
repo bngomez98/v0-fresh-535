@@ -7,12 +7,17 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <div className="container mx-auto container-padding py-16">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold mb-8">Privacy Policy</h1>
-        <p className="text-slate-600 mb-8">Last updated: {new Date().toLocaleDateString()}</p>
+    <div className="bg-background py-16 md:py-24">
+      <div className="container mx-auto px-4">
+        <div className="max-w-4xl mx-auto">
+          <div className="page-header">
+            <h1>Privacy Policy</h1>
+            <p className="text-xl text-muted-foreground">
+              Last updated: {new Date().toLocaleDateString()}
+            </p>
+          </div>
 
-        <div className="prose prose-slate max-w-none">
+          <div className="prose prose-slate max-w-none">
           <section className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">Introduction</h2>
             <p className="text-slate-700 mb-4">
