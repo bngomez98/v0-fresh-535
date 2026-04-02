@@ -25,9 +25,9 @@ export default function HomePage() {
                 <span className="text-gradient-red">We're Changing That.</span>
               </h1>
               <p className="text-lg md:text-xl text-slate-300 leading-relaxed max-w-prose">
-                They rigged the system. 95% reelection rate with 18% approval. Your representative ignores you because
-                they know they'll win anyway. Fresh 535 breaks that cycle by coordinating voters to fire every single
-                incumbent in one election.
+                They rigged the system. Incumbents have a 95% reelection rate despite only 18% approval. Your
+                representative ignores you because they know they will win anyway. Fresh 535 breaks that cycle by
+                coordinating voters to fire every single incumbent in one election.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button asChild size="lg" variant="destructive">
@@ -106,7 +106,7 @@ export default function HomePage() {
                 <HistoricalReelectionChart />
               </div>
               <p className="text-sm text-slate-600 mt-2 text-center">
-                95% reelection rate means your vote is meaningless under current system
+                A 95% reelection rate means your vote is meaningless under the current system.
               </p>
             </div>
           </div>
@@ -119,8 +119,8 @@ export default function HomePage() {
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl mb-4">How We Take Back Control</h2>
             <p className="text-lg text-slate-600">
-              Primary elections have 15-25% turnout. General elections 55-60%. A coordinated 20% of voters can defeat
-              any incumbent. Fresh 535 coordinates that 20% to fire all 535 in one election cycle.
+              Primary elections have 15-25% turnout, and general elections have 55-60% turnout. A coordinated 20% of
+              voters can defeat any incumbent. Fresh 535 coordinates that 20% to fire all 535 in one election cycle.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8 text-center">
