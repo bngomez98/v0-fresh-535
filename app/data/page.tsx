@@ -24,7 +24,7 @@ export default function DataPage() {
             <div className="section-divider mb-10" />
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-              <Card className="text-center border-2 border-destructive/20 bg-destructive/5">
+              <Card className="text-center border-2 border-destructive/20 bg-destructive/5 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                 <CardHeader>
                   <AlertTriangle className="h-12 w-12 text-destructive mx-auto mb-2" />
                   <CardTitle className="text-3xl font-bold text-destructive">18%</CardTitle>
@@ -35,7 +35,7 @@ export default function DataPage() {
                 </CardContent>
               </Card>
 
-              <Card className="text-center border-2 border-chart-4/20 bg-chart-4/5">
+              <Card className="text-center border-2 border-chart-4/20 bg-chart-4/5 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                 <CardHeader>
                   <Target className="h-12 w-12 text-chart-4 mx-auto mb-2" />
                   <CardTitle className="text-3xl font-bold text-chart-4">95%</CardTitle>
@@ -46,7 +46,7 @@ export default function DataPage() {
                 </CardContent>
               </Card>
 
-              <Card className="text-center border-2 border-primary/20 bg-primary/5">
+              <Card className="text-center border-2 border-primary/20 bg-primary/5 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                 <CardHeader>
                   <DollarSign className="h-12 w-12 text-primary mx-auto mb-2" />
                   <CardTitle className="text-2xl font-bold text-primary">$34T+</CardTitle>
@@ -57,7 +57,7 @@ export default function DataPage() {
                 </CardContent>
               </Card>
 
-              <Card className="text-center border-2 border-chart-2/20 bg-chart-2/5">
+              <Card className="text-center border-2 border-chart-2/20 bg-chart-2/5 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                 <CardHeader>
                   <BarChart3 className="h-12 w-12 text-chart-2 mx-auto mb-2" />
                   <CardTitle className="text-3xl font-bold text-chart-2">27</CardTitle>
