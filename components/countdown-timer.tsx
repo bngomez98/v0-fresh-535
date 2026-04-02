@@ -45,12 +45,12 @@ export function CountdownTimer() {
   return (
     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto">
       {timeUnits.map((unit) => (
-        <Card key={unit.label} className="bg-brand-blue/10 border-brand-blue/20">
+        <Card key={unit.label} className="bg-primary/10 border-primary/20">
           <CardContent className="p-4 text-center">
-            <div className="text-3xl md:text-4xl font-bold text-brand-blue mb-2">
+            <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
               {unit.value.toString().padStart(2, "0")}
             </div>
-            <div className="text-brand-blue/70 text-sm uppercase tracking-wide">{unit.label}</div>
+            <div className="text-primary/70 text-sm uppercase tracking-wide">{unit.label}</div>
           </CardContent>
         </Card>
       ))}
