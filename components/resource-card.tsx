@@ -18,7 +18,7 @@ export function ResourceCard({ resource }: { resource: Resource }) {
     <div className="border bg-white rounded-lg overflow-hidden transition-shadow hover:shadow-xl flex flex-col">
       <div className="bg-slate-100 p-4 flex justify-center items-center aspect-video">
         <Image
-          src={resource.previewUrl || "/placeholder.svg"}
+          src={resource.previewUrl || "/brand-logo.png"}
           alt={`Preview of ${resource.title}`}
           width={400}
           height={300}
