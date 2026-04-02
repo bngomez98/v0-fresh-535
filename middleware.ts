@@ -85,6 +85,38 @@ export async function middleware(request: NextRequest) {
   }
 
   // --- Security Headers ---
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+  let supabaseHost: string | null = null
+
+  if (supabaseUrl) {
+    try {
+      supabaseHost = new URL(supabaseUrl).host
+    } catch (error) {
+      console.warn('Invalid Supabase URL provided to NEXT_PUBLIC_SUPABASE_URL', error)
+    }
+  }
+
+  const supabaseWs = supabaseHost ? `wss://${supabaseHost}` : null
+
+  const connectSources = [
+    "'self'",
+    supabaseHost ? `https://${supabaseHost}` : null,
+    supabaseWs,
+    'https://www.google-analytics.com',
+    'https://www.googletagmanager.com',
+    'https://region1.google-analytics.com',
+    'https://vitals.vercel-insights.com',
+  ]
+    .filter((value): value is string => Boolean(value))
+    .join(' ')
+
+  const scriptSources = [
+    "'self'",
+    "'unsafe-inline'",
+    "'unsafe-eval'",
+    'https://www.googletagmanager.com',
+    'https://www.google-analytics.com',
+  ].join(' ')
 
   // Prevent clickjacking
   response.headers.set('X-Frame-Options', 'DENY')
@@ -101,7 +133,7 @@ export async function middleware(request: NextRequest) {
   // Content Security Policy
   response.headers.set(
     'Content-Security-Policy',
-    "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self';"
+    `default-src 'self'; script-src ${scriptSources}; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src ${connectSources};`
   )
 
   return response
