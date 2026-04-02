@@ -4,7 +4,7 @@ import Image from "next/image"
 
 export default function FlyerPage() {
   return (
-    <div className="bg-white text-black p-8 max-w-4xl mx-auto font-sans">
+    <div className="bg-white text-black p-8 max-w-4xl mx-auto">
       <style jsx global>{`
         @media print {
           body {
