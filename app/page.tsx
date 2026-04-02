@@ -32,7 +32,7 @@ export default function HomePage() {
                 dismantling the broken cycle, and restoring true accountability to our government.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button asChild size="lg" variant="destructive">
+                <Button asChild size="lg" variant="destructive" className="btn-professional">
                   <Link href="/pledge">
                     <Target className="h-5 w-5 mr-2" />
                     Join the Movement
@@ -42,7 +42,7 @@ export default function HomePage() {
                   asChild
                   variant="outline"
                   size="lg"
-                  className="bg-transparent text-white border-slate-500 hover:bg-white hover:text-brand-navy"
+                  className="bg-transparent text-white border-slate-500 hover:bg-white hover:text-brand-navy btn-professional"
                 >
                   <Link href="/solution">
                     See How We Win
@@ -84,7 +84,7 @@ export default function HomePage() {
               asChild
               size="lg"
               variant="outline"
-              className="border-2 border-destructive text-destructive hover:bg-destructive hover:text-white bg-transparent"
+              className="border-2 border-destructive text-destructive hover:bg-destructive hover:text-white bg-transparent btn-professional"
             >
               <Link href="/my-district">
                 <MapPin className="h-5 w-5 mr-2" />
@@ -95,20 +95,20 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-2 gap-10">
             <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-              <h3 className="text-2xl mb-4 text-center">They Don't Care What You Think</h3>
-              <div className="h-80 border rounded-xl p-4 bg-white shadow-sm">
+              <h3 className="text-2xl font-bold mb-6 text-center">They Don't Care What You Think</h3>
+              <div className="h-80 border-2 rounded-2xl p-6 bg-white shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <CongressionalApprovalChart />
               </div>
-              <p className="text-sm text-muted-foreground mt-3 text-center">
+              <p className="text-sm text-muted-foreground mt-4 text-center leading-relaxed">
                 18% approval but they keep getting reelected. The system is broken.
               </p>
             </div>
             <div className="animate-in fade-in slide-in-from-bottom-4 duration-500" style={{ animationDelay: "200ms" }}>
-              <h3 className="text-2xl mb-4 text-center">They Know They Can't Lose</h3>
-              <div className="h-80 border rounded-xl p-4 bg-white shadow-sm">
+              <h3 className="text-2xl font-bold mb-6 text-center">They Know They Can't Lose</h3>
+              <div className="h-80 border-2 rounded-2xl p-6 bg-white shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <HistoricalReelectionChart />
               </div>
-              <p className="text-sm text-muted-foreground mt-3 text-center">
+              <p className="text-sm text-muted-foreground mt-4 text-center leading-relaxed">
                 A 95% reelection rate means your vote is meaningless under the current system.
               </p>
             </div>
@@ -128,29 +128,29 @@ export default function HomePage() {
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <div className="bg-card rounded-xl border p-8 text-center shadow-sm hover:shadow-md transition-shadow duration-200">
-              <div className="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-5">
-                <Vote className="h-7 w-7 text-accent" />
+            <div className="interactive-card p-8 text-center">
+              <div className="w-16 h-16 rounded-full bg-gradient-bg-accent flex items-center justify-center mx-auto mb-6 shadow-lg">
+                <Vote className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Primary: Vote Them Out</h3>
+              <h3 className="text-xl font-semibold mb-4">Primary: Vote Them Out</h3>
               <p className="text-muted-foreground leading-relaxed">
                 Vote for any challenger against your incumbent. Low turnout means we don't need many voters to win.
               </p>
             </div>
-            <div className="bg-card rounded-xl border p-8 text-center shadow-sm hover:shadow-md transition-shadow duration-200">
-              <div className="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-5">
-                <Zap className="h-7 w-7 text-accent" />
+            <div className="interactive-card p-8 text-center">
+              <div className="w-16 h-16 rounded-full bg-gradient-bg-accent flex items-center justify-center mx-auto mb-6 shadow-lg">
+                <Zap className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">General: Finish the Job</h3>
+              <h3 className="text-xl font-semibold mb-4">General: Finish the Job</h3>
               <p className="text-muted-foreground leading-relaxed">
                 If they survive the primary, vote for their opponent. Party doesn't matter.
               </p>
             </div>
-            <div className="bg-card rounded-xl border p-8 text-center shadow-sm hover:shadow-md transition-shadow duration-200">
-              <div className="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-5">
-                <Globe className="h-7 w-7 text-accent" />
+            <div className="interactive-card p-8 text-center">
+              <div className="w-16 h-16 rounded-full bg-gradient-bg-accent flex items-center justify-center mx-auto mb-6 shadow-lg">
+                <Globe className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Victory: They Work for Us</h3>
+              <h3 className="text-xl font-semibold mb-4">Victory: They Work for Us</h3>
               <p className="text-muted-foreground leading-relaxed">
                 New representatives with no seniority, no lobbyist connections. They'll need your vote to survive.
               </p>
@@ -171,7 +171,7 @@ export default function HomePage() {
               Every day more voters realize their representatives don't represent them. Fresh 535 gives them a way to
               fight back. Join now and help coordinate the largest voter rebellion in American history.
             </p>
-            <Button asChild size="lg" variant="destructive">
+            <Button asChild size="lg" variant="destructive" className="btn-professional">
               <Link href="/pledge">
                 <Users className="h-5 w-5 mr-2" />
                 Take the Fresh 535 Pledge

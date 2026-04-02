@@ -101,7 +101,7 @@ const ContactCard = ({
   description: string
   contact: string
 }) => (
-  <Card>
+  <Card className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-2">
     <CardHeader>
       <CardTitle className="flex items-center gap-3">
         {icon}
@@ -109,7 +109,7 @@ const ContactCard = ({
       </CardTitle>
     </CardHeader>
     <CardContent>
-      <p className="text-muted-foreground mb-3">{description}</p>
+      <p className="text-muted-foreground mb-3 leading-relaxed">{description}</p>
       <p className="text-sm font-medium">{contact}</p>
     </CardContent>
   </Card>

@@ -10,9 +10,9 @@ export default function PledgePage() {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <div className="bg-primary text-primary-foreground rounded-xl p-8 md:p-10 mb-12 shadow-lg">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">Pledge to Reset the System</h1>
-              <p className="text-xl leading-relaxed mb-8 opacity-90">
+            <div className="gradient-bg-primary text-primary-foreground rounded-2xl p-10 md:p-12 mb-12 shadow-2xl">
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">Pledge to Reset the System</h1>
+              <p className="text-xl leading-relaxed mb-8 opacity-95">
                 Join thousands of Americans in a simple, powerful act to restore a government that works for the people.
                 Your pledge is a commitment to vote for a complete reset of Congress.
               </p>
@@ -45,52 +45,52 @@ export default function PledgePage() {
             <div className="section-divider mb-10" />
 
             <div className="grid md:grid-cols-2 gap-8 mb-8">
-              <Card className="border-2 border-destructive/20 hover:shadow-lg transition-shadow">
+              <Card className="border-2 border-destructive/20 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                 <CardHeader>
                   <Shield className="h-12 w-12 text-destructive mx-auto mb-4" />
                   <CardTitle className="text-xl text-center">Safeguard Our Democracy</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground text-center">
+                  <p className="text-muted-foreground text-center leading-relaxed">
                     An unresponsive government creates a vacuum for extremism. A system reset is the strongest defense
                     of our democratic principles.
                   </p>
                 </CardContent>
               </Card>
 
-              <Card className="border-2 border-primary/20 hover:shadow-lg transition-shadow">
+              <Card className="border-2 border-primary/20 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                 <CardHeader>
                   <Users className="h-12 w-12 text-primary mx-auto mb-4" />
                   <CardTitle className="text-xl text-center">Empower the Voter</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground text-center">
+                  <p className="text-muted-foreground text-center leading-relaxed">
                     This action reminds every politician that the ultimate authority belongs to the citizens they are
                     supposed to serve.
                   </p>
                 </CardContent>
               </Card>
 
-              <Card className="border-2 border-chart-2/20 hover:shadow-lg transition-shadow">
+              <Card className="border-2 border-chart-2/20 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                 <CardHeader>
                   <TrendingUp className="h-12 w-12 text-chart-2 mx-auto mb-4" />
                   <CardTitle className="text-xl text-center">Force a Focus on Results</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground text-center">
+                  <p className="text-muted-foreground text-center leading-relaxed">
                     When job security is tied to performance, representatives are incentivized to solve problems that
                     affect the American people.
                   </p>
                 </CardContent>
               </Card>
 
-              <Card className="border-2 border-chart-3/20 hover:shadow-lg transition-shadow">
+              <Card className="border-2 border-chart-3/20 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                 <CardHeader>
                   <Target className="h-12 w-12 text-chart-3 mx-auto mb-4" />
                   <CardTitle className="text-xl text-center">Achieve Critical Mass</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground text-center">
+                  <p className="text-muted-foreground text-center leading-relaxed">
                     It only takes a coordinated 20% of voters to achieve a full reset. Your pledge helps us reach that
                     goal.
                   </p>
@@ -117,7 +117,7 @@ export default function PledgePage() {
             <div className="section-divider mb-10" />
 
             <div className="space-y-6">
-              <div className="bg-card p-6 rounded-xl border shadow-sm">
+              <div className="section-card">
                 <h3 className="text-xl font-bold text-foreground mb-3">1. You'll Receive Resources</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Get access to voter guides, district-specific information, and tools to help you make informed
@@ -125,7 +125,7 @@ export default function PledgePage() {
                 </p>
               </div>
 
-              <div className="bg-card p-6 rounded-xl border shadow-sm">
+              <div className="section-card">
                 <h3 className="text-xl font-bold text-foreground mb-3">2. You'll Get Election Reminders</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   We'll notify you about upcoming primary and general elections in your area, where your vote has
@@ -133,7 +133,7 @@ export default function PledgePage() {
                 </p>
               </div>
 
-              <div className="bg-card p-6 rounded-xl border shadow-sm">
+              <div className="section-card">
                 <h3 className="text-xl font-bold text-foreground mb-3">3. You'll Help Build the Movement</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Your pledge adds to our growing numbers, showing politicians and the media that an organized,
@@ -145,16 +145,16 @@ export default function PledgePage() {
           </section>
 
           {/* Share Section */}
-          <section className="text-center bg-primary text-primary-foreground p-12 rounded-xl">
-            <h2 className="text-3xl font-bold mb-6">Spread the Movement</h2>
-            <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
+          <section className="text-center gradient-bg-primary text-primary-foreground p-12 rounded-2xl shadow-2xl">
+            <h2 className="text-3xl font-bold mb-6 text-white">Spread the Movement</h2>
+            <p className="text-xl mb-8 max-w-2xl mx-auto opacity-95">
               Every person who takes the pledge brings us closer to the critical mass needed for complete congressional
               turnover. Share Fresh 535 with your friends, family, and community.
             </p>
 
             <ShareButtons />
 
-            <p className="text-lg mt-8 opacity-90">
+            <p className="text-lg mt-8 opacity-95">
               Together, we can restore accountability to Congress and protect democracy from authoritarian capture.
             </p>
           </section>
