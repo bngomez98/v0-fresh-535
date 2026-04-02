@@ -1,6 +1,19 @@
 import { createClient, isSupabaseConfigured } from "@/lib/supabase/server"
 import { redirect } from "next/navigation"
+import type { Metadata } from "next"
 import SignUpForm from "@/components/sign-up-form"
+
+export const metadata: Metadata = {
+  title: "Sign Up | Fresh 535",
+  description: "Create a Fresh 535 account.",
+  alternates: {
+    canonical: "/auth/sign-up",
+  },
+  robots: {
+    index: false,
+    follow: false,
+  },
+}
 
 export default async function SignUpPage() {
   // If Supabase is not configured, show setup message directly

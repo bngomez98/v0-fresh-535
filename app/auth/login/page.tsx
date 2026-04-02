@@ -1,6 +1,19 @@
 import { createClient, isSupabaseConfigured } from "@/lib/supabase/server"
 import { redirect } from "next/navigation"
+import type { Metadata } from "next"
 import LoginForm from "@/components/login-form"
+
+export const metadata: Metadata = {
+  title: "Login | Fresh 535",
+  description: "Log in to your Fresh 535 account.",
+  alternates: {
+    canonical: "/auth/login",
+  },
+  robots: {
+    index: false,
+    follow: false,
+  },
+}
 
 export default async function LoginPage() {
   // If Supabase is not configured, show setup message directly

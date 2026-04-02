@@ -1,4 +1,5 @@
 import Link from "next/link"
+import type { Metadata } from "next"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { AlertTriangle, Target, FileText, BookOpen, BarChart3 } from "lucide-react"
@@ -8,6 +9,18 @@ import { CampaignSpendingChart } from "@/components/charts/campaign-spending-cha
 import { LegislativeProductivityChart } from "@/components/charts/legislative-productivity-chart"
 import { ShareButtons } from "@/components/share-buttons"
 import { redirect } from "next/navigation"
+
+export const metadata: Metadata = {
+  title: "Analysis Redirect | Fresh 535",
+  description: "This route redirects to the Fresh 535 problem analysis page.",
+  alternates: {
+    canonical: "/problem",
+  },
+  robots: {
+    index: false,
+    follow: true,
+  },
+}
 
 export default function AnalysisPage() {
   redirect("/problem")
