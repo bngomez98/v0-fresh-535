@@ -3,35 +3,35 @@ import { ExternalLink, Database, Shield, GitBranch } from "lucide-react"
 
 export default function MethodologyPage() {
   return (
-    <div className="bg-white pt-24 pb-16">
+    <div className="bg-background pt-24 pb-16">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-12 gap-12">
           <aside className="lg:col-span-3">
             <div className="sticky top-24">
               <h3 className="font-semibold text-lg mb-4">On this page</h3>
-              <nav className="space-y-2 text-slate-600">
-                <a href="#overview" className="block hover:text-blue-700">
+              <nav className="space-y-2 text-muted-foreground">
+                <a href="#overview" className="block hover:text-primary">
                   Overview
                 </a>
-                <a href="#approach" className="block hover:text-blue-700">
+                <a href="#approach" className="block hover:text-primary">
                   Research Approach
                 </a>
-                <a href="#sources" className="block hover:text-blue-700">
+                <a href="#sources" className="block hover:text-primary">
                   Data Sources
                 </a>
-                <a href="#definitions" className="block hover:text-blue-700">
+                <a href="#definitions" className="block hover:text-primary">
                   Metric Definitions
                 </a>
-                <a href="#collection" className="block hover:text-blue-700">
+                <a href="#collection" className="block hover:text-primary">
                   Collection Methods
                 </a>
-                <a href="#validation" className="block hover:text-blue-700">
+                <a href="#validation" className="block hover:text-primary">
                   Validation Process
                 </a>
-                <a href="#limitations" className="block hover:text-blue-700">
+                <a href="#limitations" className="block hover:text-primary">
                   Limitations
                 </a>
-                <a href="#updates" className="block hover:text-blue-700">
+                <a href="#updates" className="block hover:text-primary">
                   Updates
                 </a>
               </nav>
@@ -42,7 +42,7 @@ export default function MethodologyPage() {
             <div className="prose prose-lg max-w-none">
               <section id="overview">
                 <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-4">Research Methodology</h1>
-                <p className="text-xl text-stone-600 mb-8">
+                <p className="text-xl text-muted-foreground mb-8">
                   Transparent, rigorous analysis of congressional data from authoritative sources with full
                   methodological disclosure.
                 </p>
@@ -61,7 +61,7 @@ export default function MethodologyPage() {
                   <Card>
                     <CardHeader>
                       <CardTitle className="flex items-center gap-2">
-                        <Database className="h-5 w-5 text-blue-700" />
+                        <Database className="h-5 w-5 text-primary" />
                         Source Verification
                       </CardTitle>
                     </CardHeader>
@@ -72,7 +72,7 @@ export default function MethodologyPage() {
                   <Card>
                     <CardHeader>
                       <CardTitle className="flex items-center gap-2">
-                        <Shield className="h-5 w-5 text-blue-700" />
+                        <Shield className="h-5 w-5 text-primary" />
                         Methodological Transparency
                       </CardTitle>
                     </CardHeader>
@@ -83,7 +83,7 @@ export default function MethodologyPage() {
                   <Card>
                     <CardHeader>
                       <CardTitle className="flex items-center gap-2">
-                        <GitBranch className="h-5 w-5 text-blue-700" />
+                        <GitBranch className="h-5 w-5 text-primary" />
                         Bipartisan Analysis
                       </CardTitle>
                     </CardHeader>
@@ -95,7 +95,7 @@ export default function MethodologyPage() {
                   <Card>
                     <CardHeader>
                       <CardTitle className="flex items-center gap-2">
-                        <ExternalLink className="h-5 w-5 text-blue-700" />
+                        <ExternalLink className="h-5 w-5 text-primary" />
                         Peer Review
                       </CardTitle>
                     </CardHeader>
@@ -418,7 +418,7 @@ const SourceItem = ({
         <CardTitle className="text-lg">{title}</CardTitle>
         <span
           className={`text-xs px-2 py-1 rounded ${
-            reliability === "Primary" ? "bg-green-100 text-green-700" : "bg-blue-100 text-blue-700"
+            reliability === "Primary" ? "bg-chart-2/10 text-chart-2" : "bg-primary/10 text-primary"
           }`}
         >
           {reliability}
@@ -426,10 +426,10 @@ const SourceItem = ({
       </div>
     </CardHeader>
     <CardContent>
-      <p className="text-sm text-slate-600 mb-2">{description}</p>
-      <div className="flex justify-between items-center text-xs text-slate-500">
+      <p className="text-sm text-muted-foreground mb-2">{description}</p>
+      <div className="flex justify-between items-center text-xs text-muted-foreground/80">
         <span>Coverage: {coverage}</span>
-        <a href={url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-blue-700">
+        <a href={url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-primary">
           Visit <ExternalLink className="h-3 w-3" />
         </a>
       </div>
@@ -456,20 +456,20 @@ const MetricDefinition = ({
     </CardHeader>
     <CardContent className="space-y-3">
       <div>
-        <h4 className="font-semibold text-sm text-slate-700">Definition</h4>
+        <h4 className="font-semibold text-sm text-foreground">Definition</h4>
         <p className="text-sm">{definition}</p>
       </div>
       <div>
-        <h4 className="font-semibold text-sm text-slate-700">Formula</h4>
-        <p className="text-sm font-mono bg-slate-50 p-2 rounded">{formula}</p>
+        <h4 className="font-semibold text-sm text-foreground">Formula</h4>
+        <p className="text-sm font-mono bg-muted p-2 rounded">{formula}</p>
       </div>
       <div>
-        <h4 className="font-semibold text-sm text-slate-700">Methodology</h4>
-        <p className="text-sm">{methodology}</p>
+        <h4 className="font-semibold text-sm text-foreground">Methodology</h4>
+        <p className="text-sm text-muted-foreground">{methodology}</p>
       </div>
       <div>
-        <h4 className="font-semibold text-sm text-slate-700">Notes</h4>
-        <p className="text-sm text-slate-600">{notes}</p>
+        <h4 className="font-semibold text-sm text-foreground">Notes</h4>
+        <p className="text-sm text-muted-foreground">{notes}</p>
       </div>
     </CardContent>
   </Card>
