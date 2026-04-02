@@ -8,30 +8,30 @@ export default function MethodologyPage() {
         <div className="grid lg:grid-cols-12 gap-12">
           <aside className="lg:col-span-3">
             <div className="sticky top-24">
-              <h3 className="font-semibold text-lg mb-4">On this page</h3>
+              <h3 className="font-semibold text-lg mb-4 text-primary">On this page</h3>
               <nav className="space-y-2 text-muted-foreground">
-                <a href="#overview" className="block hover:text-primary">
+                <a href="#overview" className="block hover:text-primary transition-all duration-200 hover:translate-x-1 py-1">
                   Overview
                 </a>
-                <a href="#approach" className="block hover:text-primary">
+                <a href="#approach" className="block hover:text-primary transition-all duration-200 hover:translate-x-1 py-1">
                   Research Approach
                 </a>
-                <a href="#sources" className="block hover:text-primary">
+                <a href="#sources" className="block hover:text-primary transition-all duration-200 hover:translate-x-1 py-1">
                   Data Sources
                 </a>
-                <a href="#definitions" className="block hover:text-primary">
+                <a href="#definitions" className="block hover:text-primary transition-all duration-200 hover:translate-x-1 py-1">
                   Metric Definitions
                 </a>
-                <a href="#collection" className="block hover:text-primary">
+                <a href="#collection" className="block hover:text-primary transition-all duration-200 hover:translate-x-1 py-1">
                   Collection Methods
                 </a>
-                <a href="#validation" className="block hover:text-primary">
+                <a href="#validation" className="block hover:text-primary transition-all duration-200 hover:translate-x-1 py-1">
                   Validation Process
                 </a>
-                <a href="#limitations" className="block hover:text-primary">
+                <a href="#limitations" className="block hover:text-primary transition-all duration-200 hover:translate-x-1 py-1">
                   Limitations
                 </a>
-                <a href="#updates" className="block hover:text-primary">
+                <a href="#updates" className="block hover:text-primary transition-all duration-200 hover:translate-x-1 py-1">
                   Updates
                 </a>
               </nav>
