@@ -1,7 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Users, Target, Vote, Zap, Globe, MapPin } from 'lucide-react'
+import { ArrowRight, Users, Target, Vote, Zap, Globe, MapPin } from "lucide-react"
 import { HistoricalReelectionChart } from "@/components/charts/historical-reelection-chart"
 import { CongressionalApprovalChart } from "@/components/charts/congressional-approval-chart"
 
@@ -25,9 +25,12 @@ export default function HomePage() {
                 <span className="text-gradient-red">We're Changing That.</span>
               </h1>
               <p className="text-lg md:text-xl text-slate-300 leading-relaxed max-w-prose">
-                They rigged the system. 95% reelection rate with 18% approval. Your representative ignores you because
-                they know they'll win anyway. Fresh 535 breaks that cycle by coordinating voters to fire every single
-                incumbent in one election.
+                 The political system is undeniably rigged against the will of the people. 
+              Despite a dismal 18% public approval rating, congressional incumbents astonishingly maintain a 95% reelection rate. 
+              This stark disparity means your elected representative can afford to ignore your concerns, knowing their position is virtually guaranteed regardless of their performance. 
+              Fresh 535 offers a revolutionary solution, engaging voters across the nation to collectively unseat every single incumbent in one election,
+              dismantling the broken cycle, and restoring true accountability to our government.
+
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button asChild size="lg" variant="destructive">
@@ -106,7 +109,7 @@ export default function HomePage() {
                 <HistoricalReelectionChart />
               </div>
               <p className="text-sm text-slate-600 mt-2 text-center">
-                95% reelection rate means your vote is meaningless under current system
+                A 95% reelection rate means your vote is meaningless under the current system.
               </p>
             </div>
           </div>
@@ -116,42 +119,33 @@ export default function HomePage() {
       {/* The Strategy Section */}
       <section className="section-padding bg-slate-50">
         <div className="container mx-auto container-padding">
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-3xl md:text-4xl mb-4">How We Take Back Control</h2>
             <p className="text-lg text-slate-600">
-              Primary elections have 15-25% turnout. General elections 55-60%. A coordinated 20% of voters can defeat
-              any incumbent. Fresh 535 coordinates that 20% to fire all 535 in one election cycle.
+              Primary elections have 15-25% turnout, and general elections have 55-60% turnout. A coordinated 20% of
+              voters can defeat any incumbent. Fresh 535 coordinates that 20% to fire all 535 in one election cycle.
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8 text-center">
-            <div className="space-y-3 p-6 bg-white border rounded-lg hover:shadow-xl transition-shadow">
-              <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto">
-                <Vote className="h-8 w-8 text-accent" />
-              </div>
+          <div className="grid md:grid-cols-3 gap-12 text-center max-w-5xl mx-auto">
+            <div className="space-y-3">
+              <Vote className="h-10 w-10 text-accent mx-auto" />
               <h3 className="text-xl font-semibold">Primary: Vote Them Out</h3>
               <p className="text-slate-600">
-                Vote for any challenger against your incumbent. Low turnout means we don't need many voters to win. Your
-                vote finally counts.
+                Vote for any challenger against your incumbent. Low turnout means we don't need many voters to win.
               </p>
             </div>
-            <div className="space-y-3 p-6 bg-white border rounded-lg hover:shadow-xl transition-shadow">
-              <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto">
-                <Zap className="h-8 w-8 text-accent" />
-              </div>
+            <div className="space-y-3">
+              <Zap className="h-10 w-10 text-accent mx-auto" />
               <h3 className="text-xl font-semibold">General: Finish the Job</h3>
               <p className="text-slate-600">
-                If they survive the primary, vote for their opponent. Party doesn't matter. Being an incumbent is the
-                only disqualification we care about.
+                If they survive the primary, vote for their opponent. Party doesn't matter.
               </p>
             </div>
-            <div className="space-y-3 p-6 bg-white border rounded-lg hover:shadow-xl transition-shadow">
-              <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto">
-                <Globe className="h-8 w-8 text-accent" />
-              </div>
+            <div className="space-y-3">
+              <Globe className="h-10 w-10 text-accent mx-auto" />
               <h3 className="text-xl font-semibold">Victory: They Work for Us</h3>
               <p className="text-slate-600">
-                New representatives with no seniority, no committee power, no lobbyist connections. They'll actually
-                need your vote to survive.
+                New representatives with no seniority, no lobbyist connections. They'll need your vote to survive.
               </p>
             </div>
           </div>
@@ -174,20 +168,6 @@ export default function HomePage() {
                 Take the Fresh 535 Pledge
               </Link>
             </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Privacy Notice Section */}
-      <section className="py-8 bg-slate-100">
-        <div className="container mx-auto container-padding">
-          <div className="text-center text-sm text-slate-600">
-            <p className="mb-2">
-              <strong>Privacy Notice:</strong> Fresh 535 respects your privacy. We collect minimal information necessary for voter coordination and never share personal data with third parties.
-            </p>
-            <p>
-              Email addresses remain private and are used only for movement updates. Anonymous pledges are welcome and equally valuable.
-            </p>
           </div>
         </div>
       </section>

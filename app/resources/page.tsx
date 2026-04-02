@@ -1,5 +1,4 @@
 import { ResourceCard, type Resource } from "@/components/resource-card"
-import { ShareButtons } from "@/components/share-buttons"
 
 const resources: Resource[] = [
   {
@@ -20,28 +19,28 @@ const resources: Resource[] = [
     title: "Primary Logo Pack",
     description: "Official Fresh 535 logos (PNG, SVG) for use on light and dark backgrounds.",
     previewUrl: "/brand-logo.png",
-    link: "#", // This would be a direct download link in a real app
+    link: "/fresh-535-logo.png",
     type: "Digital Asset",
   },
   {
     title: "'I Pledged' Profile Badge",
     description: "Add this badge to your social media profile picture to show your support.",
     previewUrl: "/fresh-535-pledged-badge.png",
-    link: "#",
+    link: "/fresh-535-pledged-badge.png",
     type: "Social Media",
   },
   {
     title: "Accountability Deficit Graphic",
     description: "A shareable graphic for Instagram & Facebook detailing key statistics.",
     previewUrl: "/accountability-deficit-graphic.png",
-    link: "#",
+    link: "/accountability-deficit-graphic.png",
     type: "Social Media",
   },
   {
     title: "Twitter / X Header",
     description: "An optimized header image for your Twitter / X profile.",
     previewUrl: "/fresh-535-twitter-header.png",
-    link: "#",
+    link: "/fresh-535-twitter-header.png",
     type: "Social Media",
   },
 ]
@@ -57,18 +56,10 @@ export default function ResourcesPage() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {resources.map((resource) => (
             <ResourceCard key={resource.title} resource={resource} />
           ))}
-        </div>
-
-        <div className="text-center bg-brand-navy text-white p-8 rounded-lg">
-          <h2 className="text-2xl font-bold mb-4">Share Fresh 535</h2>
-          <p className="text-lg mb-6 opacity-90">
-            Help spread the movement by sharing on social media and with your network.
-          </p>
-          <ShareButtons />
         </div>
       </div>
     </div>

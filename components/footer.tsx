@@ -7,25 +7,25 @@ export function Footer() {
     {
       title: "The Movement",
       links: [
-        { href: "/problem", label: "The Problem" },
-        { href: "/solution", label: "The Solution" },
-        { href: "/my-district", label: "My District" },
+        { href: "/about", label: "About Us" },
+        { href: "/solution", label: "Our Solution" },
+        { href: "/data", label: "The Data" },
       ],
     },
     {
       title: "Get Involved",
       links: [
         { href: "/pledge", label: "Take the Pledge" },
-        { href: "/donate", label: "Donate" },
+        { href: "/donate", label: "Support Us" },
         { href: "/resources", label: "Resources" },
       ],
     },
     {
-      title: "About",
+      title: "Learn More",
       links: [
         { href: "/faq", label: "FAQ" },
-        { href: "/contact", label: "Contact Us" },
-        { href: "/methodology", label: "Methodology" },
+        { href: "/contact", label: "Contact" },
+        { href: "/methodology", label: "How It Works" },
       ],
     },
   ]
@@ -40,10 +40,11 @@ export function Footer() {
               <span className="text-xl font-semibold">FRESH 535</span>
             </Link>
             <p className="text-slate-400 max-w-sm mb-6">
-              A non-partisan civic movement to restore functional governance by replacing all 535 members of Congress.
+              We're a movement to replace all 535 members of Congress. Every incumbent must go so we can rebuild a
+              government that actually works for regular people, not just special interests.
             </p>
             <Button asChild variant="secondary">
-              <Link href="/pledge">Join the Movement</Link>
+              <Link href="/pledge">Join Us</Link>
             </Button>
           </div>
 
@@ -64,8 +65,8 @@ export function Footer() {
         </div>
 
         <div className="border-t border-slate-700 mt-12 pt-8 text-center text-sm text-slate-500">
-          <p>&copy; {new Date().getFullYear()} Fresh 535. All Rights Reserved.</p>
-          <p className="mt-1">A non-partisan civic movement for congressional accountability.</p>
+          <p>&copy; {new Date().getFullYear()} Fresh 535. All rights reserved.</p>
+          <p className="mt-1">A grassroots movement to make Congress work again.</p>
         </div>
       </div>
     </footer>

@@ -32,7 +32,7 @@ export function ResourceCard({ resource }: { resource: Resource }) {
         <h3 className="text-xl font-semibold mb-2">{resource.title}</h3>
         <p className="text-slate-600 mb-4 text-sm flex-grow">{resource.description}</p>
         <Button asChild className="w-full mt-auto">
-          <Link href={resource.link} target={isPrintable ? "_blank" : "_self"}>
+          <Link href={resource.link} target="_blank" rel="noopener noreferrer" download={!isPrintable ? true : undefined}>
             {isPrintable ? (
               <>
                 <Printer className="h-4 w-4 mr-2" /> View & Print
