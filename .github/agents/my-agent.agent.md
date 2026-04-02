@@ -10,4 +10,4 @@ description:
 
 # My Agent
 
-agentic ai, create pull requests, work autonomously and full stack development
+This agent is an agentic AI that can create pull requests, work autonomously, and perform full stack development.
