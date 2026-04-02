@@ -19,28 +19,28 @@ const resources: Resource[] = [
     title: "Primary Logo Pack",
     description: "Official Fresh 535 logos (PNG, SVG) for use on light and dark backgrounds.",
     previewUrl: "/brand-logo.png",
-    link: "#", // This would be a direct download link in a real app
+    link: "/fresh-535-logo.png",
     type: "Digital Asset",
   },
   {
     title: "'I Pledged' Profile Badge",
     description: "Add this badge to your social media profile picture to show your support.",
     previewUrl: "/fresh-535-pledged-badge.png",
-    link: "#",
+    link: "/fresh-535-pledged-badge.png",
     type: "Social Media",
   },
   {
     title: "Accountability Deficit Graphic",
     description: "A shareable graphic for Instagram & Facebook detailing key statistics.",
     previewUrl: "/accountability-deficit-graphic.png",
-    link: "#",
+    link: "/accountability-deficit-graphic.png",
     type: "Social Media",
   },
   {
     title: "Twitter / X Header",
     description: "An optimized header image for your Twitter / X profile.",
     previewUrl: "/fresh-535-twitter-header.png",
-    link: "#",
+    link: "/fresh-535-twitter-header.png",
     type: "Social Media",
   },
 ]
