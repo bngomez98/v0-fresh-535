@@ -6,6 +6,7 @@ import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { Menu, X, Heart, Users } from "lucide-react"
 import { Button } from "./ui/button"
+import { ThemeToggle } from "./theme-toggle"
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -65,6 +66,7 @@ export function Header() {
           </div>
 
           <div className="hidden lg:flex items-center space-x-2">
+            <ThemeToggle />
             <Button variant="outline" size="sm" asChild className="bg-transparent btn-professional">
               <Link href="/donate">
                 <Heart className="h-4 w-4 mr-1.5" />
@@ -107,6 +109,9 @@ export function Header() {
               </Link>
             ))}
             <div className="flex flex-col space-y-2.5 pt-4 mt-2 border-t">
+              <div className="flex justify-center pb-2">
+                <ThemeToggle />
+              </div>
               <Button variant="outline" className="w-full bg-transparent btn-professional" asChild>
                 <Link href="/donate">
                   <Heart className="h-4 w-4 mr-1.5" />

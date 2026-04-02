@@ -10,6 +10,7 @@ import { CustomAnalytics } from "@/components/analytics"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import { ScrollToTop } from "@/components/scroll-to-top"
+import { ThemeProvider } from "@/components/theme-provider"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -80,7 +81,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
+    <html lang="en" className={`${inter.variable} ${playfair.variable}`} suppressHydrationWarning>
       <head>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-9QXW6S19X4"
@@ -96,15 +97,17 @@ export default function RootLayout({
         </Script>
       </head>
       <body className="bg-background text-foreground antialiased font-sans">
-        <Suspense>
-          <ScrollToTop />
-          <Header />
-          <main className="pt-20">{children}</main>
-          <Footer />
-          <Toaster />
-          <CustomAnalytics />
-          <Analytics />
-        </Suspense>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
+          <Suspense>
+            <ScrollToTop />
+            <Header />
+            <main className="pt-20">{children}</main>
+            <Footer />
+            <Toaster />
+            <CustomAnalytics />
+            <Analytics />
+          </Suspense>
+        </ThemeProvider>
       </body>
     </html>
   )
