@@ -30,10 +30,10 @@ export default function HomePage() {
                 incumbent in one election.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button asChild size="lg" variant="destructive">
+                <Button asChild size="lg" variant="destructive" className="shadow-lg shadow-red-900/40 ring-2 ring-red-300/30">
                   <Link href="/pledge">
                     <Target className="h-5 w-5 mr-2" />
-                    Join the Movement
+                    Take the Fresh 535 Pledge
                   </Link>
                 </Button>
                 <Button
