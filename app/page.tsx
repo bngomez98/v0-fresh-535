@@ -25,7 +25,7 @@ export default function HomePage() {
                 <span className="text-gradient-red">We're Changing That.</span>
               </h1>
               <p className="text-lg md:text-xl text-slate-300 leading-relaxed max-w-prose">
-                They rigged the system. 95% reelection rate with 18% approval. Your representative ignores you because
+                They rigged the system. They have a 95% reelection rate despite 18% approval. Your representative ignores you because
                 they know they'll win anyway. Fresh 535 breaks that cycle by coordinating voters to fire every single
                 incumbent in one election.
               </p>
