@@ -1,8 +1,22 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
+import { evaluateRequest } from '@/lib/firewall/firewall'
 
 export function middleware(request: NextRequest) {
-  // Add security headers
+  // --- Agent Firewall ---
+  const firewallAction = evaluateRequest(request)
+
+  if (firewallAction.type === 'block') {
+    return new NextResponse(
+      JSON.stringify({ error: firewallAction.reason }),
+      {
+        status: firewallAction.status,
+        headers: { 'Content-Type': 'application/json' },
+      }
+    )
+  }
+
+  // --- Security Headers ---
   const response = NextResponse.next()
   
   // Prevent clickjacking
