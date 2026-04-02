@@ -6,7 +6,6 @@ export default function Head() {
         name="description"
         content="Take the Fresh 535 pledge and join voters coordinating to replace all incumbent members of Congress."
       />
-      <link rel="canonical" href="https://fresh535.org/pledge" />
     </>
   )
 }
