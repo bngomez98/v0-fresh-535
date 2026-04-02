@@ -6,7 +6,6 @@ export default function Head() {
         name="description"
         content="Understand the accountability crisis in Congress and why Fresh 535 argues that structural incumbency advantages have broken democratic responsiveness."
       />
-      <link rel="canonical" href="https://fresh535.org/problem" />
     </>
   )
 }
