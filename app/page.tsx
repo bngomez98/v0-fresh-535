@@ -116,42 +116,33 @@ export default function HomePage() {
       {/* The Strategy Section */}
       <section className="section-padding bg-slate-50">
         <div className="container mx-auto container-padding">
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-3xl md:text-4xl mb-4">How We Take Back Control</h2>
             <p className="text-lg text-slate-600">
               Primary elections have 15-25% turnout. General elections 55-60%. A coordinated 20% of voters can defeat
               any incumbent. Fresh 535 coordinates that 20% to fire all 535 in one election cycle.
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8 text-center">
-            <div className="space-y-3 p-6 bg-white border rounded-lg hover:shadow-xl transition-shadow">
-              <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto">
-                <Vote className="h-8 w-8 text-accent" />
-              </div>
+          <div className="grid md:grid-cols-3 gap-12 text-center max-w-5xl mx-auto">
+            <div className="space-y-3">
+              <Vote className="h-10 w-10 text-accent mx-auto" />
               <h3 className="text-xl font-semibold">Primary: Vote Them Out</h3>
               <p className="text-slate-600">
-                Vote for any challenger against your incumbent. Low turnout means we don't need many voters to win. Your
-                vote finally counts.
+                Vote for any challenger against your incumbent. Low turnout means we don't need many voters to win.
               </p>
             </div>
-            <div className="space-y-3 p-6 bg-white border rounded-lg hover:shadow-xl transition-shadow">
-              <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto">
-                <Zap className="h-8 w-8 text-accent" />
-              </div>
+            <div className="space-y-3">
+              <Zap className="h-10 w-10 text-accent mx-auto" />
               <h3 className="text-xl font-semibold">General: Finish the Job</h3>
               <p className="text-slate-600">
-                If they survive the primary, vote for their opponent. Party doesn't matter. Being an incumbent is the
-                only disqualification we care about.
+                If they survive the primary, vote for their opponent. Party doesn't matter.
               </p>
             </div>
-            <div className="space-y-3 p-6 bg-white border rounded-lg hover:shadow-xl transition-shadow">
-              <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto">
-                <Globe className="h-8 w-8 text-accent" />
-              </div>
+            <div className="space-y-3">
+              <Globe className="h-10 w-10 text-accent mx-auto" />
               <h3 className="text-xl font-semibold">Victory: They Work for Us</h3>
               <p className="text-slate-600">
-                New representatives with no seniority, no committee power, no lobbyist connections. They'll actually
-                need your vote to survive.
+                New representatives with no seniority, no lobbyist connections. They'll need your vote to survive.
               </p>
             </div>
           </div>

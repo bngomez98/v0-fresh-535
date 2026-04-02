@@ -1,6 +1,5 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { AlertTriangle, Target, FileText, BookOpen } from "lucide-react"
 import { HistoricalReelectionChart } from "@/components/charts/historical-reelection-chart"
 import { CongressionalApprovalChart } from "@/components/charts/congressional-approval-chart"
@@ -111,96 +110,72 @@ export default function AnalysisPage() {
           <section className="mb-16">
             <h2 className="text-3xl font-bold text-foreground mb-8">Part I: Quantified System Failure</h2>
 
-            <div className="space-y-12">
-              <Card className="overflow-hidden">
-                <CardHeader>
-                  <CardTitle>The Accountability Gap: Performance vs. Job Security</CardTitle>
-                  <p className="text-muted-foreground">
-                    King-Gelman research predicted this exact scenario: when incumbency advantage exceeds 10%, electoral
-                    accountability collapses completely.
-                  </p>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid md:grid-cols-2 gap-8">
-                    <div>
-                      <h4 className="text-lg font-semibold text-center mb-2">Congressional Approval: 18%</h4>
-                      <div className="h-80 border rounded-lg p-4 bg-background">
-                        <CongressionalApprovalChart />
-                      </div>
-                      <p className="text-sm text-muted-foreground mt-2 text-center">Source: Gallup Historical Trends</p>
+            <div className="space-y-16">
+              <div>
+                <h3 className="text-2xl font-semibold mb-2">The Accountability Gap</h3>
+                <p className="text-muted-foreground mb-6">
+                  King-Gelman research predicted this exact scenario: when incumbency advantage exceeds 10%, electoral
+                  accountability collapses completely.
+                </p>
+                <div className="grid md:grid-cols-2 gap-8">
+                  <div>
+                    <h4 className="text-lg font-semibold text-center mb-2">Congressional Approval: 18%</h4>
+                    <div className="h-80 border rounded-lg p-4 bg-background">
+                      <CongressionalApprovalChart />
                     </div>
-                    <div>
-                      <h4 className="text-lg font-semibold text-center mb-2">Incumbent Reelection: 95%</h4>
-                      <div className="h-80 border rounded-lg p-4 bg-background">
-                        <HistoricalReelectionChart />
-                      </div>
-                      <p className="text-sm text-muted-foreground mt-2 text-center">
-                        Source: Center for Responsive Politics, Ballotpedia
-                      </p>
+                    <p className="text-sm text-muted-foreground mt-2 text-center">Source: Gallup Historical Trends</p>
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-center mb-2">Incumbent Reelection: 95%</h4>
+                    <div className="h-80 border rounded-lg p-4 bg-background">
+                      <HistoricalReelectionChart />
                     </div>
-                  </div>
-                  <div className="mt-6 prose max-w-none">
-                    <p>
-                      <strong>Academic Analysis:</strong> King-Gelman research shows that when incumbency advantage
-                      reaches 11% (as measured in 1984-86), electoral responsiveness drops to 1.3—meaning a 1% change in
-                      voter preference produces only 1.3% change in seat allocation. Current 95% reelection rates
-                      suggest incumbency advantage now exceeds 15%, creating near-zero electoral responsiveness.
+                    <p className="text-sm text-muted-foreground mt-2 text-center">
+                      Source: Center for Responsive Politics, Ballotpedia
                     </p>
                   </div>
-                </CardContent>
-              </Card>
+                </div>
+                <p className="mt-6 text-muted-foreground">
+                  <strong>Academic Analysis:</strong> King-Gelman research shows that when incumbency advantage
+                  reaches 11%, electoral responsiveness drops to 1.3. Current 95% reelection rates suggest incumbency advantage now exceeds 15%, creating near-zero electoral responsiveness.
+                </p>
+              </div>
 
-              <Card className="overflow-hidden">
-                <CardHeader>
-                  <CardTitle>Structural Barriers: The Fundraising Monopoly</CardTitle>
-                  <p className="text-muted-foreground">
-                    King-Gelman identified structural advantages as the root cause. Current fundraising data confirms
-                    their prediction of permanent incumbent advantage.
-                  </p>
-                </CardHeader>
-                <CardContent>
-                  <div className="h-96 border rounded-lg p-4 bg-background">
-                    <CampaignSpendingChart />
-                  </div>
-                  <p className="text-sm text-muted-foreground mt-2 text-center">
-                    Source: Federal Election Commission, Center for Responsive Politics
-                  </p>
-                  <div className="mt-6 prose max-w-none">
-                    <p>
-                      <strong>Mathematical Reality:</strong> Incumbents raise 3x more than challengers on average. In
-                      competitive races, this advantage reaches 5:1. King-Gelman research shows these structural
-                      advantages compound over time, creating an insurmountable barrier to electoral competition. The
-                      system now rewards access to donor networks over constituent representation.
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
+              <div>
+                <h3 className="text-2xl font-semibold mb-2">Structural Barriers: The Fundraising Monopoly</h3>
+                <p className="text-muted-foreground mb-6">
+                  King-Gelman identified structural advantages as the root cause. Current fundraising data confirms
+                  their prediction of permanent incumbent advantage.
+                </p>
+                <div className="h-96 border rounded-lg p-4 bg-background">
+                  <CampaignSpendingChart />
+                </div>
+                <p className="text-sm text-muted-foreground mt-2 text-center">
+                  Source: Federal Election Commission, Center for Responsive Politics
+                </p>
+                <p className="mt-6 text-muted-foreground">
+                  <strong>Mathematical Reality:</strong> Incumbents raise 3x more than challengers on average. In
+                  competitive races, this advantage reaches 5:1. The system now rewards access to donor networks over constituent representation.
+                </p>
+              </div>
 
-              <Card className="overflow-hidden">
-                <CardHeader>
-                  <CardTitle>Legislative Collapse: Quantified Dysfunction</CardTitle>
-                  <p className="text-muted-foreground">
-                    King-Gelman predicted that extreme incumbency advantage would reduce legislative effectiveness.
-                    Current productivity data confirms this prediction.
-                  </p>
-                </CardHeader>
-                <CardContent>
-                  <div className="h-96 border rounded-lg p-4 bg-background">
-                    <LegislativeProductivityChart />
-                  </div>
-                  <p className="text-sm text-muted-foreground mt-2 text-center">
-                    Source: Pew Research Center analysis of Congressional data
-                  </p>
-                  <div className="mt-6 prose max-w-none">
-                    <p>
-                      <strong>Systemic Consequences:</strong> 27 bills passed in 2023 represents a 73% decline from
-                      1970s averages. King-Gelman research explains this: when electoral accountability disappears,
-                      legislators focus on maintaining power rather than solving problems. Result: $34.5 trillion debt,
-                      crumbling infrastructure, unaddressed healthcare costs, and strategic economic vulnerabilities.
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
+              <div>
+                <h3 className="text-2xl font-semibold mb-2">Legislative Collapse</h3>
+                <p className="text-muted-foreground mb-6">
+                  King-Gelman predicted that extreme incumbency advantage would reduce legislative effectiveness.
+                  Current productivity data confirms this prediction.
+                </p>
+                <div className="h-96 border rounded-lg p-4 bg-background">
+                  <LegislativeProductivityChart />
+                </div>
+                <p className="text-sm text-muted-foreground mt-2 text-center">
+                  Source: Pew Research Center analysis of Congressional data
+                </p>
+                <p className="mt-6 text-muted-foreground">
+                  <strong>Systemic Consequences:</strong> 27 bills passed in 2023 represents a 73% decline from
+                  1970s averages. When electoral accountability disappears, legislators focus on maintaining power rather than solving problems.
+                </p>
+              </div>
             </div>
           </section>
 
