@@ -1,7 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Users, Target, Vote, Zap, Globe, MapPin } from 'lucide-react'
+import { ArrowRight, Users, Target, Vote, Zap, Globe, MapPin } from "lucide-react"
 import { HistoricalReelectionChart } from "@/components/charts/historical-reelection-chart"
 import { CongressionalApprovalChart } from "@/components/charts/congressional-approval-chart"
 
