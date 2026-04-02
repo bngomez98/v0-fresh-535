@@ -96,15 +96,15 @@ export function ImpactMetrics() {
           }`}
           style={{ animationDelay: `${index * 100}ms` }}
         >
-          <CardContent className={`p-6 ${metric.bgColor}`}>
+          <CardContent className={`p-6 rounded-xl ${metric.bgColor}`}>
             <div className="flex items-start space-x-4">
-              <div className={`p-3 rounded-lg bg-white border ${metric.borderColor}`}>
+              <div className={`p-3 rounded-xl bg-white border ${metric.borderColor}`}>
                 <metric.icon className={`h-6 w-6 ${metric.color}`} />
               </div>
               <div className="flex-1">
                 <div className={`text-3xl font-bold ${metric.color} mb-1`}>{metric.value}</div>
-                <div className="font-semibold text-slate-900 mb-2">{metric.label}</div>
-                <p className="text-sm text-slate-600">{metric.description}</p>
+                <div className="font-semibold text-foreground mb-2">{metric.label}</div>
+                <p className="text-sm text-muted-foreground">{metric.description}</p>
               </div>
             </div>
           </CardContent>
