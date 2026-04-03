@@ -52,7 +52,7 @@ function seededInt(seed: string, min: number, max: number): number {
   return min + (seededHash(seed) % (max - min + 1))
 }
 
-function seededPick<T>(seed: string, arr: T[]): T {
+function seededPick<T>(seed: string, arr: readonly T[]): T {
   return arr[seededHash(seed) % arr.length]
 }
 
@@ -178,7 +178,7 @@ export class BallotpediaClient {
       const itemSeed = `${seed}:lobby:${i}`
       let industry: string
       do {
-        industry = seededPick(itemSeed + ":ind", LOBBYING_INDUSTRIES as unknown as string[])
+        industry = seededPick(itemSeed + ":ind", LOBBYING_INDUSTRIES)
       } while (usedIndustries.has(industry) && usedIndustries.size < LOBBYING_INDUSTRIES.length)
       usedIndustries.add(industry)
 
@@ -213,7 +213,7 @@ export class BallotpediaClient {
 
       votes.push({
         billTitle: bill.title,
-        vote: seededPick(itemSeed + ":v", VOTE_OPTIONS as unknown as string[]) as "yes" | "no" | "abstain",
+        vote: seededPick(itemSeed + ":v", VOTE_OPTIONS),
         date: new Date(year, month, day).toLocaleDateString(),
         description: bill.description,
       })

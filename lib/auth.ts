@@ -28,11 +28,12 @@ async function signPayload(payload: string): Promise<string> {
 async function verifyPayload(payload: string, providedSig: string): Promise<boolean> {
   const secret = process.env.ADMIN_SECRET
   if (!secret) return false
+  if (providedSig.length === 0 || providedSig.length % 2 !== 0) return false
   try {
     const key = await getHmacKey(secret)
-    const sigBytes = new Uint8Array(
-      providedSig.match(/.{2}/g)!.map((byte) => parseInt(byte, 16))
-    )
+    const pairs = providedSig.match(/.{2}/g)
+    if (!pairs) return false
+    const sigBytes = new Uint8Array(pairs.map((byte) => parseInt(byte, 16)))
     return crypto.subtle.verify("HMAC", key, sigBytes, encoder.encode(payload))
   } catch {
     return false
