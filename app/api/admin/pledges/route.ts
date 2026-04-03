@@ -1,11 +1,22 @@
 import { NextResponse } from "next/server"
+import { supabase } from "@/lib/supabase"
 
-// Note: This returns an empty array since we removed Supabase database.
-// Data would need to be stored elsewhere (e.g., another database or service).
 export async function GET() {
   try {
-    // Return empty pledges array - authentication removed
-    return NextResponse.json({ data: [] })
+    const { data, error } = await supabase
+      .from("pledges")
+      .select("*")
+      .order("created_at", { ascending: false })
+
+    if (error) {
+      console.error("Error fetching pledges:", error)
+      return NextResponse.json(
+        { error: "Internal server error" },
+        { status: 500 }
+      )
+    }
+
+    return NextResponse.json({ data: data ?? [] })
   } catch (error) {
     console.error("Unexpected error:", error)
     return NextResponse.json(

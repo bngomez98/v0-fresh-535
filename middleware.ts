@@ -30,6 +30,7 @@ export async function middleware(request: NextRequest) {
     'https://www.googletagmanager.com',
     'https://region1.google-analytics.com',
     'https://vitals.vercel-insights.com',
+    'https://*.supabase.co',
   ].join(' ')
 
   const scriptSources = [

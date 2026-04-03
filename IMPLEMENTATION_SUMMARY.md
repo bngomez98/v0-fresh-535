@@ -1,90 +1,64 @@
-# Supabase Removal Summary
+# Supabase Integration Summary
 
 ## Overview
 
-Successfully removed Supabase integration from the Fresh 535 civic movement website.
+The Fresh 535 civic movement website uses Supabase (PostgreSQL) for persistent data storage.
 
-## What Was Removed
+## Required Environment Variables
 
-### 1. Dependencies
-- Removed `@supabase/supabase-js` from package.json
-- Removed `@supabase/ssr` from package.json
+The application requires the following environment variables to connect to Supabase:
 
-### 2. Library Files
-- Deleted `lib/supabase.ts` - Original Supabase client
-- Deleted `lib/supabase-server.ts` - Server-side Supabase client
-- Deleted `lib/supabase-browser.ts` - Client-side Supabase client
+| Variable | Description |
+|---|---|
+| `NEXT_PUBLIC_SUPABASE_URL` | Your Supabase project URL (e.g., `https://your-project.supabase.co`) |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Your Supabase anon/public API key |
 
-### 3. API Routes
-Updated to use in-memory storage:
-- `app/api/pledge/route.ts` - Now uses in-memory array for pledges
-- `app/api/contact/route.ts` - Now uses in-memory array for messages
-- `app/api/admin/pledges/route.ts` - Returns empty array (stub)
-- `app/api/admin/messages/route.ts` - Returns empty array (stub)
+### Local Development
 
-### 4. Authentication
-Removed authentication from:
-- `app/login/page.tsx` - Now shows placeholder error
-- `app/admin/page.tsx` - No longer checks authentication
-- `components/admin-dashboard.tsx` - Removed Supabase auth imports and logout functionality
-- `middleware.ts` - Removed Supabase session refresh and route protection
+Create a `.env.local` file in the project root:
 
-### 5. Configuration
-- `vercel.json` - Removed Supabase environment variables
-- `middleware.ts` - Removed Supabase URL from CSP headers
+```bash
+NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+```
 
-### 6. Documentation
-Updated to reflect removal:
-- `README.md` - Removed all Supabase references
-- `AUTH_SETUP.md` - Updated to note authentication removal
-- `SETUP_CHECKLIST.md` - Updated to note Supabase removal
-- `IMPLEMENTATION_SUMMARY.md` - This file
+### Vercel Deployment
 
-## Current State
+Set these variables in your Vercel project settings under **Settings → Environment Variables**, or they will be mapped automatically via `vercel.json` if configured as Vercel secrets.
+
+## Architecture
 
 ### Data Storage
-The application now uses **in-memory storage** for:
-- Pledge submissions (stored in `app/api/pledge/route.ts`)
-- Contact messages (stored in `app/api/contact/route.ts`)
+- **Supabase client:** `lib/supabase.ts` — creates a Supabase client using the anon key
+- **Pledge submissions:** stored in the `pledges` table via `app/api/pledge/route.ts`
+- **Contact messages:** stored in the `contact_messages` table via `app/api/contact/route.ts`
 
-**⚠️ Warning:** All data is lost when the server restarts. This is suitable for development/testing only.
+### API Routes
+- `app/api/pledge/route.ts` — GET (pledge count) and POST (new pledge) using Supabase
+- `app/api/contact/route.ts` — POST (new contact message) using Supabase
+- `app/api/admin/pledges/route.ts` — GET all pledges from Supabase
+- `app/api/admin/messages/route.ts` — GET all contact messages from Supabase
 
-### Authentication
+### Configuration
+- `vercel.json` — maps Supabase environment variables for Vercel deployments
+- `middleware.ts` — CSP headers allow connections to `*.supabase.co`
+
+## Authentication
+
 - Login page exists but is non-functional
 - Admin dashboard is accessible without authentication
-- Admin API routes return empty data
 - No session management or route protection
 
-### What Still Works
+## What Works
 - Home page and all public pages
-- Pledge form submission (data stored in memory)
-- Contact form submission (data stored in memory)
+- Pledge form submission (data persisted in Supabase)
+- Contact form submission (data persisted in Supabase)
+- Admin dashboard data retrieval from Supabase
 - UI components and styling
-- Firewall and security headers (minus Supabase CSP rules)
-
-## Next Steps
-
-To restore full functionality, you'll need to:
-
-1. **Choose a data storage solution:**
-   - Re-implement Supabase
-   - Use another database (PostgreSQL, MongoDB, MySQL, etc.)
-   - Use a different backend service
-
-2. **Implement authentication (optional):**
-   - NextAuth.js
-   - Clerk
-   - Auth0
-   - Supabase Auth
-   - Custom solution
-
-3. **Update API routes** to use the new storage solution
-
-4. **Add environment variables** for the new services
+- Firewall and security headers
 
 ## Technical Notes
 
-- All type definitions from `lib/supabase.ts` were copied into files that needed them
-- In-memory storage uses `crypto.randomUUID()` for ID generation
-- Validation logic for emails and ZIP codes was preserved
-- CSV export functionality remains in the admin dashboard (operates on empty data)
+- Supabase client uses the anon key; admin API routes query using the same client
+- Validation logic for emails and ZIP codes is preserved in API routes
+- CSV export functionality remains in the admin dashboard

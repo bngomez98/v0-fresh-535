@@ -1,23 +1,18 @@
 import { type NextRequest, NextResponse } from "next/server"
-
-// In-memory storage for pledges (will reset on server restart)
-const pledges: Array<{
-  id: string
-  first_name: string
-  last_name: string
-  email: string
-  state: string
-  zip_code: string
-  comments?: string
-  ip_address?: string
-  user_agent?: string
-  created_at: string
-}> = []
+import { supabase } from "@/lib/supabase"
 
 export async function GET() {
   try {
-    // Return the total count of pledges
-    return NextResponse.json({ count: pledges.length }, { status: 200 })
+    const { count, error } = await supabase
+      .from("pledges")
+      .select("*", { count: "exact", head: true })
+
+    if (error) {
+      console.error("Error fetching pledge count:", error)
+      return NextResponse.json({ error: "Internal server error" }, { status: 500 })
+    }
+
+    return NextResponse.json({ count: count ?? 0 }, { status: 200 })
   } catch (error) {
     console.error("Error fetching pledge count:", error)
     return NextResponse.json({ error: "Internal server error" }, { status: 500 })
@@ -45,33 +40,37 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Invalid ZIP code format" }, { status: 400 })
     }
 
-    // Create new pledge
-    const pledge = {
-      id: crypto.randomUUID(),
-      first_name: firstName,
-      last_name: lastName,
-      email: email,
-      state: state,
-      zip_code: zipCode,
-      comments: comments || undefined,
-      ip_address: request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || undefined,
-      user_agent: request.headers.get("user-agent") || undefined,
-      created_at: new Date().toISOString(),
+    const { data, error } = await supabase
+      .from("pledges")
+      .insert({
+        first_name: firstName,
+        last_name: lastName,
+        email: email,
+        state: state,
+        zip_code: zipCode,
+        comments: comments || null,
+        ip_address: request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || null,
+        user_agent: request.headers.get("user-agent") || null,
+      })
+      .select("id")
+      .single()
+
+    if (error) {
+      console.error("Error saving pledge:", error)
+      return NextResponse.json({ error: "Internal server error" }, { status: 500 })
     }
 
-    pledges.push(pledge)
-
     console.log("New pledge saved:", {
-      pledgeId: pledge.id,
+      pledgeId: data.id,
       email,
       state,
-      timestamp: pledge.created_at,
+      timestamp: new Date().toISOString(),
     })
 
     return NextResponse.json(
       {
         message: "Pledge recorded successfully",
-        pledgeId: pledge.id,
+        pledgeId: data.id,
       },
       { status: 200 },
     )

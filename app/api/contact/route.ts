@@ -1,17 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-
-// In-memory storage for contact messages (will reset on server restart)
-const messages: Array<{
-  id: string
-  name: string
-  email: string
-  subject: string
-  category?: string
-  message: string
-  ip_address?: string
-  user_agent?: string
-  created_at: string
-}> = []
+import { supabase } from '@/lib/supabase'
 
 export async function POST(request: NextRequest) {
   try {
@@ -35,30 +23,37 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Create new contact message
-    const contactMessage = {
-      id: crypto.randomUUID(),
-      name: name,
-      email: email,
-      subject: subject,
-      category: category || undefined,
-      message: message,
-      ip_address: request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || undefined,
-      user_agent: request.headers.get('user-agent') || undefined,
-      created_at: new Date().toISOString(),
+    const { data, error } = await supabase
+      .from('contact_messages')
+      .insert({
+        name: name,
+        email: email,
+        subject: subject,
+        category: category || null,
+        message: message,
+        ip_address: request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || null,
+        user_agent: request.headers.get('user-agent') || null,
+      })
+      .select('id')
+      .single()
+
+    if (error) {
+      console.error('Error saving contact message:', error)
+      return NextResponse.json(
+        { error: 'Internal server error' },
+        { status: 500 }
+      )
     }
 
-    messages.push(contactMessage)
-
     console.log('New contact message saved:', {
-      messageId: contactMessage.id,
+      messageId: data.id,
       email,
       subject,
-      timestamp: contactMessage.created_at,
+      timestamp: new Date().toISOString(),
     })
 
     return NextResponse.json(
-      { message: 'Message sent successfully', messageId: contactMessage.id },
+      { message: 'Message sent successfully', messageId: data.id },
       { status: 200 }
     )
   } catch (error) {

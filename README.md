@@ -17,12 +17,20 @@ A modern Next.js application for tracking political engagement and pledges.
    npm install --legacy-peer-deps
    ```
 
-3. **Start development server**
+3. **Configure environment variables**
+
+   Create a `.env.local` file in the project root:
+   ```bash
+   NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+   ```
+
+4. **Start development server**
    ```bash
    npm run dev
    ```
 
-4. **Open in browser**
+5. **Open in browser**
    ```
    http://localhost:3000
    ```
@@ -36,7 +44,10 @@ A modern Next.js application for tracking political engagement and pledges.
 **Quick Deploy Steps:**
 1. Click the "Deploy with Vercel" button above
 2. Connect your GitHub account
-3. Deploy!
+3. Set environment variables in Vercel project settings:
+   - `NEXT_PUBLIC_SUPABASE_URL` — your Supabase project URL
+   - `NEXT_PUBLIC_SUPABASE_ANON_KEY` — your Supabase anon/public key
+4. Deploy!
 
 ## 🛠️ Available Scripts
 
@@ -52,6 +63,7 @@ npm run lint     # Run ESLint
 - **Framework:** Next.js 15.2.8 (App Router)
 - **UI Library:** React 19
 - **Styling:** Tailwind CSS 4.1.9
+- **Data Storage:** Supabase (PostgreSQL)
 - **Deployment:** Vercel
 - **Components:** Radix UI + shadcn/ui
 - **Analytics:** Vercel Analytics
