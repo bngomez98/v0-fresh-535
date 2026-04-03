@@ -34,5 +34,5 @@ The application uses **Supabase** (PostgreSQL) for persistent data storage:
 
 - [ ] Push code to GitHub
 - [ ] Connect repository to Vercel
-- [ ] Set `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` in Vercel project settings
+- [ ] Set `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` in Vercel project settings (or configure them as [Vercel secrets](https://vercel.com/docs/environment-variables) named `next_public_supabase_url` and `next_public_supabase_anon_key` to match `vercel.json` mappings)
 - [ ] Deploy
