@@ -27,10 +27,11 @@ export async function middleware(request: NextRequest) {
   const connectSources = [
     "'self'",
     'https://www.google-analytics.com',
-    'https://www.googletagmanager.com',
     'https://region1.google-analytics.com',
+    'https://www.googletagmanager.com',
+    'https://analytics.google.com',
     'https://vitals.vercel-insights.com',
-  ].join(' ')
+  ]
 
   const scriptSources = [
     "'self'",
@@ -38,7 +39,8 @@ export async function middleware(request: NextRequest) {
     "'unsafe-eval'",
     'https://www.googletagmanager.com',
     'https://www.google-analytics.com',
-  ].join(' ')
+    'https://va.vercel-scripts.com',
+  ]
 
   // Prevent clickjacking
   response.headers.set('X-Frame-Options', 'DENY')
@@ -53,11 +55,16 @@ export async function middleware(request: NextRequest) {
   response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin')
 
   // Content Security Policy
-  response.headers.set(
-    'Content-Security-Policy',
-    "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://va.vercel-scripts.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://vitals.vercel-insights.com;"
-    `default-src 'self'; script-src ${scriptSources}; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src ${connectSources};`
-  )
+  const contentSecurityPolicy = [
+    "default-src 'self'",
+    `script-src ${scriptSources.join(' ')}`,
+    "style-src 'self' 'unsafe-inline'",
+    "img-src 'self' data: https:",
+    "font-src 'self' data:",
+    `connect-src ${connectSources.join(' ')}`,
+  ].join('; ')
+
+  response.headers.set('Content-Security-Policy', contentSecurityPolicy)
 
   return response
 }

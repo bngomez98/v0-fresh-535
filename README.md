@@ -27,6 +27,10 @@ A modern Next.js application for tracking political engagement and pledges.
    http://localhost:3000
    ```
 
+### Environment Variables
+
+- `NEXT_PUBLIC_GA_MEASUREMENT_ID` (optional): Google Analytics 4 measurement ID used by the Google tag. Defaults to the project's existing ID when unset.
+
 ## 📦 Deployment
 
 ### Deploy to Vercel (Recommended)

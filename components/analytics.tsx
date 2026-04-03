@@ -3,6 +3,7 @@
 import { useEffect } from "react"
 import { usePathname } from "next/navigation"
 import { getConsentStatus, COOKIE_CONSENT_UPDATE_EVENT } from "@/components/cookie-consent"
+import { GA_MEASUREMENT_ID } from "@/lib/analytics"
 
 export function CustomAnalytics() {
   const pathname = usePathname()
@@ -13,8 +14,8 @@ export function CustomAnalytics() {
       if (consent !== "accepted") return
 
       // Google Analytics
-      if (typeof window !== "undefined" && window.gtag) {
-        window.gtag("config", "G-9QXW6S19X4", {
+      if (typeof window !== "undefined" && window.gtag && GA_MEASUREMENT_ID) {
+        window.gtag("config", GA_MEASUREMENT_ID, {
           page_path: pathname,
         })
       }
