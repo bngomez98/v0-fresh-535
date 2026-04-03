@@ -1,23 +1,29 @@
 import { type NextRequest, NextResponse } from "next/server"
+import { prisma } from "@/lib/prisma"
+import { analyticsSchema } from "@/lib/validations"
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
-    const { event, path, timestamp, referrer, userAgent } = body
 
-    // In a real implementation, you would:
-    // 1. Save to analytics database
-    // 2. Process for insights
-    // 3. Update dashboards
-    // 4. Track conversion funnels
+    const result = analyticsSchema.safeParse(body)
+    if (!result.success) {
+      return NextResponse.json({ error: "Invalid analytics data" }, { status: 400 })
+    }
 
-    console.log("Analytics event:", {
-      event,
-      path,
-      timestamp,
-      referrer,
-      userAgent: userAgent?.substring(0, 100), // Truncate for logging
-      ip: request.ip,
+    const { event, path, referrer, userAgent } = result.data
+
+    await prisma.analyticsEvent.create({
+      data: {
+        event,
+        path: path ?? null,
+        referrer: referrer ?? null,
+        userAgent: userAgent?.substring(0, 500) ?? null,
+        ipAddress:
+          request.headers.get("x-forwarded-for") ??
+          request.headers.get("x-real-ip") ??
+          null,
+      },
     })
 
     return NextResponse.json({ success: true }, { status: 200 })
