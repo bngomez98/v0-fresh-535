@@ -10,11 +10,8 @@ export async function GET(request: NextRequest) {
     const sortBy = searchParams.get("sortBy") ?? "createdAt"
     const order = searchParams.get("order") === "asc" ? "asc" as const : "desc" as const
 
-    const allowedSortFields = ["createdAt", "email", "subject", "name"] as const
-    type SortField = (typeof allowedSortFields)[number]
-    const sortField: SortField = allowedSortFields.includes(sortBy as SortField)
-      ? (sortBy as SortField)
-      : "createdAt"
+    const allowedSortFields = new Set(["createdAt", "email", "subject", "name"])
+    const sortField = allowedSortFields.has(sortBy) ? sortBy : "createdAt"
 
     const where = category ? { category } : {}
 
