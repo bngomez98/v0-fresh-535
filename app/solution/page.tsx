@@ -1,8 +1,10 @@
 export const dynamic = "force-dynamic"
 
 import type React from "react"
+import Link from "next/link"
 import { Lightbulb, Target, Users } from "lucide-react"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { Button } from "@/components/ui/button"
 
 export default function SolutionPage() {
   return (
