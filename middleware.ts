@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 import { evaluateRequest } from '@/lib/firewall/firewall'
 
-export function middleware(request: NextRequest) {
+export async function middleware(request: NextRequest) {
   // --- Agent Firewall ---
   const firewallAction = evaluateRequest(request)
 
@@ -16,25 +16,47 @@ export function middleware(request: NextRequest) {
     )
   }
 
+  // Create response
+  let response = NextResponse.next({
+    request: {
+      headers: request.headers,
+    },
+  })
+
   // --- Security Headers ---
-  const response = NextResponse.next()
-  
+  const connectSources = [
+    "'self'",
+    'https://www.google-analytics.com',
+    'https://www.googletagmanager.com',
+    'https://region1.google-analytics.com',
+    'https://vitals.vercel-insights.com',
+  ].join(' ')
+
+  const scriptSources = [
+    "'self'",
+    "'unsafe-inline'",
+    "'unsafe-eval'",
+    'https://www.googletagmanager.com',
+    'https://www.google-analytics.com',
+  ].join(' ')
+
   // Prevent clickjacking
   response.headers.set('X-Frame-Options', 'DENY')
-  
+
   // Prevent MIME type sniffing
   response.headers.set('X-Content-Type-Options', 'nosniff')
-  
+
   // Enable XSS protection
   response.headers.set('X-XSS-Protection', '1; mode=block')
-  
+
   // Referrer policy
   response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin')
-  
+
   // Content Security Policy
   response.headers.set(
     'Content-Security-Policy',
     "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://va.vercel-scripts.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://vitals.vercel-insights.com;"
+    `default-src 'self'; script-src ${scriptSources}; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src ${connectSources};`
   )
 
   return response

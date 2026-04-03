@@ -2,18 +2,50 @@
 
 import { useState, useEffect } from "react"
 import { Card, CardContent } from "@/components/ui/card"
-import { Users, TrendingUp, Target } from "lucide-react"
+import { Users, TrendingUp, Target, Loader2 } from "lucide-react"
 
 export function PledgeCounter() {
-  const [count, setCount] = useState(47832)
+  const [count, setCount] = useState(0)
   const [isAnimating, setIsAnimating] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
 
+  // Fetch the initial count from the database
   useEffect(() => {
-    const interval = setInterval(() => {
-      setIsAnimating(true)
-      setCount((prev) => prev + Math.floor(Math.random() * 3) + 1)
-      setTimeout(() => setIsAnimating(false), 500)
-    }, 30000) // Update every 30 seconds
+    const fetchCount = async () => {
+      try {
+        const response = await fetch("/api/pledge")
+        if (response.ok) {
+          const data = await response.json()
+          setCount(data.count)
+        }
+      } catch (error) {
+        console.error("Error fetching pledge count:", error)
+        // Fallback to a default count if API fails
+        setCount(0)
+      } finally {
+        setIsLoading(false)
+      }
+    }
+
+    fetchCount()
+  }, [])
+
+  // Refresh the count periodically
+  useEffect(() => {
+    const interval = setInterval(async () => {
+      try {
+        setIsAnimating(true)
+        const response = await fetch("/api/pledge")
+        if (response.ok) {
+          const data = await response.json()
+          setCount(data.count)
+        }
+        setTimeout(() => setIsAnimating(false), 500)
+      } catch (error) {
+        console.error("Error refreshing pledge count:", error)
+        setIsAnimating(false)
+      }
+    }, 30000) // Refresh every 30 seconds
 
     return () => clearInterval(interval)
   }, [])
@@ -28,7 +60,7 @@ export function PledgeCounter() {
           <CardContent className="p-6 text-center">
             <Users className="h-8 w-8 mx-auto mb-3 text-slate-300" />
             <div className={`text-3xl font-bold mb-2 transition-all duration-500 ${isAnimating ? "scale-105" : ""}`}>
-              {count.toLocaleString()}
+              {isLoading ? <Loader2 className="h-8 w-8 mx-auto animate-spin" /> : count.toLocaleString()}
             </div>
             <div className="text-slate-300 text-sm">Americans Pledged</div>
           </CardContent>

@@ -1,6 +1,5 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter, Playfair_Display } from "next/font/google"
 import Script from "next/script"
 import "./globals.css"
 import { Header } from "@/components/header"
@@ -10,20 +9,6 @@ import { CustomAnalytics } from "@/components/analytics"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import { ScrollToTop } from "@/components/scroll-to-top"
-
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-inter",
-  fallback: ["system-ui", "arial"],
-})
-
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-playfair",
-  fallback: ["Georgia", "serif"],
-})
 
 export const metadata: Metadata = {
   title: "Fresh 535 — A Movement for Congressional Accountability",
@@ -80,7 +65,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
+    <html lang="en">
       <head>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-9QXW6S19X4"

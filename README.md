@@ -14,21 +14,15 @@ A modern Next.js application for tracking political engagement and pledges.
 
 2. **Install dependencies**
    ```bash
-   npm install
+   npm install --legacy-peer-deps
    ```
 
-3. **Set up environment variables**
-   ```bash
-   cp .env.example .env.local
-   # Edit .env.local with your Supabase credentials
-   ```
-
-4. **Start development server**
+3. **Start development server**
    ```bash
    npm run dev
    ```
 
-5. **Open in browser**
+4. **Open in browser**
    ```
    http://localhost:3000
    ```
@@ -39,37 +33,10 @@ A modern Next.js application for tracking political engagement and pledges.
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/bngomez98/v0-fresh-535)
 
-For detailed deployment instructions, see [VERCEL_DEPLOYMENT.md](./VERCEL_DEPLOYMENT.md)
-
 **Quick Deploy Steps:**
 1. Click the "Deploy with Vercel" button above
 2. Connect your GitHub account
-3. Add environment variables (see `.env.example`)
-4. Deploy!
-
-### Environment Variables
-
-Required environment variables:
-
-```env
-NEXT_PUBLIC_SUPABASE_URL=your-supabase-url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
-```
-
-See [.env.example](./.env.example) for details.
-
-## 🗄️ Database Setup
-
-This application uses Supabase for data storage. Follow the setup guide:
-
-1. See [SETUP_CHECKLIST.md](./SETUP_CHECKLIST.md) for complete Supabase setup
-2. See [SUPABASE_INTEGRATION.md](./SUPABASE_INTEGRATION.md) for technical details
-
-## 📚 Documentation
-
-- [Vercel Deployment Guide](./VERCEL_DEPLOYMENT.md) - Deploy to Vercel
-- [Supabase Setup Checklist](./SETUP_CHECKLIST.md) - Database configuration
-- [Supabase Integration](./SUPABASE_INTEGRATION.md) - Technical implementation
+3. Deploy!
 
 ## 🛠️ Available Scripts
 
@@ -85,21 +52,19 @@ npm run lint     # Run ESLint
 - **Framework:** Next.js 15.2.8 (App Router)
 - **UI Library:** React 19
 - **Styling:** Tailwind CSS 4.1.9
-- **Database:** Supabase
 - **Deployment:** Vercel
 - **Components:** Radix UI + shadcn/ui
+- **Analytics:** Vercel Analytics
 
 ## 📁 Project Structure
 
 ```
 ├── app/              # Next.js app router pages
 ├── components/       # React components
-├── lib/             # Utility functions and clients
-│   ├── firewall/    # Agent firewall & rate limiting
-│   └── supabase.ts  # Supabase client
+├── lib/             # Utility functions
+│   └── firewall/    # Agent firewall & rate limiting
 ├── public/          # Static assets
 ├── styles/          # Global styles
-├── supabase/        # Database migrations
 └── middleware.ts    # Edge middleware
 ```
 
@@ -108,7 +73,6 @@ npm run lint     # Run ESLint
 - Agent firewall blocking bots and scrapers
 - Rate limiting (60 req/min pages, 20 req/min API)
 - Security headers (CSP, X-Frame-Options, etc.)
-- Row-level security in Supabase
 
 ## 🤝 Contributing
 
@@ -125,4 +89,3 @@ This project is private.
 
 - [Open an issue](https://github.com/bngomez98/v0-fresh-535/issues)
 - [Vercel Support](https://vercel.com/support)
-- [Supabase Discord](https://discord.supabase.com)

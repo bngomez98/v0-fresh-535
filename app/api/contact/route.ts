@@ -1,5 +1,17 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { supabase } from '@/lib/supabase'
+
+// In-memory storage for contact messages (will reset on server restart)
+const messages: Array<{
+  id: string
+  name: string
+  email: string
+  subject: string
+  category?: string
+  message: string
+  ip_address?: string
+  user_agent?: string
+  created_at: string
+}> = []
 
 export async function POST(request: NextRequest) {
   try {
@@ -23,38 +35,30 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Save contact message to Supabase
-    const { data, error } = await supabase
-      .from('contact_messages')
-      .insert({
-        name: name,
-        email: email,
-        subject: subject,
-        category: category || null,
-        message: message,
-        ip_address: request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || null,
-        user_agent: request.headers.get('user-agent') || null,
-      })
-      .select()
-      .single()
-
-    if (error) {
-      console.error('Supabase error:', error)
-      return NextResponse.json(
-        { error: 'Failed to send message. Please try again.' },
-        { status: 500 }
-      )
+    // Create new contact message
+    const contactMessage = {
+      id: crypto.randomUUID(),
+      name: name,
+      email: email,
+      subject: subject,
+      category: category || undefined,
+      message: message,
+      ip_address: request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || undefined,
+      user_agent: request.headers.get('user-agent') || undefined,
+      created_at: new Date().toISOString(),
     }
 
-    console.log('New contact message saved to database:', {
-      messageId: data.id,
+    messages.push(contactMessage)
+
+    console.log('New contact message saved:', {
+      messageId: contactMessage.id,
       email,
       subject,
-      timestamp: new Date().toISOString(),
+      timestamp: contactMessage.created_at,
     })
 
     return NextResponse.json(
-      { message: 'Message sent successfully', messageId: data.id },
+      { message: 'Message sent successfully', messageId: contactMessage.id },
       { status: 200 }
     )
   } catch (error) {
