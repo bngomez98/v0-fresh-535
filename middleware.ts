@@ -30,6 +30,8 @@ export async function middleware(request: NextRequest) {
     'https://www.googletagmanager.com',
     'https://region1.google-analytics.com',
     'https://vitals.vercel-insights.com',
+    'https://consent.cookiebot.com',
+    'https://consentcdn.cookiebot.com',
   ].join(' ')
 
   const scriptSources = [
@@ -38,6 +40,8 @@ export async function middleware(request: NextRequest) {
     "'unsafe-eval'",
     'https://www.googletagmanager.com',
     'https://www.google-analytics.com',
+    'https://consent.cookiebot.com',
+    'https://consentcdn.cookiebot.com',
   ].join(' ')
 
   // Prevent clickjacking
@@ -55,8 +59,7 @@ export async function middleware(request: NextRequest) {
   // Content Security Policy
   response.headers.set(
     'Content-Security-Policy',
-    "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://va.vercel-scripts.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://vitals.vercel-insights.com;"
-    `default-src 'self'; script-src ${scriptSources}; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src ${connectSources};`
+    `default-src 'self'; script-src ${scriptSources}; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src ${connectSources}; frame-src https://consentcdn.cookiebot.com;`
   )
 
   return response
