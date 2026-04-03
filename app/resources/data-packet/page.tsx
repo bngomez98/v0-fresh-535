@@ -1,6 +1,6 @@
-export const dynamic = "force-dynamic"
-
 "use client"
+
+export const dynamic = "force-dynamic"
 
 import { HistoricalReelectionChart } from "@/components/charts/historical-reelection-chart"
 import { CongressionalApprovalChart } from "@/components/charts/congressional-approval-chart"

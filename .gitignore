@@ -25,9 +25,16 @@ yarn-error.log*
 
 # vercel
 .vercel
+.vercel/output
 
 # typescript
 *.tsbuildinfo
 next-env.d.ts
 
 /lib/generated/prisma
+
+# turbopack
+.turbo
+
+# macOS
+.DS_Store
