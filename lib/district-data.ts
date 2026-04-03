@@ -88,8 +88,8 @@ export const zipToDistrictMap: Record<string, DistrictInfo> = {
     state: "CA",
     district: 30,
     senators: [
-      { name: "Dianne Feinstein", party: "D", incumbent: true, yearsInOffice: 31 },
-      { name: "Alex Padilla", party: "D", incumbent: true, yearsInOffice: 4 },
+      { name: "Laphonza Butler", party: "D", incumbent: true, yearsInOffice: 2 },
+      { name: "Alex Padilla", party: "D", incumbent: true, yearsInOffice: 5 },
     ],
     representatives: [
       { name: "Adam Schiff", party: "D", incumbent: true, yearsInOffice: 24 },
@@ -100,8 +100,8 @@ export const zipToDistrictMap: Record<string, DistrictInfo> = {
     state: "CA",
     district: 11,
     senators: [
-      { name: "Dianne Feinstein", party: "D", incumbent: true, yearsInOffice: 31 },
-      { name: "Alex Padilla", party: "D", incumbent: true, yearsInOffice: 4 },
+      { name: "Laphonza Butler", party: "D", incumbent: true, yearsInOffice: 2 },
+      { name: "Alex Padilla", party: "D", incumbent: true, yearsInOffice: 5 },
     ],
     representatives: [
       { name: "Nancy Pelosi", party: "D", incumbent: true, yearsInOffice: 37 },
@@ -112,8 +112,8 @@ export const zipToDistrictMap: Record<string, DistrictInfo> = {
     state: "CA",
     district: 44,
     senators: [
-      { name: "Dianne Feinstein", party: "D", incumbent: true, yearsInOffice: 31 },
-      { name: "Alex Padilla", party: "D", incumbent: true, yearsInOffice: 4 },
+      { name: "Laphonza Butler", party: "D", incumbent: true, yearsInOffice: 2 },
+      { name: "Alex Padilla", party: "D", incumbent: true, yearsInOffice: 5 },
     ],
     representatives: [
       { name: "Nanette Barragan", party: "D", incumbent: true, yearsInOffice: 8 },
@@ -141,7 +141,7 @@ export const zipToDistrictMap: Record<string, DistrictInfo> = {
     district: 27,
     senators: [
       { name: "Marco Rubio", party: "R", incumbent: true, yearsInOffice: 14 },
-      { name: "Rick Scott", party: "R", incumbent: true, yearsInOffice: 6 },
+      { name: "Rick Scott", party: "R", incumbent: true, yearsInOffice: 8 },
     ],
     representatives: [
       { name: "Maria Elvira Salazar", party: "R", incumbent: true, yearsInOffice: 4 },
@@ -153,11 +153,11 @@ export const zipToDistrictMap: Record<string, DistrictInfo> = {
     district: 10,
     senators: [
       { name: "Marco Rubio", party: "R", incumbent: true, yearsInOffice: 14 },
-      { name: "Rick Scott", party: "R", incumbent: true, yearsInOffice: 6 },
+      { name: "Rick Scott", party: "R", incumbent: true, yearsInOffice: 8 },
     ],
     representatives: [
-      { name: "Val Demings", party: "D", incumbent: true, yearsInOffice: 8 },
-      { name: "Willie Montague", party: "R", incumbent: false, yearsInOffice: 0 },
+      { name: "Maxwell Frost", party: "D", incumbent: true, yearsInOffice: 2 },
+      { name: "Calvin Wimbish", party: "R", incumbent: false, yearsInOffice: 0 },
     ],
   },
 
@@ -236,7 +236,7 @@ export const zipToDistrictMap: Record<string, DistrictInfo> = {
       { name: "Ted Cruz", party: "R", incumbent: true, yearsInOffice: 12 },
     ],
     representatives: [
-      { name: "Eddie Bernice Johnson", party: "D", incumbent: true, yearsInOffice: 30 },
+      { name: "Jasmine Crockett", party: "D", incumbent: true, yearsInOffice: 2 },
       { name: "James Rodgers", party: "R", incumbent: false, yearsInOffice: 0 },
     ],
   },
