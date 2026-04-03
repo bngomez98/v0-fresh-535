@@ -2,22 +2,47 @@
 
 import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
-import { createClient } from "@/lib/supabase-browser"
-import type { User } from "@supabase/supabase-js"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Badge } from "@/components/ui/badge"
 import { LogOut, Users, Mail, Download, TrendingUp } from "lucide-react"
-import type { Pledge, ContactMessage } from "@/lib/supabase"
+
+// Type definitions for data structures
+interface Pledge {
+  id?: string
+  first_name: string
+  last_name: string
+  email: string
+  state: string
+  zip_code: string
+  comments?: string
+  created_at?: string
+  ip_address?: string
+  user_agent?: string
+}
+
+interface ContactMessage {
+  id?: string
+  name: string
+  email: string
+  subject: string
+  category?: string
+  message: string
+  created_at?: string
+  ip_address?: string
+  user_agent?: string
+}
 
 interface AdminDashboardProps {
-  user: User
+  user: {
+    id: string
+    email?: string
+  }
 }
 
 export function AdminDashboard({ user }: AdminDashboardProps) {
   const router = useRouter()
-  const supabase = createClient()
   const [pledges, setPledges] = useState<Pledge[]>([])
   const [messages, setMessages] = useState<ContactMessage[]>([])
   const [loading, setLoading] = useState(true)
@@ -55,7 +80,7 @@ export function AdminDashboard({ user }: AdminDashboardProps) {
   }
 
   const handleLogout = async () => {
-    await supabase.auth.signOut()
+    // Note: Authentication has been removed with Supabase
     router.push("/")
     router.refresh()
   }
