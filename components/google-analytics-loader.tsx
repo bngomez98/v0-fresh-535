@@ -1,8 +1,9 @@
 "use client"
 
-import Script from "next/script"
 import { useEffect, useState } from "react"
+import Script from "next/script"
 import { getConsentStatus, COOKIE_CONSENT_UPDATE_EVENT } from "@/components/cookie-consent"
+import { GA_MEASUREMENT_ID, hasGaMeasurementId } from "@/lib/analytics"
 
 export function GoogleAnalyticsLoader() {
   const [consentGiven, setConsentGiven] = useState(false)
@@ -14,12 +15,12 @@ export function GoogleAnalyticsLoader() {
     return () => window.removeEventListener(COOKIE_CONSENT_UPDATE_EVENT, check)
   }, [])
 
-  if (!consentGiven) return null
+  if (!consentGiven || !hasGaMeasurementId) return null
 
   return (
     <>
       <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-9QXW6S19X4"
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
         strategy="afterInteractive"
       />
       <Script id="google-analytics" strategy="afterInteractive">
@@ -27,7 +28,7 @@ export function GoogleAnalyticsLoader() {
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', 'G-9QXW6S19X4');
+          gtag('config', '${GA_MEASUREMENT_ID}');
         `}
       </Script>
     </>
