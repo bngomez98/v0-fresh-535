@@ -2,22 +2,25 @@
 
 import { useEffect } from "react"
 import { usePathname } from "next/navigation"
+import { getConsentStatus, COOKIE_CONSENT_UPDATE_EVENT } from "@/components/cookie-consent"
 
 export function CustomAnalytics() {
   const pathname = usePathname()
 
   useEffect(() => {
-    // Google Analytics
-    if (typeof window !== "undefined" && window.gtag) {
-      window.gtag("config", "G-9QXW6S19X4", {
-        page_path: pathname,
-      })
-    }
+    const track = () => {
+      const consent = getConsentStatus()
+      if (consent !== "accepted") return
 
-    // Custom analytics for movement tracking
-    if (typeof window !== "undefined") {
-      // Track page views
-      const trackPageView = () => {
+      // Google Analytics
+      if (typeof window !== "undefined" && window.gtag) {
+        window.gtag("config", "G-9QXW6S19X4", {
+          page_path: pathname,
+        })
+      }
+
+      // Custom analytics for movement tracking
+      if (typeof window !== "undefined") {
         fetch("/api/analytics", {
           method: "POST",
           headers: {
@@ -34,17 +37,14 @@ export function CustomAnalytics() {
           // Silently fail if analytics endpoint is not available
         })
       }
-
-      trackPageView()
     }
+
+    track()
+
+    // Re-evaluate when consent changes
+    window.addEventListener(COOKIE_CONSENT_UPDATE_EVENT, track)
+    return () => window.removeEventListener(COOKIE_CONSENT_UPDATE_EVENT, track)
   }, [pathname])
 
   return null
-}
-
-// Extend Window interface for TypeScript
-declare global {
-  interface Window {
-    gtag: (...args: any[]) => void
-  }
 }
