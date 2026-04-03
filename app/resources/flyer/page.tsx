@@ -40,6 +40,8 @@ const steps = [
   "Recruit 10 friends to do the same. Coordinate carpools and reminders for primaries.",
 ]
 
+export const dynamic = "force-dynamic"
+
 export default function FlyerPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">

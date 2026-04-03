@@ -42,6 +42,8 @@ const actionItems = [
   "Finish with the 20% target: every script and action should ladder up to that goal.",
 ]
 
+export const dynamic = "force-dynamic"
+
 export default function DataPacketPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">

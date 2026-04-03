@@ -14,6 +14,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Search, MapPin, AlertTriangle } from "lucide-react"
 import type { District, Candidate } from "@/lib/api-clients"
 
+export const dynamic = "force-dynamic"
+
 export default function MyDistrictPage() {
   return <MyDistrictPageClient />
 }
