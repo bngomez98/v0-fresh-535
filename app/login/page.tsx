@@ -1,9 +1,7 @@
-export const dynamic = "force-dynamic"
-
 "use client"
 
 import { useState } from "react"
-import { useRouter } from "next/navigation"
+import { useRouter, useSearchParams } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -16,16 +14,35 @@ export default function LoginPage() {
   const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
   const router = useRouter()
+  const searchParams = useSearchParams()
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
     setError(null)
     setLoading(true)
 
-    // Note: Authentication has been removed with Supabase.
-    // This is now a placeholder that would need a new auth implementation.
-    setError("Authentication system has been removed. Please implement a new authentication provider.")
-    setLoading(false)
+    try {
+      const response = await fetch("/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      })
+
+      const data = await response.json()
+
+      if (!response.ok) {
+        setError(data.error ?? "Login failed")
+        return
+      }
+
+      const redirect = searchParams.get("redirect") ?? "/admin"
+      router.push(redirect)
+      router.refresh()
+    } catch {
+      setError("Network error. Please try again.")
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
