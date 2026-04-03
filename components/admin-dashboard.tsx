@@ -80,9 +80,12 @@ export function AdminDashboard({ user }: AdminDashboardProps) {
   }
 
   const handleLogout = async () => {
-    // Note: Authentication has been removed with Supabase
-    router.push("/")
-    router.refresh()
+    try {
+      await fetch("/api/auth/logout", { method: "POST" })
+    } finally {
+      router.push("/")
+      router.refresh()
+    }
   }
 
   const downloadCSV = (data: any[], filename: string) => {

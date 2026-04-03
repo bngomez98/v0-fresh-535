@@ -1,58 +1,30 @@
-export const dynamic = "force-dynamic"
-
-import { LoginPageClient } from "./login-client"
-
-export default function LoginPage() {
-  return <LoginPageClient />
 "use client"
 
-export const dynamic = "force-dynamic"
-
+import type React from "react"
 import { useState } from "react"
-import { useRouter, useSearchParams } from "next/navigation"
+import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { LogIn } from "lucide-react"
 
-export const dynamic = "force-dynamic"
-
-export default function LoginPage() {
+export function LoginPageClient() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
   const router = useRouter()
-  const searchParams = useSearchParams()
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
     setError(null)
     setLoading(true)
 
-    try {
-      const response = await fetch("/api/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
-      })
-
-      const data = await response.json()
-
-      if (!response.ok) {
-        setError(data.error ?? "Login failed")
-        return
-      }
-
-      const redirect = searchParams.get("redirect") ?? "/admin"
-      router.push(redirect)
-      router.refresh()
-    } catch {
-      setError("Network error. Please try again.")
-    } finally {
-      setLoading(false)
-    }
+    // Note: Authentication has been removed with Supabase.
+    // This is now a placeholder that would need a new auth implementation.
+    setError("Authentication system has been removed. Please implement a new authentication provider.")
+    setLoading(false)
   }
 
   return (

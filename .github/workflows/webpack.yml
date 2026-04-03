@@ -23,6 +23,11 @@ jobs:
         node-version: ${{ matrix.node-version }}
 
     - name: Build
+      env:
+        DATABASE_URL: "file:prisma/dev.db"
+        ADMIN_EMAIL: "admin@fresh535.org"
+        ADMIN_PASSWORD: "build-placeholder-not-used"
+        ADMIN_SECRET: "build-placeholder-secret-not-used-in-static-gen"
       run: |
         npm install --legacy-peer-deps
         npm run build

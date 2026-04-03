@@ -6,24 +6,24 @@ export async function GET(request: NextRequest) {
 
   const resources = {
     "white-paper": {
-      filename: "Fresh535-White-Paper-Complete.pdf",
+      filename: "Fresh535-White-Paper-Complete.txt",
       content: generateWhitePaper(),
-      contentType: "application/pdf",
+      contentType: "text/plain; charset=utf-8",
     },
     "data-packet": {
-      filename: "Fresh535-Congressional-Data-Analysis.pdf",
+      filename: "Fresh535-Congressional-Data-Analysis.txt",
       content: generateDataPacket(),
-      contentType: "application/pdf",
+      contentType: "text/plain; charset=utf-8",
     },
     "organizing-toolkit": {
-      filename: "Fresh535-Organizing-Toolkit.zip",
+      filename: "Fresh535-Organizing-Toolkit.txt",
       content: generateOrganizingToolkit(),
-      contentType: "application/zip",
+      contentType: "text/plain; charset=utf-8",
     },
     "voter-guide": {
-      filename: "Fresh535-Voter-Execution-Guide.pdf",
+      filename: "Fresh535-Voter-Execution-Guide.txt",
       content: generateVoterGuide(),
-      contentType: "application/pdf",
+      contentType: "text/plain; charset=utf-8",
     },
   }
 
