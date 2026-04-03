@@ -97,7 +97,9 @@ Authentication System Files:
 │   ├── supabase-browser.ts             # Client-side Supabase client
 │   └── supabase.ts                     # Original client (for public operations)
 ├── middleware.ts                        # Updated with auth session refresh & route protection
-└── supabase/                            # Supabase migration references (if maintained separately)
+└── supabase/
+    └── migrations/
+        └── 003_update_rls_for_auth.sql # RLS policy migration referenced above
 ```
 
 ## Security Features
