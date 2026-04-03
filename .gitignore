@@ -16,12 +16,23 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files
-.env*
+# env files (keep .env.example committed if it exists)
+.env
+.env.local
+.env.*.local
+.env.production
+.env.development
+.env.staging
 
-# database
+# database files
 *.db
 *.db-journal
+*.db-wal
+*.db-shm
+prisma/*.db
+prisma/*.db-journal
+prisma/*.db-wal
+prisma/*.db-shm
 
 # vercel
 .vercel
@@ -38,3 +49,9 @@ next-env.d.ts
 
 # macOS
 .DS_Store
+# prisma generated client (regenerated via postinstall)
+/lib/generated/
+
+# OS files
+.DS_Store
+Thumbs.db

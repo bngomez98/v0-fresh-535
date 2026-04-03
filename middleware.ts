@@ -1,23 +1,37 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 import { evaluateRequest } from '@/lib/firewall/firewall'
+import { verifySession } from '@/lib/auth'
 
 export async function middleware(request: NextRequest) {
-  // --- Agent Firewall ---
-  const firewallAction = evaluateRequest(request)
+  const { pathname } = request.nextUrl
 
-  if (firewallAction.type === 'block') {
-    return new NextResponse(
-      JSON.stringify({ error: firewallAction.reason }),
-      {
-        status: firewallAction.status,
-        headers: { 'Content-Type': 'application/json' },
-      }
-    )
+  // --- Admin Route Protection ---
+  if (pathname.startsWith('/admin')) {
+    const sessionValid = await verifySession(request)
+    if (!sessionValid) {
+      const loginUrl = new URL('/login', request.url)
+      loginUrl.searchParams.set('redirect', pathname)
+      return NextResponse.redirect(loginUrl)
+    }
+  }
+
+  // --- Agent Firewall (skip for API routes) ---
+  if (!pathname.startsWith('/api')) {
+    const firewallAction = evaluateRequest(request)
+    if (firewallAction.type === 'block') {
+      return new NextResponse(
+        JSON.stringify({ error: firewallAction.reason }),
+        {
+          status: firewallAction.status,
+          headers: { 'Content-Type': 'application/json' },
+        }
+      )
+    }
   }
 
   // Create response
-  let response = NextResponse.next({
+  const response = NextResponse.next({
     request: {
       headers: request.headers,
     },
@@ -38,6 +52,7 @@ export async function middleware(request: NextRequest) {
     "'unsafe-eval'",
     'https://www.googletagmanager.com',
     'https://www.google-analytics.com',
+    'https://va.vercel-scripts.com',
   ].join(' ')
 
   // Prevent clickjacking
@@ -65,11 +80,10 @@ export const config = {
   matcher: [
     /*
      * Match all request paths except for the ones starting with:
-     * - api (API routes)
      * - _next/static (static files)
      * - _next/image (image optimization files)
      * - favicon.ico (favicon file)
      */
-    '/((?!api|_next/static|_next/image|favicon.ico).*)',
+    '/((?!_next/static|_next/image|favicon.ico).*)',
   ],
 }

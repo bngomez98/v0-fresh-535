@@ -1,17 +1,31 @@
 export const dynamic = "force-dynamic"
 
+import { cookies } from "next/headers"
+import { redirect } from "next/navigation"
 import { AdminDashboard } from "@/components/admin-dashboard"
+import { verifySession, SESSION_COOKIE } from "@/lib/auth"
+import type { NextRequest } from "next/server"
 
 export default async function AdminPage() {
-  // Note: Authentication has been removed with Supabase.
-  // This page now renders without authentication checks.
-  // Implement a new authentication provider if needed.
+  const cookieStore = await cookies()
 
-  // Pass a mock user object since AdminDashboard expects it
-  const mockUser = {
-    id: "mock-user-id",
-    email: "admin@fresh535.org",
+  // Build a minimal request-like object to reuse verifySession
+  const mockRequest = {
+    cookies: {
+      get: (name: string) => cookieStore.get(name),
+    },
+  } as unknown as NextRequest
+
+  if (!(await verifySession(mockRequest))) {
+    redirect("/login?redirect=/admin")
   }
 
-  return <AdminDashboard user={mockUser} />
+  const adminEmail = process.env.ADMIN_EMAIL ?? "admin@fresh535.org"
+
+  const adminUser = {
+    id: "admin",
+    email: adminEmail,
+  }
+
+  return <AdminDashboard user={adminUser} />
 }
