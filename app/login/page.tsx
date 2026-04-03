@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import { useRouter } from "next/navigation"
-import { createClient } from "@/lib/supabase-browser"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -15,33 +14,16 @@ export default function LoginPage() {
   const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
   const router = useRouter()
-  const supabase = createClient()
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
     setError(null)
     setLoading(true)
 
-    try {
-      const { data, error } = await supabase.auth.signInWithPassword({
-        email,
-        password,
-      })
-
-      if (error) {
-        setError(error.message)
-        setLoading(false)
-        return
-      }
-
-      if (data.user) {
-        router.push("/admin")
-        router.refresh()
-      }
-    } catch (err) {
-      setError("An unexpected error occurred")
-      setLoading(false)
-    }
+    // Note: Authentication has been removed with Supabase.
+    // This is now a placeholder that would need a new auth implementation.
+    setError("Authentication system has been removed. Please implement a new authentication provider.")
+    setLoading(false)
   }
 
   return (

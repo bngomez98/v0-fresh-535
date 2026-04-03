@@ -1,7 +1,6 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 import { evaluateRequest } from '@/lib/firewall/firewall'
-import { createServerClient, type CookieOptions } from '@supabase/ssr'
 
 export async function middleware(request: NextRequest) {
   // --- Agent Firewall ---
@@ -17,98 +16,21 @@ export async function middleware(request: NextRequest) {
     )
   }
 
-  // --- Supabase Auth Session Refresh ---
+  // Create response
   let response = NextResponse.next({
     request: {
       headers: request.headers,
     },
   })
 
-  const supabase = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-    {
-      cookies: {
-        get(name: string) {
-          return request.cookies.get(name)?.value
-        },
-        set(name: string, value: string, options: CookieOptions) {
-          request.cookies.set({
-            name,
-            value,
-            ...options,
-          })
-          response = NextResponse.next({
-            request: {
-              headers: request.headers,
-            },
-          })
-          response.cookies.set({
-            name,
-            value,
-            ...options,
-          })
-        },
-        remove(name: string, options: CookieOptions) {
-          request.cookies.set({
-            name,
-            value: '',
-            ...options,
-          })
-          response = NextResponse.next({
-            request: {
-              headers: request.headers,
-            },
-          })
-          response.cookies.set({
-            name,
-            value: '',
-            ...options,
-          })
-        },
-      },
-    }
-  )
-
-  // Refresh session if expired
-  await supabase.auth.getUser()
-
-  // Protect /admin routes
-  if (request.nextUrl.pathname.startsWith('/admin')) {
-    const {
-      data: { user },
-    } = await supabase.auth.getUser()
-
-    if (!user) {
-      return NextResponse.redirect(new URL('/login', request.url))
-    }
-  }
-
   // --- Security Headers ---
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
-  let supabaseHost: string | null = null
-
-  if (supabaseUrl) {
-    try {
-      supabaseHost = new URL(supabaseUrl).host
-    } catch (error) {
-      console.warn('Invalid Supabase URL provided to NEXT_PUBLIC_SUPABASE_URL', error)
-    }
-  }
-
-  const supabaseWs = supabaseHost ? `wss://${supabaseHost}` : null
-
   const connectSources = [
     "'self'",
-    supabaseHost ? `https://${supabaseHost}` : null,
-    supabaseWs,
     'https://www.google-analytics.com',
     'https://www.googletagmanager.com',
     'https://region1.google-analytics.com',
     'https://vitals.vercel-insights.com',
-  ]
-    .filter((value): value is string => Boolean(value))
-    .join(' ')
+  ].join(' ')
 
   const scriptSources = [
     "'self'",

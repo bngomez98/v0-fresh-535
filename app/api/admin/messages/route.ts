@@ -1,35 +1,11 @@
 import { NextResponse } from "next/server"
-import { createClient } from "@/lib/supabase-server"
 
+// Note: This returns an empty array since we removed Supabase database.
+// Data would need to be stored elsewhere (e.g., another database or service).
 export async function GET() {
   try {
-    const supabase = await createClient()
-
-    // Check if user is authenticated
-    const {
-      data: { user },
-      error: authError,
-    } = await supabase.auth.getUser()
-
-    if (authError || !user) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
-    }
-
-    // Fetch contact messages from database
-    const { data: messages, error } = await supabase
-      .from("contact_messages")
-      .select("*")
-      .order("created_at", { ascending: false })
-
-    if (error) {
-      console.error("Error fetching messages:", error)
-      return NextResponse.json(
-        { error: "Failed to fetch messages" },
-        { status: 500 }
-      )
-    }
-
-    return NextResponse.json({ data: messages })
+    // Return empty messages array - authentication removed
+    return NextResponse.json({ data: [] })
   } catch (error) {
     console.error("Unexpected error:", error)
     return NextResponse.json(
