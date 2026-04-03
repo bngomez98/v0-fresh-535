@@ -2,7 +2,7 @@
 
 import { useEffect } from "react"
 import { usePathname } from "next/navigation"
-import { getConsentStatus } from "@/components/cookie-consent"
+import { getConsentStatus, COOKIE_CONSENT_UPDATE_EVENT } from "@/components/cookie-consent"
 
 export function CustomAnalytics() {
   const pathname = usePathname()
@@ -42,8 +42,8 @@ export function CustomAnalytics() {
     track()
 
     // Re-evaluate when consent changes
-    window.addEventListener("cookie-consent-update", track)
-    return () => window.removeEventListener("cookie-consent-update", track)
+    window.addEventListener(COOKIE_CONSENT_UPDATE_EVENT, track)
+    return () => window.removeEventListener(COOKIE_CONSENT_UPDATE_EVENT, track)
   }, [pathname])
 
   return null

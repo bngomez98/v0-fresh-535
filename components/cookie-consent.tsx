@@ -4,13 +4,14 @@ import { useState, useEffect, useCallback } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 
-const CONSENT_KEY = "cookie-consent"
+const COOKIE_CONSENT_STORAGE_KEY = "cookie-consent"
+export const COOKIE_CONSENT_UPDATE_EVENT = "cookie-consent-update"
 
 export type ConsentStatus = "accepted" | "declined" | null
 
 export function getConsentStatus(): ConsentStatus {
   if (typeof window === "undefined") return null
-  const value = localStorage.getItem(CONSENT_KEY)
+  const value = localStorage.getItem(COOKIE_CONSENT_STORAGE_KEY)
   if (value === "accepted" || value === "declined") return value
   return null
 }
@@ -25,16 +26,15 @@ export function CookieConsent() {
   }, [])
 
   const handleAccept = useCallback(() => {
-    localStorage.setItem(CONSENT_KEY, "accepted")
+    localStorage.setItem(COOKIE_CONSENT_STORAGE_KEY, "accepted")
     setVisible(false)
-    // Dispatch event so analytics can react immediately
-    window.dispatchEvent(new Event("cookie-consent-update"))
+    window.dispatchEvent(new Event(COOKIE_CONSENT_UPDATE_EVENT))
   }, [])
 
   const handleDecline = useCallback(() => {
-    localStorage.setItem(CONSENT_KEY, "declined")
+    localStorage.setItem(COOKIE_CONSENT_STORAGE_KEY, "declined")
     setVisible(false)
-    window.dispatchEvent(new Event("cookie-consent-update"))
+    window.dispatchEvent(new Event(COOKIE_CONSENT_UPDATE_EVENT))
   }, [])
 
   if (!visible) return null

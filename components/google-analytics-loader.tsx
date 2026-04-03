@@ -2,7 +2,7 @@
 
 import Script from "next/script"
 import { useEffect, useState } from "react"
-import { getConsentStatus } from "@/components/cookie-consent"
+import { getConsentStatus, COOKIE_CONSENT_UPDATE_EVENT } from "@/components/cookie-consent"
 
 export function GoogleAnalyticsLoader() {
   const [consentGiven, setConsentGiven] = useState(false)
@@ -10,8 +10,8 @@ export function GoogleAnalyticsLoader() {
   useEffect(() => {
     const check = () => setConsentGiven(getConsentStatus() === "accepted")
     check()
-    window.addEventListener("cookie-consent-update", check)
-    return () => window.removeEventListener("cookie-consent-update", check)
+    window.addEventListener(COOKIE_CONSENT_UPDATE_EVENT, check)
+    return () => window.removeEventListener(COOKIE_CONSENT_UPDATE_EVENT, check)
   }, [])
 
   if (!consentGiven) return null
