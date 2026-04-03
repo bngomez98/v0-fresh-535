@@ -39,6 +39,73 @@ export interface District {
 
 import { getDistrictByZip } from "./district-data"
 
+// Deterministic pseudo-random number generator seeded by a string
+function seededHash(seed: string): number {
+  let h = 0
+  for (let i = 0; i < seed.length; i++) {
+    h = (Math.imul(31, h) + seed.charCodeAt(i)) | 0
+  }
+  return Math.abs(h)
+}
+
+function seededInt(seed: string, min: number, max: number): number {
+  return min + (seededHash(seed) % (max - min + 1))
+}
+
+function seededPick<T>(seed: string, arr: readonly T[]): T {
+  return arr[seededHash(seed) % arr.length]
+}
+
+// Known lobbying data indexed by industry
+const LOBBYING_INDUSTRIES = [
+  "Healthcare",
+  "Technology",
+  "Energy",
+  "Finance",
+  "Defense",
+  "Pharmaceuticals",
+  "Agriculture",
+  "Transportation",
+  "Telecommunications",
+] as const
+
+const LOBBYING_ORGS: Record<string, string> = {
+  Healthcare: "American Medical Association",
+  Technology: "Tech Industry Coalition",
+  Energy: "Energy Alliance",
+  Finance: "Financial Services Group",
+  Defense: "Defense Contractors Association",
+  Pharmaceuticals: "PhRMA",
+  Agriculture: "Farm Bureau Federation",
+  Transportation: "Transportation Alliance",
+  Telecommunications: "Telecom Association",
+}
+
+const BILLS = [
+  {
+    title: "Infrastructure Investment and Jobs Act",
+    description: "Bipartisan infrastructure legislation for roads, bridges, and broadband",
+  },
+  {
+    title: "CHIPS and Science Act",
+    description: "Semiconductor manufacturing and research investment",
+  },
+  {
+    title: "Inflation Reduction Act",
+    description: "Climate change and healthcare cost reduction measures",
+  },
+  {
+    title: "National Defense Authorization Act",
+    description: "Annual defense spending and policy authorization",
+  },
+  {
+    title: "Farm Bill Reauthorization",
+    description: "Agricultural policy and food assistance programs",
+  },
+] as const
+
+const VOTE_OPTIONS = ["yes", "no", "abstain"] as const
+
 // Ballotpedia API client
 export class BallotpediaClient {
   async getCandidatesByZip(zipCode: string): Promise<District | null> {
@@ -50,34 +117,44 @@ export class BallotpediaClient {
       }
 
       // Convert DistrictInfo to District format - include ALL representatives (incumbents and challengers)
-      const representatives: Candidate[] = districtInfo.representatives.map((rep, index) => ({
-        id: `house-${districtInfo.state}-${districtInfo.district}-${index}`,
-        name: rep.name,
-        party: rep.party,
-        isIncumbent: rep.incumbent,
-        office: "House",
-        district: districtInfo.district.toString(),
-        state: districtInfo.state,
-        yearsInOffice: rep.yearsInOffice,
-        lastElectionMargin: rep.incumbent ? Math.random() * 20 + 5 : undefined, // Only incumbents have previous margins
-        fundraisingTotal: Math.floor(Math.random() * 2000000) + 500000, // $500K - $2.5M
-        lobbyingConnections: this.generateLobbyingConnections(),
-        votingRecord: rep.incumbent ? this.generateVotingRecord() : [], // Only incumbents have voting records
-      }))
+      const representatives: Candidate[] = districtInfo.representatives.map((rep, index) => {
+        const id = `house-${districtInfo.state}-${districtInfo.district}-${index}`
+        return {
+          id,
+          name: rep.name,
+          party: rep.party,
+          isIncumbent: rep.incumbent,
+          office: "House",
+          district: districtInfo.district.toString(),
+          state: districtInfo.state,
+          yearsInOffice: rep.yearsInOffice,
+          lastElectionMargin: rep.incumbent
+            ? 5 + seededInt(id + ":margin", 0, 20)
+            : undefined,
+          fundraisingTotal: 500000 + seededInt(id + ":fundraising", 0, 2000000),
+          lobbyingConnections: this.generateLobbyingConnections(id),
+          votingRecord: rep.incumbent ? this.generateVotingRecord(id) : [],
+        }
+      })
 
-      const senators: Candidate[] = districtInfo.senators.map((senator, index) => ({
-        id: `senate-${districtInfo.state}-${index + 1}`,
-        name: senator.name,
-        party: senator.party,
-        isIncumbent: senator.incumbent,
-        office: "Senate",
-        state: districtInfo.state,
-        yearsInOffice: senator.yearsInOffice,
-        lastElectionMargin: senator.incumbent ? Math.random() * 15 + 8 : undefined, // Senate races typically closer
-        fundraisingTotal: Math.floor(Math.random() * 5000000) + 1000000, // $1M - $6M
-        lobbyingConnections: this.generateLobbyingConnections(),
-        votingRecord: senator.incumbent ? this.generateVotingRecord() : [], // Only incumbents have voting records
-      }))
+      const senators: Candidate[] = districtInfo.senators.map((senator, index) => {
+        const id = `senate-${districtInfo.state}-${index + 1}`
+        return {
+          id,
+          name: senator.name,
+          party: senator.party,
+          isIncumbent: senator.incumbent,
+          office: "Senate",
+          state: districtInfo.state,
+          yearsInOffice: senator.yearsInOffice,
+          lastElectionMargin: senator.incumbent
+            ? 8 + seededInt(id + ":margin", 0, 15)
+            : undefined,
+          fundraisingTotal: 1000000 + seededInt(id + ":fundraising", 0, 5000000),
+          lobbyingConnections: this.generateLobbyingConnections(id),
+          votingRecord: senator.incumbent ? this.generateVotingRecord(id) : [],
+        }
+      })
 
       return {
         state: districtInfo.state,
@@ -92,85 +169,52 @@ export class BallotpediaClient {
     }
   }
 
-  private generateLobbyingConnections(): LobbyingConnection[] {
-    const industries = [
-      "Healthcare",
-      "Technology",
-      "Energy",
-      "Finance",
-      "Defense",
-      "Pharmaceuticals",
-      "Agriculture",
-      "Transportation",
-      "Telecommunications",
-    ]
-
-    const organizations = [
-      "American Medical Association",
-      "Tech Industry Coalition",
-      "Energy Alliance",
-      "Financial Services Group",
-      "Defense Contractors Association",
-      "PhRMA",
-      "Farm Bureau Federation",
-      "Transportation Alliance",
-      "Telecom Association",
-    ]
-
+  generateLobbyingConnections(seed: string): LobbyingConnection[] {
+    const numConnections = 2 + seededInt(seed + ":count", 0, 8)
     const connections: LobbyingConnection[] = []
-    const numConnections = Math.floor(Math.random() * 8) + 2 // 2-10 connections
+    const usedIndustries = new Set<string>()
 
     for (let i = 0; i < numConnections; i++) {
+      const itemSeed = `${seed}:lobby:${i}`
+      let industry: string
+      do {
+        industry = seededPick(itemSeed + ":ind", LOBBYING_INDUSTRIES)
+      } while (usedIndustries.has(industry) && usedIndustries.size < LOBBYING_INDUSTRIES.length)
+      usedIndustries.add(industry)
+
       connections.push({
-        organization: organizations[Math.floor(Math.random() * organizations.length)],
-        amount: Math.floor(Math.random() * 50000) + 5000, // $5K - $55K
-        year: 2023 - Math.floor(Math.random() * 3), // 2021-2023
-        industry: industries[Math.floor(Math.random() * industries.length)],
+        organization: LOBBYING_ORGS[industry] ?? industry,
+        amount: 5000 + seededInt(itemSeed + ":amt", 0, 50000),
+        year: 2021 + seededInt(itemSeed + ":yr", 0, 2),
+        industry,
       })
     }
 
     return connections
   }
 
-  private generateVotingRecord(): VotingRecord[] {
-    const bills = [
-      {
-        title: "Infrastructure Investment and Jobs Act",
-        description: "Bipartisan infrastructure legislation for roads, bridges, and broadband",
-      },
-      {
-        title: "CHIPS and Science Act",
-        description: "Semiconductor manufacturing and research investment",
-      },
-      {
-        title: "Inflation Reduction Act",
-        description: "Climate change and healthcare cost reduction measures",
-      },
-      {
-        title: "National Defense Authorization Act",
-        description: "Annual defense spending and policy authorization",
-      },
-      {
-        title: "Farm Bill Reauthorization",
-        description: "Agricultural policy and food assistance programs",
-      },
-    ]
-
+  generateVotingRecord(seed: string): VotingRecord[] {
+    const numVotes = 3 + seededInt(seed + ":vcount", 0, 5)
     const votes: VotingRecord[] = []
-    const numVotes = Math.floor(Math.random() * 5) + 3 // 3-8 votes
+    const usedBills = new Set<number>()
 
     for (let i = 0; i < numVotes; i++) {
-      const bill = bills[Math.floor(Math.random() * bills.length)]
-      const voteOptions: ("yes" | "no" | "abstain")[] = ["yes", "no", "abstain"]
+      const itemSeed = `${seed}:vote:${i}`
+      let billIdx: number
+      do {
+        billIdx = seededInt(itemSeed + ":bill", 0, BILLS.length - 1)
+      } while (usedBills.has(billIdx) && usedBills.size < BILLS.length)
+      usedBills.add(billIdx)
+
+      const bill = BILLS[billIdx]
+      const month = seededInt(itemSeed + ":mo", 0, 11)
+      const day = seededInt(itemSeed + ":day", 1, 28)
+      const year = 2021 + seededInt(itemSeed + ":yr", 0, 2)
 
       votes.push({
         billTitle: bill.title,
-        vote: voteOptions[Math.floor(Math.random() * voteOptions.length)],
-        date: new Date(
-          2023 - Math.random(),
-          Math.floor(Math.random() * 12),
-          Math.floor(Math.random() * 28) + 1,
-        ).toLocaleDateString(),
+        vote: seededPick(itemSeed + ":v", VOTE_OPTIONS),
+        date: new Date(year, month, day).toLocaleDateString(),
         description: bill.description,
       })
     }
@@ -182,31 +226,11 @@ export class BallotpediaClient {
 // OpenSecrets API client
 export class OpenSecretsClient {
   async getLobbyingData(candidateId: string): Promise<LobbyingConnection[]> {
-    return [
-      {
-        organization: "Healthcare Industry Coalition",
-        amount: 25000,
-        year: 2023,
-        industry: "Healthcare",
-      },
-      {
-        organization: "Energy Sector Alliance",
-        amount: 18500,
-        year: 2023,
-        industry: "Energy",
-      },
-    ]
+    return new BallotpediaClient().generateLobbyingConnections(candidateId)
   }
 
   async getVotingRecord(candidateId: string): Promise<VotingRecord[]> {
-    return [
-      {
-        billTitle: "Infrastructure Investment Act",
-        vote: "yes",
-        date: "2023-11-15",
-        description: "Bipartisan infrastructure investment legislation",
-      },
-    ]
+    return new BallotpediaClient().generateVotingRecord(candidateId)
   }
 }
 
