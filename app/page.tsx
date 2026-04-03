@@ -331,18 +331,18 @@ export default function HomePage() {
         <div className="container mx-auto container-padding text-center">
           <div className="max-w-4xl mx-auto">
             <div className="inline-block text-sm font-semibold tracking-widest uppercase text-red-200 mb-4 border border-red-200/40 rounded-full px-4 py-1.5 bg-white/5">
-              Vote in a Fresh 535
+              Pledges become turnout
             </div>
-            <h2 className="text-3xl md:text-4xl mb-6 text-white">The movement is growing. Help us finish the build.</h2>
+            <h2 className="text-3xl md:text-4xl mb-6 text-white">Add your name, then recruit three neighbors.</h2>
             <p className="text-lg text-slate-200 mb-8 leading-relaxed max-w-2xl mx-auto">
-              Every day more voters realize their representatives don&apos;t represent them. Fresh 535 gives them a path to
-              act together: pledge, recruit, and show up. When we do, the math flips.
+              Fresh 535 tracks live pledges and district readiness. Signing the ledger proves demand in your district and
+              unlocks scripts you can share today so turnout keeps compounding.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" variant="destructive" className="btn-professional">
                 <Link href="/pledge">
                   <Users className="h-5 w-5 mr-2" />
-                  Take the Fresh 535 Pledge
+                  Add my name to the ledger
                 </Link>
               </Button>
               <Button
@@ -352,11 +352,14 @@ export default function HomePage() {
                 className="bg-transparent text-white border-white/30 hover:bg-white hover:text-brand-navy btn-professional"
               >
                 <Link href="/resources">
-                  Share the toolkit
+                  Share the district kit
                   <ArrowRight className="h-5 w-5 ml-2" />
                 </Link>
               </Button>
             </div>
+            <p className="text-sm text-slate-200 mt-4">
+              We&apos;ll send a ready-to-share message and the latest brief for your district once you sign.
+            </p>
           </div>
         </div>
       </section>
