@@ -7,6 +7,7 @@ import { Footer } from "@/components/footer"
 import { Toaster } from "@/components/ui/toaster"
 import { Analytics } from "@/components/analytics"
 import { Analytics as VercelAnalytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Suspense } from "react"
 import { ScrollToTop } from "@/components/scroll-to-top"
 
@@ -88,6 +89,7 @@ export default function RootLayout({
           <Toaster />
           <Analytics />
           <VercelAnalytics />
+          <SpeedInsights />
         </Suspense>
       </body>
     </html>
