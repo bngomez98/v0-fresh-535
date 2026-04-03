@@ -1,3 +1,9 @@
+export const dynamic = "force-dynamic"
+
+import { FlyerPageClient } from "./flyer-client"
+
+export default function FlyerPage() {
+  return <FlyerPageClient />
 "use client"
 
 export const dynamic = "force-dynamic"
