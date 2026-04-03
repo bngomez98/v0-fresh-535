@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic"
+
 import type React from "react"
 import { ContactForm } from "@/components/contact-form"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
