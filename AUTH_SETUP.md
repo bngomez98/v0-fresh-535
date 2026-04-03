@@ -66,24 +66,7 @@ Run the migration to update RLS policies:
 
 The migration updates policies to allow authenticated users to read from `pledges` and `contact_messages` tables.
 
-### 3. Environment Variables
-
-Copy the `.env.example` file to `.env.local`:
-
-```bash
-cp .env.example .env.local
-```
-
-Update with your Supabase credentials:
-
-```env
-NEXT_PUBLIC_SUPABASE_URL=https://your-project-id.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
-```
-
-Find these values in your Supabase dashboard under **Settings** → **API**.
-
-### 4. Run the Application
+### 3. Run the Application
 
 ```bash
 npm run dev
@@ -114,10 +97,7 @@ Authentication System Files:
 │   ├── supabase-browser.ts             # Client-side Supabase client
 │   └── supabase.ts                     # Original client (for public operations)
 ├── middleware.ts                        # Updated with auth session refresh & route protection
-├── supabase/
-│   └── migrations/
-│       └── 003_update_rls_for_auth.sql # RLS policy updates for auth
-└── .env.example                         # Environment variable template
+└── supabase/                            # Supabase migration references (if maintained separately)
 ```
 
 ## Security Features

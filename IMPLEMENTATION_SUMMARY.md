@@ -89,8 +89,6 @@ The "auth failure" was that admins/staff could not authenticate to view the data
 - `components/admin-dashboard.tsx` - Dashboard component
 - `app/api/admin/pledges/route.ts` - Pledges API
 - `app/api/admin/messages/route.ts` - Messages API
-- `supabase/migrations/003_update_rls_for_auth.sql` - RLS policies
-- `.env.example` - Environment variable template
 - `AUTH_SETUP.md` - Complete setup documentation
 
 ### Modified Files
@@ -109,19 +107,12 @@ The "auth failure" was that admins/staff could not authenticate to view the data
 npm install --legacy-peer-deps
 ```
 
-### 2. Configure Environment Variables
-Create `.env.local` with:
-```env
-NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
-```
-
-### 3. Enable Supabase Auth
+### 2. Enable Supabase Auth
 - Enable Email authentication in Supabase dashboard
 - Create admin users via Supabase dashboard or SQL
 
-### 4. Run RLS Migration
-Execute `supabase/migrations/003_update_rls_for_auth.sql` in Supabase
+### 3. Configure Supabase Policies
+Ensure your Supabase project has the appropriate RLS policies for pledges and contact messages.
 
 ## Features
 
@@ -206,7 +197,6 @@ Execute `supabase/migrations/003_update_rls_for_auth.sql` in Supabase
 
 Complete setup instructions available in:
 - `AUTH_SETUP.md` - Detailed setup and configuration guide
-- `.env.example` - Environment variable template
 
 ## Commit
 
