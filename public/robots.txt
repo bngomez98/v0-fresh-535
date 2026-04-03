@@ -35,6 +35,12 @@ Disallow: /
 User-agent: Claude-Web
 Disallow: /
 
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
 User-agent: cohere-ai
 Disallow: /
 

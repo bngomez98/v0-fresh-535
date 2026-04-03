@@ -27,6 +27,8 @@ export const BLOCKED_AGENT_PATTERNS: RegExp[] = [
   /\banthropic-ai\b/i,
   /\bClaudeBot\b/i,
   /\bClaude-Web\b/i,
+  /\bGoogle-Extended\b/i,
+  /\bApplebot-Extended\b/i,
   /\bcohere-ai\b/i,
   /\bPerplexityBot\b/i,
   /\bYouBot\b/i,
