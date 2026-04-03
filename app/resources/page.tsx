@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic"
+
 import { ResourceCard, type Resource } from "@/components/resource-card"
 
 const resources: Resource[] = [

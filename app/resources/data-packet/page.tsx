@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic"
+
 "use client"
 
 import { HistoricalReelectionChart } from "@/components/charts/historical-reelection-chart"

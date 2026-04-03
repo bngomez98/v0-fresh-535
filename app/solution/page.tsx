@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic"
+
 import type React from "react"
 import { Lightbulb, Target, Users } from "lucide-react"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
