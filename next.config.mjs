@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  reactStrictMode: true,
   output: "standalone",
   eslint: {
     ignoreDuringBuilds: true,
@@ -7,6 +8,11 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  images: {
+    unoptimized: true,
+  },
+  output: "standalone",
+  serverExternalPackages: ["@prisma/client", "@libsql/client"],
 }
 
 export default nextConfig

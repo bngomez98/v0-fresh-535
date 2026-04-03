@@ -9,14 +9,26 @@ export function PledgeCounter() {
   const [isAnimating, setIsAnimating] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
 
-  // Fetch the initial count from the database
   useEffect(() => {
+    let eventSource: EventSource | null = null
+    let pollInterval: ReturnType<typeof setInterval> | undefined
+    let animationTimeout: ReturnType<typeof setTimeout> | undefined
+
+    const triggerAnimation = (value: number) => {
+      setIsAnimating(true)
+      setCount(value)
+      if (animationTimeout) clearTimeout(animationTimeout)
+      animationTimeout = setTimeout(() => setIsAnimating(false), 500)
+    }
+
     const fetchCount = async () => {
       try {
         const response = await fetch("/api/pledge")
         if (response.ok) {
           const data = await response.json()
-          setCount(data.count)
+          if (typeof data.count === "number") {
+            triggerAnimation(data.count)
+          }
         }
       } catch (error) {
         console.error("Error fetching pledge count:", error)
@@ -27,27 +39,47 @@ export function PledgeCounter() {
       }
     }
 
-    fetchCount()
-  }, [])
+    const startPolling = () => {
+      pollInterval = setInterval(fetchCount, 30000)
+    }
 
-  // Refresh the count periodically
-  useEffect(() => {
-    const interval = setInterval(async () => {
-      try {
-        setIsAnimating(true)
-        const response = await fetch("/api/pledge")
-        if (response.ok) {
-          const data = await response.json()
-          setCount(data.count)
-        }
-        setTimeout(() => setIsAnimating(false), 500)
-      } catch (error) {
-        console.error("Error refreshing pledge count:", error)
-        setIsAnimating(false)
+    const startSse = () => {
+      if (typeof EventSource === "undefined") {
+        startPolling()
+        return
       }
-    }, 30000) // Refresh every 30 seconds
 
-    return () => clearInterval(interval)
+      eventSource = new EventSource("/api/pledge/stream")
+
+      eventSource.onmessage = (event) => {
+        try {
+          const data = JSON.parse(event.data)
+          if (typeof data.count === "number") {
+            setIsLoading(false)
+            triggerAnimation(data.count)
+          }
+        } catch (error) {
+          console.error("Error parsing pledge stream event:", error)
+        }
+      }
+
+      eventSource.onerror = () => {
+        eventSource?.close()
+        eventSource = null
+        if (!pollInterval) {
+          startPolling()
+        }
+      }
+    }
+
+    fetchCount()
+    startSse()
+
+    return () => {
+      eventSource?.close()
+      if (pollInterval) clearInterval(pollInterval)
+      if (animationTimeout) clearTimeout(animationTimeout)
+    }
   }, [])
 
   const targetCount = 1000000

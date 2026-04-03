@@ -36,11 +36,19 @@ prisma/*.db-shm
 
 # vercel
 .vercel
+.vercel/output
 
 # typescript
 *.tsbuildinfo
 next-env.d.ts
 
+/lib/generated/prisma
+
+# turbopack
+.turbo
+
+# macOS
+.DS_Store
 # prisma generated client (regenerated via postinstall)
 /lib/generated/
 
