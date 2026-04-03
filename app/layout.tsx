@@ -1,6 +1,5 @@
 import type React from "react"
 import type { Metadata } from "next"
-import Script from "next/script"
 import "./globals.css"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
@@ -9,6 +8,8 @@ import { CustomAnalytics } from "@/components/analytics"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import { ScrollToTop } from "@/components/scroll-to-top"
+import { CookieConsent } from "@/components/cookie-consent"
+import { GoogleAnalyticsLoader } from "@/components/google-analytics-loader"
 
 export const metadata: Metadata = {
   title: "Fresh 535 — A Movement for Congressional Accountability",
@@ -66,20 +67,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-9QXW6S19X4"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-9QXW6S19X4');
-          `}
-        </Script>
-      </head>
       <body className="bg-background text-foreground antialiased font-sans">
         <Suspense>
           <ScrollToTop />
@@ -87,8 +74,10 @@ export default function RootLayout({
           <main className="pt-20">{children}</main>
           <Footer />
           <Toaster />
+          <GoogleAnalyticsLoader />
           <CustomAnalytics />
           <Analytics />
+          <CookieConsent />
         </Suspense>
       </body>
     </html>
