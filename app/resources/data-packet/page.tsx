@@ -1,11 +1,11 @@
-export const dynamic = "force-dynamic"
-
 "use client"
 
 import { HistoricalReelectionChart } from "@/components/charts/historical-reelection-chart"
 import { CongressionalApprovalChart } from "@/components/charts/congressional-approval-chart"
 import { CampaignSpendingChart } from "@/components/charts/campaign-spending-chart"
 import Image from "next/image"
+
+export const dynamic = "force-dynamic"
 
 export default function DataPacketPage() {
   return (

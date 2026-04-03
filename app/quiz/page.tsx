@@ -1,5 +1,3 @@
-export const dynamic = "force-dynamic"
-
 "use client"
 
 import { useState } from "react"
@@ -8,6 +6,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
 import Link from "next/link"
+
+export const dynamic = "force-dynamic"
 
 interface QuizQuestion {
   id: number
