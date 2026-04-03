@@ -19,25 +19,40 @@ import { HistoricalReelectionChart } from "@/components/charts/historical-reelec
 import { CongressionalApprovalChart } from "@/components/charts/congressional-approval-chart"
 
 const stats = [
-  { value: "95%", label: "Incumbent reelection", detail: "Name ID + donor networks keep them safe" },
-  { value: "18%", label: "Public approval", detail: "Congress keeps winning while legitimacy collapses" },
-  { value: "20%", label: "Voters needed", detail: "Coordinated primary turnout to retire all 535" },
+  {
+    value: "95%",
+    label: "Incumbent reelection",
+    detail: "A 3:1 fundraising edge and name recognition challengers can't match keep every seat safe.",
+  },
+  {
+    value: "18%",
+    label: "Public approval",
+    detail: "The lowest sustained approval rating in modern history—yet incumbents keep winning easily.",
+  },
+  {
+    value: "20%",
+    label: "Voters needed",
+    detail: "Primary turnout averages 15–25%. A disciplined 20% bloc is mathematically sufficient to flip every race.",
+  },
 ]
 
 const playbook = [
   {
     title: "Data-first targeting",
-    description: "Live pledge ledger, district intel, and turnout goals so every action ladders up to a winnable number.",
+    description:
+      "Live pledge counts, district intelligence, and precise turnout thresholds ensure every action ladders up to a winnable number in every district.",
     icon: BarChart3,
   },
   {
     title: "Field operations",
-    description: "Local captains mobilize neighbors, share scripts, and schedule rides so turnout happens automatically.",
+    description:
+      "Local captains mobilize neighbors with proven scripts, peer-to-peer outreach, and ride coordination so high turnout happens systematically—not by chance.",
     icon: Activity,
   },
   {
     title: "Accountability loop",
-    description: "Transparent progress dashboards and weekly briefings keep volunteers and donors aligned on results.",
+    description:
+      "Public dashboards and weekly updates keep every volunteer, donor, and district captain focused on the same metrics that actually move elections.",
     icon: ShieldCheck,
   },
 ]
@@ -45,25 +60,25 @@ const playbook = [
 const actionCards = [
   {
     title: "Take the pledge",
-    description: "Add your name to the nationwide ledger and prove demand in your district.",
+    description: "Add your name to the national ledger and register your commitment in your district.",
     href: "/pledge",
     icon: Target,
   },
   {
     title: "Audit your district",
-    description: "See tenure, margins, and how many votes we actually need to flip it.",
+    description: "See incumbent tenure, past margins, and the exact vote count needed to flip your race.",
     href: "/my-district",
     icon: MapPin,
   },
   {
     title: "Study the plan",
-    description: "Read the full playbook and see how we coordinate primaries and generals.",
+    description: "Read the full strategy and learn how we coordinate primary and general election turnout.",
     href: "/solution",
     icon: Globe,
   },
   {
     title: "Share the data",
-    description: "Use charts and one-pagers to persuade neighbors that change is possible.",
+    description: "Download charts and one-pagers to show your neighbors why—and how—this works.",
     href: "/data",
     icon: Sparkles,
   },
@@ -93,9 +108,9 @@ export default function HomePage() {
                   A professional plan to retire every incumbent—on purpose.
                 </h1>
                 <p className="text-lg md:text-xl text-slate-200 leading-relaxed max-w-3xl">
-                  Congress keeps winning with 18% approval because nobody coordinates voters. Fresh 535 is a disciplined,
-                  data-backed operation: we track commitments, set district-level turnout goals, and move people to the polls
-                  together.
+                  Congress wins reelection at 95% despite an 18% approval rating—because voter frustration stays
+                  fragmented. Fresh 535 is the coordinated answer: district-level pledge tracking, precise turnout
+                  targets, and organized field teams that move voters to the polls together.
                 </p>
               </div>
               <div className="grid sm:grid-cols-3 gap-4">
@@ -155,8 +170,8 @@ export default function HomePage() {
                   </div>
                 </div>
                 <p className="text-sm leading-relaxed text-slate-700">
-                  Track pledge velocity, see which counties need a push, and download scripts for your next phone bank.
-                  Every widget stays synced with the same ledger powering our API.
+                  Track pledge velocity by county, see which districts need a push, and download phone-bank scripts for
+                  your next canvassing session. Every widget stays synced with the live pledge ledger.
                 </p>
                 <div className="grid grid-cols-2 gap-3">
                   <div className="rounded-xl border border-slate-200 p-3">
@@ -167,7 +182,7 @@ export default function HomePage() {
                   <div className="rounded-xl border border-slate-200 p-3">
                     <p className="text-xs text-muted-foreground">Avg. tenure</p>
                     <p className="text-2xl font-bold text-brand-navy">16 yrs</p>
-                    <p className="text-xs text-slate-500 mt-1">Time to retire them.</p>
+                    <p className="text-xs text-slate-500 mt-1">The clock is ticking.</p>
                   </div>
                 </div>
                 <div className="flex flex-col gap-3">
@@ -208,12 +223,12 @@ export default function HomePage() {
       <section className="section-padding bg-background">
         <div className="container mx-auto container-padding">
           <div className="text-center max-w-4xl mx-auto mb-12">
-            <h2 className="text-3xl md:text-4xl mb-4">Why They Ignore You</h2>
+            <h2 className="text-3xl md:text-4xl mb-4">Why They Keep Ignoring You</h2>
             <div className="section-divider mb-6" />
             <p className="text-lg text-muted-foreground leading-relaxed">
-              They know they&apos;ll win. Incumbents combine name recognition, gerrymandered districts, and donor networks
-              to secure 95% reelection—even while only 18% of Americans approve of their performance. Coordinated voter
-              action is the only unlock.
+              Incumbents know they&apos;ll win. They combine name recognition, gerrymandered districts, and a 3-to-1
+              fundraising advantage to secure 95% reelection—even while just 18% of Americans approve of their
+              performance. Coordinated voter action is the only force that changes this math.
             </p>
           </div>
 
@@ -224,28 +239,27 @@ export default function HomePage() {
                 <li className="flex gap-3">
                   <CheckCircle2 className="h-5 w-5 text-destructive mt-0.5" />
                   <div>
-                    <p className="font-semibold text-foreground">Name ID and donor insulation</p>
-                    <p className="text-sm leading-relaxed">Incumbents start with cash and recognition challengers can&apos;t match.</p>
+                    <p className="font-semibold text-foreground">Name recognition and donor insulation</p>
+                    <p className="text-sm leading-relaxed">Incumbents start every race with universal name ID and a war chest challengers spend years trying to match.</p>
                   </div>
                 </li>
                 <li className="flex gap-3">
                   <CheckCircle2 className="h-5 w-5 text-destructive mt-0.5" />
                   <div>
                     <p className="font-semibold text-foreground">Low-turnout primaries</p>
-                    <p className="text-sm leading-relaxed">15–25% of voters decide primaries. We only need a precise 20% to flip results.</p>
+                    <p className="text-sm leading-relaxed">Only 15–25% of voters participate in primaries. A coordinated 20% bloc can out-vote incumbents in every district.</p>
                   </div>
                 </li>
                 <li className="flex gap-3">
                   <CheckCircle2 className="h-5 w-5 text-destructive mt-0.5" />
                   <div>
                     <p className="font-semibold text-foreground">Fragmented outrage</p>
-                    <p className="text-sm leading-relaxed">People are angry in isolation. We convert that energy into coordinated action.</p>
+                    <p className="text-sm leading-relaxed">Millions are angry but acting in isolation. We convert scattered frustration into a single, coordinated pressure campaign.</p>
                   </div>
                 </li>
               </ul>
               <div className="rounded-xl border border-dashed border-primary/30 bg-primary/5 p-4 text-sm text-foreground">
-                We treat this like a national product launch: clear metrics, consistent messaging, and a go-to-market plan
-                for every district.
+                We treat this like a national campaign launch: clear metrics, district-by-district messaging, and a go-to-market plan that covers every seat.
               </div>
             </div>
 
@@ -258,7 +272,7 @@ export default function HomePage() {
                 <CongressionalApprovalChart />
               </div>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                The mandate is gone. We translate that frustration into a disciplined turnout machine instead of sporadic outrage.
+                Public mandate has collapsed. We translate that frustration into a disciplined turnout machine rather than another cycle of sporadic outrage.
               </p>
             </div>
 
@@ -273,7 +287,7 @@ export default function HomePage() {
                 <HistoricalReelectionChart />
               </div>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                The data is clear: until a coordinated bloc shows up, incumbents never feel pressure. We are that bloc.
+                The data is clear: until an organized bloc shows up and holds the line, incumbents never feel real pressure. We are that bloc.
               </p>
             </div>
           </div>
@@ -287,8 +301,8 @@ export default function HomePage() {
             <h2 className="text-3xl md:text-4xl mb-4">Our Full-Stack Playbook</h2>
             <div className="section-divider mb-6" />
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Primary turnout averages 15–25%. We only need a disciplined 20% to force every incumbent into retirement. Here
-              is how we marshal people, data, and money to get there.
+              Primary turnout averages 15–25%. A disciplined 20% is enough to force every incumbent into retirement.
+              Here is how we marshal people, data, and resources to reach that threshold in every single district.
             </p>
           </div>
 
@@ -333,10 +347,11 @@ export default function HomePage() {
             <div className="inline-block text-sm font-semibold tracking-widest uppercase text-red-200 mb-4 border border-red-200/40 rounded-full px-4 py-1.5 bg-white/5">
               Vote in a Fresh 535
             </div>
-            <h2 className="text-3xl md:text-4xl mb-6 text-white">The movement is growing. Help us finish the build.</h2>
+            <h2 className="text-3xl md:text-4xl mb-6 text-white">The movement is growing. Be part of what comes next.</h2>
             <p className="text-lg text-slate-200 mb-8 leading-relaxed max-w-2xl mx-auto">
-              Every day more voters realize their representatives don&apos;t represent them. Fresh 535 gives them a path to
-              act together: pledge, recruit, and show up. When we do, the math flips.
+              Every day more voters realize their representatives don&apos;t work for them. Fresh 535 gives them a
+              path to act together: pledge your vote, recruit your neighbors, and show up. When enough of us do, the
+              math flips—and incumbents finally face real consequences.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" variant="destructive" className="btn-professional">

@@ -21,8 +21,9 @@ export default function FAQPage() {
               <AccordionTrigger className="text-lg font-semibold hover:text-primary">What is Fresh 535?</AccordionTrigger>
               <AccordionContent className="text-muted-foreground pt-2 leading-relaxed">
                 Fresh 535 is a nonpartisan voter instruction movement. We ask Americans to vote against all incumbent
-                members of Congress — all 535 — to force accountability through turnover. We don't endorse candidates or
-                promote policy platforms. Our sole focus is restoring electoral competition and accountability.
+                members of Congress—all 535—to force real accountability through turnover. We do not endorse
+                candidates or advocate for specific policies. Our sole focus is restoring electoral competition and
+                making every seat genuinely contestable.
               </AccordionContent>
             </AccordionItem>
 
@@ -31,10 +32,10 @@ export default function FAQPage() {
                 Does this favor one political party?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground pt-2 leading-relaxed">
-                No. The rule applies equally to all incumbents regardless of party affiliation. We believe the problem
-                is systemic, not partisan. Both parties have contributed to the current dysfunction in Congress. In
-                Republican districts, this helps Democratic challengers. In Democratic districts, it helps Republican
-                challengers. Over time, this creates equal pressure on both parties.
+                No. The rule applies equally to incumbents of every party and ideology. We believe the dysfunction is
+                systemic, not partisan—both parties have contributed to the current breakdown. In Republican districts,
+                this benefits Democratic challengers. In Democratic districts, it benefits Republican challengers.
+                Over time, it creates equal accountability pressure across the entire institution.
               </AccordionContent>
             </AccordionItem>
 
@@ -43,9 +44,10 @@ export default function FAQPage() {
                 Is Fresh 535 a PAC or political organization?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground pt-2 leading-relaxed">
-                No. We are a voter education and coordination movement. We don't raise money for candidates, make
-                endorsements, or engage in traditional political activities. We simply provide information and encourage
-                voter participation. We operate as a 501(c)(4) social welfare organization focused on civic education.
+                No. Fresh 535 is a voter education and coordination movement. We do not raise or distribute money for
+                candidates, make electoral endorsements, or engage in traditional political activities. We operate as
+                a 501(c)(4) social welfare organization focused on civic education, providing information and
+                encouraging lawful voter participation.
               </AccordionContent>
             </AccordionItem>
 
@@ -54,11 +56,11 @@ export default function FAQPage() {
                 What if I like my current representative?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground pt-2 leading-relaxed">
-                Individual representatives may be well-intentioned, but they operate within a broken system. Even "good"
-                incumbents participate in a system that prioritizes fundraising and special interests over constituent
-                needs. The system itself needs to change. Your representative's individual merit is less important than
-                the institutional dysfunction they're part of. Sacrificing one good representative is worth fixing the
-                entire system.
+                Individual representatives may be well-intentioned, but even good members operate within—and benefit
+                from—a broken system. They participate in the same fundraising incentive structures and the same
+                self-preservation mechanisms that have produced record dysfunction. The system itself must change.
+                The long-term gain of a fully accountable Congress outweighs the short-term cost of losing any
+                single member.
               </AccordionContent>
             </AccordionItem>
 
@@ -67,11 +69,10 @@ export default function FAQPage() {
                 What if the challenger is unqualified or extreme?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground pt-2 leading-relaxed">
-                New representatives haven't been captured by the current system yet. They're more likely to be
-                responsive to voters than to lobbyists and donors. Additionally, the threat of replacement will moderate
-                behavior across the board. As districts become more competitive, higher-quality candidates will be
-                attracted to run. The current system already produces dysfunction — we're trading known failure for
-                potential improvement.
+                New members haven't been captured by entrenched interests yet—they're more likely to respond to
+                constituents than to lobbyists and donors. As districts become genuinely competitive, higher-quality
+                candidates are attracted to run. The threat of replacement will also moderate behavior across the
+                board. Trading known, guaranteed dysfunction for potential improvement is a rational bet.
               </AccordionContent>
             </AccordionItem>
 
@@ -80,10 +81,11 @@ export default function FAQPage() {
                 Won't this create chaos and inexperience in Congress?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground pt-2 leading-relaxed">
-                The current system is already chaotic and dysfunctional. Fresh perspectives and new energy often lead to
-                better outcomes than entrenched interests and stale thinking. Many of our most effective periods in
-                Congress have followed major turnover events. Institutional knowledge exists in committee staff and
-                support structures, not just in individual members.
+                The current system is already producing chaos and dysfunction—just with highly experienced members.
+                Fresh perspectives and new accountability often outperform entrenched habits and captured loyalties.
+                Congressional institutional knowledge lives primarily in professional committee staff and the
+                Congressional Research Service, not in individual members. Turnover breaks up power structures;
+                it does not erase expertise.
               </AccordionContent>
             </AccordionItem>
 
@@ -92,10 +94,10 @@ export default function FAQPage() {
                 How many people do you need to make this work?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground pt-2 leading-relaxed">
-                Primary elections typically have 15-25% turnout, and many general elections are decided by small
-                margins. A coordinated 20% of voters can swing most elections. We don't need a majority — just enough
-                people to create real electoral consequences. Even the threat of organized opposition will change
-                incumbent behavior.
+                Primary elections typically see 15–25% turnout, and many general elections are decided by small
+                margins. A coordinated 20% of voters can swing most races. We don't need a majority—just enough
+                people to create genuine electoral consequences. Even the credible threat of organized opposition
+                changes how incumbents govern.
               </AccordionContent>
             </AccordionItem>
 
@@ -104,20 +106,20 @@ export default function FAQPage() {
                 What happens after we replace everyone?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground pt-2 leading-relaxed">
-                New representatives will be more responsive to voters because they'll know that electoral consequences
-                are real. Districts will choose their own direction with fresh leadership. The goal is accountability,
-                not any specific policy outcome. A Congress that knows it can be fired will govern differently than one
-                that considers itself permanent.
+                New representatives will know that electoral consequences are real—and govern accordingly. Districts
+                will choose their own direction with fresh, accountable leadership. The goal is not any specific
+                policy outcome but a legislature that understands it can be fired. A Congress that knows it
+                can lose will behave entirely differently from one that considers itself permanent.
               </AccordionContent>
             </AccordionItem>
 
             <AccordionItem value="item-9" className="border-2 rounded-xl px-6 hover:border-primary/30 transition-colors">
               <AccordionTrigger className="text-lg font-semibold hover:text-primary">Do you accept donations?</AccordionTrigger>
               <AccordionContent className="text-muted-foreground pt-2 leading-relaxed">
-                Yes, we accept donations for operational costs like website maintenance, data analysis, and voter
-                education materials. We never accept or distribute money for candidates. All donations go toward
-                movement infrastructure and civic education. We publish quarterly financial reports for full
-                transparency.
+                Yes. We accept donations to cover operational costs including website maintenance, data analysis, and
+                voter education materials. We never accept or distribute funds for candidates. All contributions
+                go toward movement infrastructure and civic education. We publish quarterly financial reports for
+                full transparency.
               </AccordionContent>
             </AccordionItem>
 
@@ -126,9 +128,10 @@ export default function FAQPage() {
                 How do I know which candidates are incumbents?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground pt-2 leading-relaxed">
-                Incumbents are current office holders running for re-election. Your ballot will typically indicate this,
-                or you can check your state's election website. If someone is currently serving in Congress, they're an
-                incumbent. We're developing tools to help voters easily identify incumbents in their district.
+                Incumbents are current officeholders running for reelection. Your ballot will typically indicate this,
+                and your state's official election website will confirm it. If someone is currently serving in Congress,
+                they are an incumbent. We are building district lookup tools to help voters identify incumbents quickly
+                and easily.
               </AccordionContent>
             </AccordionItem>
 
@@ -137,37 +140,39 @@ export default function FAQPage() {
                 What about local and state elections?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground pt-2 leading-relaxed">
-                Fresh 535 focuses specifically on federal Congressional elections — the House and Senate. Local and
-                state elections have different dynamics and may require different approaches. We believe fixing Congress
-                is the highest priority for restoring functional governance at the federal level.
+                Fresh 535 focuses specifically on federal Congressional elections—the House and Senate. Local and
+                state offices have different dynamics and warrant different approaches. We believe resetting the
+                U.S. Congress is the highest-leverage point for restoring functional democratic governance at
+                the national level.
               </AccordionContent>
             </AccordionItem>
 
             <AccordionItem value="item-12" className="border-2 rounded-xl px-6 hover:border-primary/30 transition-colors">
               <AccordionTrigger className="text-lg font-semibold hover:text-primary">Is this legal?</AccordionTrigger>
               <AccordionContent className="text-muted-foreground pt-2 leading-relaxed">
-                Absolutely. Voter education and coordination are fundamental rights in a democracy. We encourage legal
-                participation in the electoral process and don't engage in any activities that would violate election
-                laws. We operate transparently and within all applicable regulations.
+                Absolutely. Voter education and coordination are fundamental democratic rights. We encourage legal
+                participation in the electoral process and operate transparently within all applicable laws and
+                election regulations. There is nothing more American than organizing voters around a shared civic goal.
               </AccordionContent>
             </AccordionItem>
 
             <AccordionItem value="item-13" className="border-2 rounded-xl px-6 hover:border-primary/30 transition-colors">
               <AccordionTrigger className="text-lg font-semibold hover:text-primary">How can I help spread the word?</AccordionTrigger>
               <AccordionContent className="text-muted-foreground pt-2 leading-relaxed">
-                Share our hashtags (#Fresh535, #FireThemAll, #IfTheyreInTheyreOut), tell five people about the movement,
-                and encourage others to take the pledge. Use our social media graphics and printable materials. Social
-                media sharing and word-of-mouth are our primary tools for growth. Every conversation matters.
+                Share our hashtags (#Fresh535, #FireThemAll, #IfTheyreInTheyreOut), tell five people about the
+                movement, and invite them to take the pledge. Use our social media graphics and printable flyers.
+                Word-of-mouth and peer-to-peer sharing are our most powerful growth tools. Every conversation
+                you start matters.
               </AccordionContent>
             </AccordionItem>
 
             <AccordionItem value="item-14" className="border-2 rounded-xl px-6 hover:border-primary/30 transition-colors">
               <AccordionTrigger className="text-lg font-semibold hover:text-primary">What's your success metric?</AccordionTrigger>
               <AccordionContent className="text-muted-foreground pt-2 leading-relaxed">
-                Success is measured by increased electoral competition and accountability. This includes: higher
-                incumbent defeat rates, closer election margins, more qualified challengers running, and ultimately,
-                improved congressional performance on key issues. We track these metrics publicly and adjust strategy
-                based on results.
+                We measure success by increased electoral competition and accountability: higher incumbent defeat
+                rates, closer election margins, more qualified challengers entering races, and ultimately improved
+                congressional performance on the issues that matter to Americans. We track these metrics publicly
+                and adjust strategy based on real-world results.
               </AccordionContent>
             </AccordionItem>
 
@@ -176,10 +181,10 @@ export default function FAQPage() {
                 Why not work within the existing parties?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground pt-2 leading-relaxed">
-                Both parties benefit from the current system of safe seats and incumbent protection. They have no
-                incentive to reform a system that keeps them in power. Real change requires external pressure from
-                voters who are willing to cross party lines to demand accountability. This is bigger than partisan
-                politics.
+                Both parties benefit from the current system of safe seats and incumbent protection. Neither has a
+                structural incentive to reform a system that keeps their members in power. Real change requires
+                external voter pressure from people willing to cross party lines to demand accountability. This
+                is bigger than any party—it is about restoring representative government itself.
               </AccordionContent>
             </AccordionItem>
           </Accordion>

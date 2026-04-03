@@ -11,11 +11,11 @@ export default function AboutPage() {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="page-header">
-            <h1>The Need for a System Reset</h1>
+            <h1>The Case for a System Reset</h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
               American democracy is built on the principle of a government accountable to its people. When that
-              connection weakens, the system ceases to function for the majority. This is the challenge we face today: a
-              system that has become unresponsive to the needs of its citizens, requiring a fundamental reset.
+              connection breaks down, the system stops working for the majority. That is where we are today: a Congress
+              that has become structurally unresponsive to the citizens it represents.
             </p>
           </div>
 
@@ -25,30 +25,30 @@ export default function AboutPage() {
             <div className="section-divider mb-10" />
             <div className="space-y-6">
               <div className="section-card">
-                <h3 className="text-2xl font-bold text-foreground mb-4">A System Unresponsive to the People</h3>
+                <h3 className="text-2xl font-bold text-foreground mb-4">A Congress That Works for Donors, Not Voters</h3>
                 <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
-                  Over decades, the priorities of Congress have shifted. Representatives now spend an inordinate amount
-                  of time fundraising from a small pool of wealthy donors and special interests. This creates a system
-                  where policy is shaped not by the needs of the American public, but by the priorities of those who can
-                  fund campaigns.
+                  Over decades, congressional priorities have drifted from constituent service to fundraising. Members
+                  now spend a significant portion of their time soliciting a small pool of wealthy donors and special
+                  interests. Policy is increasingly shaped not by the needs of everyday Americans but by the priorities
+                  of those who can fund campaigns.
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  The result is a government that struggles to address critical issues affecting everyday Americans—from
-                  a national debt surpassing $34 trillion and soaring healthcare costs to crumbling infrastructure and
-                  economic uncertainty. Its incentive structure is aligned with outside interests, not the public good.
+                  The result: a government unable to address the challenges that affect ordinary Americans—a national
+                  debt exceeding $34 trillion, soaring healthcare costs, a housing crisis, and persistent economic
+                  uncertainty. Its incentive structure is aligned with outside money, not the public good.
                 </p>
               </div>
 
               <div className="section-card">
                 <h3 className="text-2xl font-bold text-foreground mb-4">The Self-Preservation Loop</h3>
                 <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
-                  Despite historically low approval ratings, incumbents are reelected over 95% of the time. This is not
-                  a sign of public satisfaction. It is the result of a system designed to protect incumbents through
-                  gerrymandered districts and enormous fundraising advantages.
+                  Despite historic low approval ratings, incumbents are reelected over 95% of the time. This is not
+                  public satisfaction—it is the predictable outcome of a system engineered to protect incumbents through
+                  gerrymandered districts, fundraising advantages, and low primary turnout.
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  This "self-preservation loop" prevents new ideas and new leaders from emerging, ensuring that the
-                  institution remains stagnant and unable to adapt to the country's evolving challenges.
+                  This self-preservation loop blocks new ideas and new leaders from emerging, ensuring the institution
+                  stays stagnant and incapable of adapting to the country&apos;s evolving challenges.
                 </p>
               </div>
             </div>
@@ -59,25 +59,25 @@ export default function AboutPage() {
             <div className="bg-destructive/10 border border-destructive/20 rounded-xl p-8">
               <div className="flex items-center mb-6">
                 <AlertTriangle className="h-8 w-8 text-destructive mr-3" />
-                <h2 className="text-3xl font-bold text-destructive">The Consequence of an Unresponsive System</h2>
+                <h2 className="text-3xl font-bold text-destructive">What Happens When Government Stops Working</h2>
               </div>
 
               <div className="prose prose-lg max-w-none text-foreground">
                 <p className="text-lg mb-6">
-                  When a government fails to solve the real-world problems of its citizens, it creates a dangerous void.
-                  People's legitimate frustration becomes a powerful political force. Extremist movements exploit this
-                  energy by offering radical, anti-democratic solutions.
+                  When a government consistently fails to solve real-world problems, it creates a dangerous political
+                  vacuum. Legitimate public frustration becomes fuel for movements that offer radical,
+                  anti-democratic solutions in place of reform.
                 </p>
 
                 <p className="text-lg mb-6">
-                  Detailed plans like Project 2025 are designed to capitalize on this very moment. They propose to
-                  dismantle democratic checks and balances, politicize the civil service, and centralize executive
-                  power, effectively replacing our system of government with one based on authoritarian control.
+                  Detailed blueprints like Project 2025 are designed to exploit precisely this moment. They propose
+                  dismantling democratic checks and balances, politicizing the civil service, and concentrating
+                  executive power—effectively replacing representative government with centralized control.
                 </p>
 
                 <p className="text-lg font-semibold text-destructive bg-background p-4 rounded-xl border border-destructive/20">
-                  This authoritarian risk is not the cause of our problems; it is the direct consequence of a system
-                  that has stopped delivering for the American people.
+                  Authoritarianism is not the cause of our dysfunction—it is its consequence. A Congress that fails
+                  its constituents creates the conditions that anti-democratic movements exploit.
                 </p>
               </div>
             </div>
@@ -101,12 +101,12 @@ export default function AboutPage() {
               <h2 className="text-3xl font-bold text-primary mb-4">There Is a Way Out</h2>
               <div className="prose prose-lg max-w-2xl mx-auto text-muted-foreground">
                 <p className="leading-relaxed">
-                  The solution must be as fundamental as the problem. It cannot be a minor reform or a shift in partisan
-                  control. It must be a complete reset of the institution itself.
+                  The solution must be as fundamental as the problem. A minor reform or a partisan swap won&apos;t fix
+                  a structurally broken institution. It requires resetting the institution itself.
                 </p>
                 <p className="leading-relaxed">
-                  The Fresh 535 movement proposes a simple, powerful, and non-partisan strategy: coordinated electoral
-                  action to replace every single member of Congress.
+                  The Fresh 535 movement offers a straightforward, powerful, and nonpartisan path: coordinated
+                  electoral action to replace every single sitting member of Congress.
                 </p>
               </div>
               <div className="mt-8">

@@ -15,12 +15,12 @@ export default function AnalysisPage() {
         <div className="max-w-5xl mx-auto">
           <div className="page-header">
             <h1>
-              Academic Evidence: The Case for Complete Congressional Replacement
+              The Academic Case for Complete Congressional Replacement
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed max-w-4xl mx-auto">
-              Peer-reviewed research from Harvard University and UC Berkeley demonstrates that incumbency advantage has
-              systematically destroyed electoral accountability, creating an unresponsive system that requires complete
-              replacement to restore democratic function.
+              Peer-reviewed research from Harvard University and UC Berkeley demonstrates that incumbency advantage
+              has systematically dismantled electoral accountability—creating a structurally unresponsive Congress
+              that requires complete replacement to restore democratic function.
             </p>
           </div>
 
@@ -36,16 +36,16 @@ export default function AnalysisPage() {
                   "Systemic Consequences of Incumbency Advantage in U.S. House Elections"
                   <br />
                   <span className="font-normal text-slate-600">
-                    Gary King (Harvard) & Andrew Gelman (UC Berkeley), American Journal of Political Science, 1991
+                    Gary King (Harvard) &amp; Andrew Gelman (UC Berkeley), American Journal of Political Science, 1991
                   </span>
                 </p>
                 <p>
-                  This landmark study analyzed 40 years of congressional election data (1946-1986) and documented the
-                  systematic destruction of electoral accountability. Key findings:
+                  This landmark study analyzed 40 years of congressional election data (1946–1986) and documented the
+                  structural erosion of electoral accountability. Key findings:
                 </p>
                 <ul className="list-disc pl-6 space-y-2">
                   <li>
-                    <strong>1,000% increase in incumbency advantage:</strong> It rose from 1% (1946-48) to 11% (1984-86).
+                    <strong>1,000% increase in incumbency advantage:</strong> It rose from 1% (1946–48) to 11% (1984–86).
                   </li>
                   <li>
                     <strong>43% decline in electoral responsiveness:</strong> It dropped from 2.3 to 1.3 over 40 years.
@@ -54,12 +54,12 @@ export default function AnalysisPage() {
                     <strong>Incumbency explains virtually all partisan bias trends</strong> since the 1940s.
                   </li>
                   <li>
-                    <strong>The system became mathematically unresponsive</strong> to voter preferences.
+                    <strong>The system became mathematically unresponsive</strong> to voter preferences as incumbency grew.
                   </li>
                 </ul>
                 <p className="font-semibold">
-                  The research proves that high incumbency retention rates are not due to voter satisfaction, but to
-                  structural advantages that have created a permanently unaccountable political class.
+                  The research proves that high incumbency retention rates are not a sign of voter satisfaction—they
+                  reflect structural advantages that have created a permanently unaccountable political class.
                 </p>
               </div>
             </div>
@@ -75,40 +75,39 @@ export default function AnalysisPage() {
 
               <div className="prose prose-lg max-w-none text-muted-foreground">
                 <p>
-                  The King-Gelman research predicted exactly what we see today: a Congress completely disconnected from
-                  public will. Current metrics confirm the complete breakdown of electoral accountability:
+                  The King–Gelman research predicted exactly what we observe today: a Congress completely disconnected
+                  from public will. Current metrics confirm the full breakdown of electoral accountability:
                 </p>
                 <div className="grid md:grid-cols-2 gap-6 my-6">
                   <div className="bg-background p-5 rounded-xl border">
                     <h4 className="font-bold text-destructive">Performance Metrics</h4>
                     <ul className="text-sm space-y-1.5 mt-2">
                       <li>• Congressional approval: 18% (Gallup 2024)</li>
-                      <li>• Bills passed 2023: 27 (lowest since 1995)</li>
+                      <li>• Bills enacted in 2023: 27 (lowest since 1995)</li>
                       <li>• National debt: $34.5 trillion (+$7.8T under current Congress)</li>
                       <li>• Healthcare costs: +158% since 2000</li>
                       <li>• Housing prices: +47% since 2020</li>
                     </ul>
                   </div>
                   <div className="bg-background p-5 rounded-xl border">
-                    <h4 className="font-bold text-chart-2">Job Security Metrics</h4>
+                    <h4 className="font-bold text-chart-2">Incumbency Protection Metrics</h4>
                     <ul className="text-sm space-y-1.5 mt-2">
-                      <li>• House incumbent reelection: 95% (2022)</li>
+                      <li>• House incumbent reelection: 95% (2022–2024)</li>
                       <li>• Senate incumbent reelection: 84% (2022)</li>
-                      <li>• Primary challenge success: &lt;5%</li>
-                      <li>• Average tenure: 9.7 years House, 11.2 years Senate</li>
+                      <li>• Primary challenge success rate: &lt;5%</li>
+                      <li>• Average tenure: 9.7 years (House), 11.2 years (Senate)</li>
                       <li>• Fundraising advantage: 3:1 over challengers</li>
                     </ul>
                   </div>
                 </div>
                 <p className="font-semibold">
-                  This data confirms the King-Gelman prediction: when incumbency advantage reaches extreme levels, the
-                  electoral system ceases to function as an accountability mechanism.
+                  This data confirms the King–Gelman prediction: when incumbency advantage reaches extreme levels,
+                  electoral accountability effectively ceases to function.
                 </p>
               </div>
             </div>
           </section>
 
-          {/* Part I: The Data of Dysfunction */}
           <section className="mb-16">
             <h2 className="text-3xl font-bold text-foreground mb-8">Part I: Quantified System Failure</h2>
 
@@ -116,8 +115,8 @@ export default function AnalysisPage() {
               <div>
                 <h3 className="text-2xl font-semibold mb-2">The Accountability Gap</h3>
                 <p className="text-muted-foreground mb-6">
-                  King-Gelman research predicted this exact scenario: when incumbency advantage exceeds 10%, electoral
-                  accountability collapses completely.
+                  King–Gelman research predicted this scenario precisely: when incumbency advantage exceeds 10%,
+                  electoral accountability collapses completely. We have crossed that threshold.
                 </p>
                 <div className="grid md:grid-cols-2 gap-8">
                   <div>
@@ -128,7 +127,7 @@ export default function AnalysisPage() {
                     <p className="text-sm text-muted-foreground mt-2 text-center">Source: Gallup Historical Trends</p>
                   </div>
                   <div>
-                    <h4 className="text-lg font-semibold text-center mb-2">Incumbent Reelection: 95%</h4>
+                    <h4 className="text-lg font-semibold text-center mb-2">Incumbent Reelection Rate: 95%</h4>
                     <div className="h-80 border rounded-xl p-4 bg-background">
                       <HistoricalReelectionChart />
                     </div>
@@ -138,16 +137,17 @@ export default function AnalysisPage() {
                   </div>
                 </div>
                 <p className="mt-6 text-muted-foreground">
-                  <strong>Academic Analysis:</strong> King-Gelman research shows that when incumbency advantage
-                  reaches 11%, electoral responsiveness drops to 1.3. Current 95% reelection rates suggest incumbency advantage now exceeds 15%, creating near-zero electoral responsiveness.
+                  <strong>Academic Analysis:</strong> King–Gelman research shows that when incumbency advantage reaches
+                  11%, electoral responsiveness drops to 1.3. Current 95% reelection rates suggest advantage now
+                  exceeds 15%—creating near-zero electoral responsiveness to voter preferences.
                 </p>
               </div>
 
               <div>
                 <h3 className="text-2xl font-semibold mb-2">Structural Barriers: The Fundraising Monopoly</h3>
                 <p className="text-muted-foreground mb-6">
-                  King-Gelman identified structural advantages as the root cause. Current fundraising data confirms
-                  their prediction of permanent incumbent advantage.
+                  King–Gelman identified structural advantages—especially fundraising—as the root cause of permanent
+                  incumbency. Current FEC data confirms their prediction of an entrenched financial barrier to entry.
                 </p>
                 <div className="h-96 border rounded-xl p-4 bg-background">
                   <CampaignSpendingChart />
@@ -156,16 +156,17 @@ export default function AnalysisPage() {
                   Source: Federal Election Commission, Center for Responsive Politics
                 </p>
                 <p className="mt-6 text-muted-foreground">
-                  <strong>Mathematical Reality:</strong> Incumbents raise 3x more than challengers on average. In
-                  competitive races, this advantage reaches 5:1. The system now rewards access to donor networks over constituent representation.
+                  <strong>What the Numbers Mean:</strong> Incumbents raise 3x more than challengers on average. In
+                  competitive races, this advantage reaches 5:1. The system now rewards access to donor networks
+                  over quality of constituent representation.
                 </p>
               </div>
 
               <div>
                 <h3 className="text-2xl font-semibold mb-2">Legislative Collapse</h3>
                 <p className="text-muted-foreground mb-6">
-                  King-Gelman predicted that extreme incumbency advantage would reduce legislative effectiveness.
-                  Current productivity data confirms this prediction.
+                  King–Gelman predicted that extreme incumbency advantage would erode legislative effectiveness.
+                  Historical productivity data confirms exactly that trajectory over the past five decades.
                 </p>
                 <div className="h-96 border rounded-xl p-4 bg-background">
                   <LegislativeProductivityChart />
@@ -174,54 +175,53 @@ export default function AnalysisPage() {
                   Source: Pew Research Center analysis of Congressional data
                 </p>
                 <p className="mt-6 text-muted-foreground">
-                  <strong>Systemic Consequences:</strong> 27 bills passed in 2023 represents a 73% decline from
-                  1970s averages. When electoral accountability disappears, legislators focus on maintaining power rather than solving problems.
+                  <strong>What the Trend Shows:</strong> Bills enacted in 2023 fell to a historic low—roughly 73%
+                  below 1970s averages. When members face no electoral consequences, governing takes a back seat
+                  to fundraising and positioning.
                 </p>
               </div>
             </div>
           </section>
 
-          {/* Part II: The Consequence */}
           <section className="mb-16">
             <div className="bg-destructive/10 border-l-4 border-destructive p-8 rounded-r-xl">
               <h2 className="text-3xl font-bold text-destructive mb-6 flex items-center">
                 <AlertTriangle className="h-8 w-8 mr-3" />
-                Part II: Democratic Collapse Risk
+                Part II: The Democratic Risk
               </h2>
               <div className="prose prose-lg max-w-none text-muted-foreground">
                 <p>
-                  King-Gelman research identified a critical threshold: when incumbency advantage exceeds 10% and
-                  electoral responsiveness falls below 1.5, democratic accountability effectively ceases. We have
-                  crossed both thresholds.
+                  King–Gelman research identified a critical threshold: when incumbency advantage exceeds 10% and
+                  electoral responsiveness falls below 1.5, democratic accountability effectively ceases to function.
+                  Current data shows we have crossed both thresholds.
                 </p>
                 <p>
-                  <strong>Current Threat Assessment:</strong> Organized anti-democratic movements have prepared
-                  comprehensive plans (Project 2025, etc.) to exploit this institutional failure. When mainstream
-                  institutions cannot channel legitimate public frustration, extremist ideologies fill the vacuum.
+                  <strong>The Vacuum Problem:</strong> When mainstream institutions fail to address legitimate public
+                  frustration, anti-democratic movements step in with radical alternatives. Organized blueprints like
+                  Project 2025 are designed to exploit precisely this moment of institutional failure.
                 </p>
                 <p>
-                  <strong>Mathematical Reality:</strong> A Congress with 95% incumbent retention and 18% approval cannot
-                  defend democratic institutions. The legislative branch's failure to govern creates the conditions for
-                  authoritarian capture of executive and judicial branches.
+                  <strong>Why Congress Is the Key:</strong> A legislature with 95% incumbent retention and 18% approval
+                  cannot credibly defend democratic norms. Its failure to govern creates the conditions for executive
+                  branch overreach and judicial capture.
                 </p>
                 <p className="font-semibold">
-                  Academic research proves: without electoral accountability, democratic institutions cannot
-                  self-correct or resist authoritarian pressure.
+                  The academic evidence is clear: without functional electoral accountability, democratic
+                  institutions cannot self-correct or resist authoritarian pressure from any direction.
                 </p>
               </div>
             </div>
           </section>
 
-          {/* Part III: The Solution */}
           <section className="text-center bg-primary text-primary-foreground p-12 rounded-xl">
-            <h2 className="text-3xl font-bold mb-6">Part III: Mathematical Solution</h2>
+            <h2 className="text-3xl font-bold mb-6">Part III: The Solution Is Mathematical</h2>
             <p className="text-xl mb-4 max-w-3xl mx-auto">
-              King-Gelman research proves that removing incumbency advantage restores electoral responsiveness. Complete
-              replacement is the only method that eliminates structural advantages simultaneously.
+              King–Gelman research proves that eliminating incumbency advantage restores electoral responsiveness.
+              Complete congressional replacement is the only method that removes all structural advantages simultaneously.
             </p>
             <p className="text-lg mb-8 max-w-3xl mx-auto opacity-90">
-              Primary turnout: 15-25%. Coordinated 20% bloc vote defeats 95% of incumbents mathematically. No
-              constitutional amendment required. Immediate restoration of electoral accountability.
+              Primary turnout: 15–25%. A coordinated 20% bloc defeats incumbents in every district. No
+              constitutional amendment required. No third party needed. Just coordinated voters showing up.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

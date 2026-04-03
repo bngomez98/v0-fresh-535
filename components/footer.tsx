@@ -40,8 +40,8 @@ export function Footer() {
               <span className="text-xl font-semibold tracking-tight">FRESH 535</span>
             </Link>
             <p className="text-slate-400 max-w-sm mb-6 leading-relaxed">
-              We're a movement to replace all 535 members of Congress. Every incumbent must go so we can rebuild a
-              government that actually works for regular people, not just special interests.
+              A movement to replace all 535 members of Congress—every incumbent, every party. When electoral
+              consequences are real, representatives govern for the people, not for the donors.
             </p>
             <Button asChild variant="secondary" size="sm" className="btn-professional">
               <Link href="/pledge">Join Us</Link>
@@ -78,7 +78,7 @@ export function Footer() {
               Terms of Service
             </Link>
           </div>
-          <p className="hidden md:block">A grassroots movement to make Congress work again.</p>
+          <p className="hidden md:block">A grassroots movement to make every congressional seat accountable.</p>
         </div>
       </div>
     </footer>
