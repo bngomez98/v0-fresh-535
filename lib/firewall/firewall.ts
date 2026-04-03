@@ -24,7 +24,7 @@ export type FirewallAction =
 export function evaluateRequest(request: NextRequest): FirewallAction {
   const { pathname } = request.nextUrl
 
-  // 1. Bypass paths (static assets, health-checks)
+  // 1. Bypass paths (bundled assets, health-checks)
   for (const pattern of BYPASS_PATHS) {
     if (pattern.test(pathname)) {
       return { type: "allow" }

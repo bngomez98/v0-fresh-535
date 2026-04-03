@@ -80,7 +80,7 @@ export const API_RATE_LIMIT: RateLimitPolicy = {
   windowSeconds: 60,
 }
 
-/** Paths that bypass the firewall entirely (health-checks, static assets). */
+/** Paths that bypass the firewall entirely (health-checks, bundled assets). */
 export const BYPASS_PATHS: RegExp[] = [
   /^\/_next\//,
   /^\/favicon\.ico$/,
