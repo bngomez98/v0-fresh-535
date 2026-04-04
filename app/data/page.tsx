@@ -12,17 +12,18 @@ export default function DataPage() {
         <div className="max-w-5xl mx-auto">
           <div className="page-header">
             <h1>
-              Congressional Failure: Complete Documentation
+              Congressional Failure: The Complete Record
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              18% approval rating. 95% reelection rate. $34.5 trillion debt. 27 bills passed in 2023. Mathematical proof
-              that Congress has failed and must be completely replaced.
+              18% approval. 95% reelection rate. $34.5 trillion in debt. Just 27 bills enacted in 2023. The data
+              tells a clear story: Congress has failed its constituents—and the current system ensures no
+              consequences for that failure.
             </p>
           </div>
 
           {/* Key Statistics Grid */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold text-foreground mb-2 text-center">System Failure Metrics</h2>
+            <h2 className="text-3xl font-bold text-foreground mb-2 text-center">Key Failure Metrics</h2>
             <div className="section-divider mb-10" />
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
@@ -72,9 +73,8 @@ export default function DataPage() {
             </div>
           </section>
 
-          {/* Downloadable Resources */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold text-foreground mb-2 text-center">Complete Documentation Package</h2>
+            <h2 className="text-3xl font-bold text-foreground mb-2 text-center">Documentation & Research Package</h2>
             <div className="section-divider mb-10" />
 
             <div className="grid md:grid-cols-2 gap-8">
@@ -87,7 +87,7 @@ export default function DataPage() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground mb-4">
-                    This document provides a mathematical analysis of congressional failure, statistical proof of incumbency protection, and the Fresh 535 execution strategy with electoral mathematics.
+                    A comprehensive analysis of congressional accountability failure, including the statistical case for incumbency reform, the electoral math behind Fresh 535, and the full execution strategy.
                   </p>
                   <Button asChild className="w-full">
                     <Link href="/api/download?resource=white-paper" target="_blank">
@@ -107,7 +107,7 @@ export default function DataPage() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground mb-4">
-                    This packet includes district-by-district incumbent performance data, voting records, donor lists, approval ratings, reelection margins, and legislative productivity metrics.
+                    District-by-district incumbent performance data covering voting records, donor contributions, approval ratings, reelection margins, and legislative productivity metrics.
                   </p>
                   <Button asChild variant="outline" className="w-full bg-transparent">
                     <Link href="/api/download?resource=data-packet" target="_blank">
@@ -127,7 +127,7 @@ export default function DataPage() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground mb-4">
-                    This toolkit contains printable flyers, social media graphics, presentation slides, talking points, legal compliance guides, and voter registration materials.
+                    Printable flyers, social media graphics, presentation slides, canvassing scripts, legal compliance guides, and voter registration materials for local organizers.
                   </p>
                   <Button asChild variant="outline" className="w-full bg-transparent">
                     <Link href="/api/download?resource=organizing-toolkit" target="_blank">
@@ -142,12 +142,12 @@ export default function DataPage() {
                 <CardHeader>
                   <CardTitle className="text-xl flex items-center">
                     <Target className="h-6 w-6 mr-2 text-destructive" />
-                    Voter Execution Guide (23 pages)
+                    Voter Action Guide (23 pages)
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground mb-4">
-                    This guide provides step-by-step instructions for primary and general election voting, including state-specific requirements, timelines, legal compliance, and tactical considerations.
+                    Step-by-step instructions for primary and general election voting, including state-specific requirements, key deadlines, how to identify incumbents, and tactical considerations.
                   </p>
                   <Button asChild variant="outline" className="w-full bg-transparent">
                     <Link href="/api/download?resource=voter-guide" target="_blank">
@@ -160,7 +160,6 @@ export default function DataPage() {
             </div>
           </section>
 
-          {/* Movement Progress */}
           <section className="mb-16">
             <h2 className="text-3xl font-bold text-foreground mb-2 text-center">Fresh 535 Movement Progress</h2>
             <div className="section-divider mb-10" />
@@ -183,8 +182,8 @@ export default function DataPage() {
                   <CardTitle className="text-3xl font-bold text-blue-600">435</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-foreground font-semibold">Districts with Pledgers</p>
-                  <p className="text-sm text-muted-foreground">All 435 House districts represented</p>
+                  <p className="text-foreground font-semibold">Districts Represented</p>
+                  <p className="text-sm text-muted-foreground">All 435 House districts have pledgers</p>
                 </CardContent>
               </Card>
 
@@ -201,12 +200,11 @@ export default function DataPage() {
             </div>
           </section>
 
-          {/* Call to Action */}
           <section className="text-center bg-primary text-primary-foreground p-12 rounded-xl">
-            <h2 className="text-3xl font-bold mb-6">The Data is Clear: Complete Replacement Required</h2>
+            <h2 className="text-3xl font-bold mb-6">The Data Is Clear: Complete Replacement Is the Solution</h2>
             <p className="text-xl mb-8 max-w-3xl mx-auto">
-              18% approval proves they failed. 95% reelection proves the system protects failure. $34.5 trillion debt
-              proves the cost of inaction. Replace all 535.
+              18% approval proves they have failed. 95% reelection proves the system protects that failure.
+              $34.5 trillion in debt proves the cost of inaction. The only move left: replace all 535.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

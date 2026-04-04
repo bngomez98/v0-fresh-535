@@ -28,6 +28,7 @@ const data = [
   { congress: "115th (2017-18)", year: 2018, bills: 442 },
   { congress: "116th (2019-20)", year: 2020, bills: 344 },
   { congress: "117th (2021-22)", year: 2022, bills: 362 },
+  { congress: "118th (2023-24)", year: 2024, bills: 83 },
 ]
 
 export function LegislativeProductivityChart() {
@@ -38,7 +39,7 @@ export function LegislativeProductivityChart() {
         <XAxis dataKey="year" tick={{ fontSize: 12 }} interval="preserveStartEnd" />
         <YAxis tick={{ fontSize: 12 }} label={{ value: "Bills Enacted", angle: -90, position: "insideLeft" }} />
         <Tooltip
-          formatter={(value, name) => [value, "Bills Enacted"]}
+          formatter={(value) => [value, "Bills Enacted"]}
           labelFormatter={(label) => {
             const item = data.find((d) => d.year === label)
             return item ? item.congress : label
