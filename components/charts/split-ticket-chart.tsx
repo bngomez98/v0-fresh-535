@@ -34,7 +34,7 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<ValueType, NameT
 
 export function SplitTicketChart() {
   return (
-    <ResponsiveContainer width="100%" height="100%">
+    <ResponsiveContainer width="100%" height={280}>
       <LineChart data={data} margin={{ top: 5, right: 20, left: 20, bottom: 5 }}>
         <CartesianGrid strokeDasharray="3 3" stroke="rgba(0, 0, 0, 0.1)" />
         <XAxis dataKey="year" tick={{ fill: '#6b7280', fontSize: 12 }} />

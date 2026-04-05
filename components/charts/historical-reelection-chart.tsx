@@ -43,7 +43,7 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<ValueType, NameT
 
 export function HistoricalReelectionChart() {
   return (
-    <ResponsiveContainer width="100%" height="100%">
+    <ResponsiveContainer width="100%" height={280}>
       <BarChart data={data} margin={{ top: 5, right: 20, left: -10, bottom: 5 }}>
         <CartesianGrid strokeDasharray="3 3" stroke="rgba(0, 0, 0, 0.1)" />
         <XAxis dataKey="year" tick={{ fill: "#475569", fontSize: 12 }} />
