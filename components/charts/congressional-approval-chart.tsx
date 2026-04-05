@@ -36,7 +36,7 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<ValueType, NameT
     return (
       <div className="bg-white p-2 border rounded-lg shadow-lg">
         <p className="font-bold text-sm">{`Year: ${label}`}</p>
-        <p className="text-accent text-sm">{`Approval: ${payload[0].value}%`}</p>
+        <p className="text-accent text-sm">{`Approval Rating: ${payload[0].value}%`}</p>
       </div>
     )
   }

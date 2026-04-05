@@ -13,10 +13,11 @@ export default function PledgePage() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <div className="gradient-bg-primary text-primary-foreground rounded-2xl p-10 md:p-12 mb-12 shadow-2xl">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">Pledge to Reset the System</h1>
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">Pledge to Reset the Congress</h1>
               <p className="text-xl leading-relaxed mb-8 opacity-95">
-                Join thousands of Americans in a simple, powerful act to restore a government that works for the people.
-                Your pledge is a commitment to vote for a complete reset of Congress.
+                Join Americans across every district in a simple, powerful act: commit to vote out every incumbent
+                until we achieve a complete congressional reset. Your pledge is your voice—and together, our voices
+                change the math.
               </p>
               <PledgeCounter />
             </div>
@@ -34,8 +35,9 @@ export default function PledgePage() {
                 </blockquote>
 
                 <p className="text-lg text-muted-foreground">
-                  Join thousands of Americans in a simple, powerful act to restore a government that works for the
-                  people. Your pledge is a commitment to vote for a complete reset of Congress.
+                  This pledge is nonpartisan, voluntary, and focused on one goal: restoring a Congress that works
+                  for the people it represents. When enough of us commit to holding the line together, the math
+                  of incumbency flips.
                 </p>
               </div>
             </div>
@@ -50,12 +52,12 @@ export default function PledgePage() {
               <Card className="border-2 border-destructive/20 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                 <CardHeader>
                   <Shield className="h-12 w-12 text-destructive mx-auto mb-4" />
-                  <CardTitle className="text-xl text-center">Safeguard Our Democracy</CardTitle>
+                  <CardTitle className="text-xl text-center">Defend Democratic Accountability</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground text-center leading-relaxed">
-                    An unresponsive government creates a vacuum for extremism. A system reset is the strongest defense
-                    of our democratic principles.
+                    An unresponsive government creates a vacuum for authoritarianism. A full congressional reset
+                    is the most direct structural defense of democratic governance we have.
                   </p>
                 </CardContent>
               </Card>
@@ -63,12 +65,12 @@ export default function PledgePage() {
               <Card className="border-2 border-primary/20 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                 <CardHeader>
                   <Users className="h-12 w-12 text-primary mx-auto mb-4" />
-                  <CardTitle className="text-xl text-center">Empower the Voter</CardTitle>
+                  <CardTitle className="text-xl text-center">Restore Voter Authority</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground text-center leading-relaxed">
-                    This action reminds every politician that the ultimate authority belongs to the citizens they are
-                    supposed to serve.
+                    Your vote is the ultimate check on political power. This pledge is a reminder—to every
+                    politician—that they answer to the people who elect them.
                   </p>
                 </CardContent>
               </Card>
@@ -76,12 +78,12 @@ export default function PledgePage() {
               <Card className="border-2 border-chart-2/20 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                 <CardHeader>
                   <TrendingUp className="h-12 w-12 text-chart-2 mx-auto mb-4" />
-                  <CardTitle className="text-xl text-center">Force a Focus on Results</CardTitle>
+                  <CardTitle className="text-xl text-center">Tie Job Security to Performance</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground text-center leading-relaxed">
-                    When job security is tied to performance, representatives are incentivized to solve problems that
-                    affect the American people.
+                    When re-election is no longer guaranteed, representatives are incentivized to solve real
+                    problems instead of just raising money and holding their seat.
                   </p>
                 </CardContent>
               </Card>
@@ -89,12 +91,12 @@ export default function PledgePage() {
               <Card className="border-2 border-chart-3/20 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                 <CardHeader>
                   <Target className="h-12 w-12 text-chart-3 mx-auto mb-4" />
-                  <CardTitle className="text-xl text-center">Achieve Critical Mass</CardTitle>
+                  <CardTitle className="text-xl text-center">Reach Critical Mass Together</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground text-center leading-relaxed">
-                    It only takes a coordinated 20% of voters to achieve a full reset. Your pledge helps us reach that
-                    goal.
+                    Primary turnout rarely exceeds 25%. A coordinated 20% bloc is all we need. Every pledge
+                    moves us closer to that threshold in every district.
                   </p>
                 </CardContent>
               </Card>
@@ -106,58 +108,56 @@ export default function PledgePage() {
             <div className="bg-card border-2 border-primary/20 rounded-xl p-8 shadow-md">
               <h2 className="text-3xl font-bold text-foreground mb-6 text-center">Make Your Commitment Official</h2>
               <p className="text-lg text-muted-foreground text-center mb-8">
-                Join the movement to restore congressional accountability. Your information helps us track momentum and
-                organize effective electoral action.
+                Join the movement to restore congressional accountability. Your information helps us track momentum,
+                organize by district, and demonstrate the scale of demand to media and candidates alike.
               </p>
               <PledgeForm />
             </div>
           </section>
 
-          {/* What Happens Next */}
           <section className="mb-16">
             <h2 className="text-3xl font-bold text-foreground mb-2 text-center">What Happens After You Pledge</h2>
             <div className="section-divider mb-10" />
 
             <div className="space-y-6">
               <div className="section-card">
-                <h3 className="text-xl font-bold text-foreground mb-3">1. You'll Receive Resources</h3>
+                <h3 className="text-xl font-bold text-foreground mb-3">1. You'll Get Voter Resources</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Get access to voter guides, district-specific information, and tools to help you make informed
-                  decisions in every election. We'll help you easily identify incumbents on your ballot.
+                  Access voter guides, district intelligence, and tools to identify incumbents on your ballot—so
+                  you can act with confidence in every primary and general election.
                 </p>
               </div>
 
               <div className="section-card">
-                <h3 className="text-xl font-bold text-foreground mb-3">2. You'll Get Election Reminders</h3>
+                <h3 className="text-xl font-bold text-foreground mb-3">2. You'll Receive Election Reminders</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  We'll notify you about upcoming primary and general elections in your area, where your vote has
-                  maximum impact. You'll never miss an opportunity to hold incumbents accountable.
+                  We'll notify you about upcoming primaries and general elections in your district, where your
+                  vote carries the most weight. You'll never miss a chance to hold an incumbent accountable.
                 </p>
               </div>
 
               <div className="section-card">
-                <h3 className="text-xl font-bold text-foreground mb-3">3. You'll Help Build the Movement</h3>
+                <h3 className="text-xl font-bold text-foreground mb-3">3. You'll Help Build Real Pressure</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Your pledge adds to our growing numbers, showing politicians and the media that an organized,
-                  cross-partisan opposition is building. As our movement grows, incumbents will start to take notice and
-                  change their behavior.
+                  Your pledge is counted publicly and adds to the growing ledger of committed voters. As our
+                  numbers grow district by district, incumbents see the threat is real—and begin to govern
+                  accordingly.
                 </p>
               </div>
             </div>
           </section>
 
-          {/* Share Section */}
           <section className="text-center gradient-bg-primary text-primary-foreground p-12 rounded-2xl shadow-2xl">
             <h2 className="text-3xl font-bold mb-6 text-white">Spread the Movement</h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto opacity-95">
-              Every person who takes the pledge brings us closer to the critical mass needed for complete congressional
-              turnover. Share Fresh 535 with your friends, family, and community.
+              Every person who takes the pledge brings us closer to the critical mass needed for complete
+              congressional turnover. Share Fresh 535 with your friends, family, and community.
             </p>
 
             <ShareButtons />
 
             <p className="text-lg mt-8 opacity-95">
-              Together, we can restore accountability to Congress and protect democracy from authoritarian capture.
+              Together, we can restore accountability to Congress and close the door on authoritarian drift.
             </p>
           </section>
         </div>

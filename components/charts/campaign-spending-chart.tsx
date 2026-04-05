@@ -46,8 +46,8 @@ export function CampaignSpendingChart() {
         <YAxis tickFormatter={(value) => `$${value}M`} tick={{ fill: "#475569", fontSize: 12 }} />
         <Tooltip content={<CustomTooltip />} cursor={{ fill: "hsla(var(--primary), 0.1)" }} />
         <Legend wrapperStyle={{ fontSize: "12px" }} />
-        <Bar dataKey="incumbent" fill="hsl(var(--primary))" name="Incumbent Average" />
-        <Bar dataKey="challenger" fill="hsl(var(--accent))" name="Challenger Average" />
+        <Bar dataKey="incumbent" fill="hsl(var(--primary))" name="Incumbent Avg. Spending ($M)" />
+        <Bar dataKey="challenger" fill="hsl(var(--accent))" name="Challenger Avg. Spending ($M)" />
       </BarChart>
     </ResponsiveContainer>
   )

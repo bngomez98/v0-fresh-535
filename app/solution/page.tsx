@@ -12,9 +12,10 @@ export default function SolutionPage() {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="page-header">
-            <h1>The Strategy for Accountability</h1>
+            <h1>The Strategy for Real Accountability</h1>
             <p className="text-xl text-muted-foreground">
-              A detailed guide to the Fresh 535 movement's theory of change and practical application.
+              A practical guide to the Fresh 535 theory of change—and how we turn voter frustration into
+              coordinated electoral action.
             </p>
           </div>
 
@@ -27,21 +28,21 @@ export default function SolutionPage() {
                   <Target className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold mb-4">Step 1: Identify</h3>
-                <p className="text-muted-foreground leading-relaxed">In any federal election, find the incumbent on your ballot. They are the current officeholder running for reelection.</p>
+                <p className="text-muted-foreground leading-relaxed">In any federal election, find the incumbent on your ballot. They are the current officeholder seeking reelection—regardless of party.</p>
               </div>
               <div className="interactive-card p-8">
                 <div className="w-16 h-16 rounded-full bg-gradient-bg-primary flex items-center justify-center mx-auto mb-6 shadow-lg">
                   <Users className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold mb-4">Step 2: Replace</h3>
-                <p className="text-muted-foreground leading-relaxed">Vote for any non-incumbent challenger. The goal is turnover, not endorsement.</p>
+                <p className="text-muted-foreground leading-relaxed">Vote for the non-incumbent challenger. The goal is turnover, not endorsement of any particular candidate or ideology.</p>
               </div>
               <div className="interactive-card p-8">
                 <div className="w-16 h-16 rounded-full bg-gradient-bg-primary flex items-center justify-center mx-auto mb-6 shadow-lg">
                   <Lightbulb className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold mb-4">Step 3: Reset</h3>
-                <p className="text-muted-foreground leading-relaxed">This action, when coordinated, creates a legislature that serves voters, not parties.</p>
+                <p className="text-muted-foreground leading-relaxed">When coordinated across all 535 seats, this creates a legislature that is answerable to voters—not to parties, donors, or decades of entrenchment.</p>
               </div>
             </div>
           </section>
@@ -53,31 +54,32 @@ export default function SolutionPage() {
             <div className="section-divider mb-10" />
             <div className="prose prose-lg max-w-none">
               <p>
-                The Fresh 535 strategy is effective because it leverages core democratic principles in a system that has
-                become unresponsive. It does not require a majority of voters to succeed.
+                The Fresh 535 strategy works because it uses core democratic principles against a system that has
+                stopped responding to them. It does not require a majority of voters—only a coordinated, consistent
+                minority.
               </p>
               <ul>
                 <li>
-                  <strong>Leveraging Primary Elections:</strong> Congressional primaries often have very low turnout. In
-                  this environment, a small, organized bloc of voters can have an outsized impact, replacing an
-                  incumbent who expects an easy victory. This is a key area of focus.
+                  <strong>Leveraging Primary Elections:</strong> Congressional primaries typically draw only 15–25%
+                  of registered voters. A small, organized bloc can have an outsized impact—defeating an incumbent
+                  who expects an uncontested path to victory. Primaries are where Fresh 535 wins.
                 </li>
                 <li>
-                  <strong>Influencing General Elections:</strong> While many districts are considered "safe" for one
-                  party, the overall balance of power in Congress often depends on a few dozen competitive races. A
-                  coordinated vote against incumbents in these races can shift the institutional dynamics.
+                  <strong>Influencing General Elections:</strong> While many districts lean safely toward one party,
+                  the overall balance of power in Congress often hinges on a few dozen competitive races. A
+                  coordinated vote against incumbents in these contests can shift institutional dynamics across both
+                  chambers.
                 </li>
                 <li>
-                  <strong>Restoring Responsiveness:</strong> The true power is not just in replacing members, but in
-                  changing the behavior of the entire institution. A representative who won a surprisingly close race,
-                  or who saw their colleagues unexpectedly defeated, is far more likely to be responsive to constituent
-                  concerns. They will govern with the knowledge that their position is temporary and depends entirely on
-                  the will of the voters.
+                  <strong>Changing Behavior, Not Just Seats:</strong> The deeper power of this strategy is
+                  institutional, not electoral. A representative who survived a surprisingly close race—or watched
+                  colleagues unexpectedly lose—governs differently. They become responsive to constituents because
+                  they understand their seat is not permanent. That shift in incentives is the real reset.
                 </li>
               </ul>
               <p>
-                The objective is not to influence any single policy outcome, but to reset the electoral incentives for
-                all members of Congress.
+                The objective is not to determine any specific policy outcome, but to restore the electoral
+                accountability that makes all good policy possible.
               </p>
             </div>
           </section>
@@ -87,30 +89,30 @@ export default function SolutionPage() {
             <div className="section-divider mb-10" />
             <div className="space-y-6">
               <OutcomePhase
-                phase="Phase 1: Short-Term (1-2 Election Cycles)"
+                phase="Phase 1: Short-Term (1–2 Election Cycles)"
                 title="A More Responsive Dialogue"
                 points={[
-                  "Incumbents in safe districts face credible primary challenges, forcing them to engage with voters.",
-                  "A small number of unexpected defeats sends a clear signal that no seat is guaranteed.",
-                  "Media narrative shifts to focus on voter empowerment and the demand for a more responsive government.",
+                  "Incumbents in safe districts face credible primary challenges for the first time, forcing genuine engagement with voters.",
+                  "A small number of unexpected defeats sends a clear signal that no seat is guaranteed—regardless of party or tenure.",
+                  "Media coverage shifts toward voter empowerment and the growing demand for a more accountable government.",
                 ]}
               />
               <OutcomePhase
-                phase="Phase 2: Medium-Term (3-5 Election Cycles)"
-                title="A Focus on Problem-Solving"
+                phase="Phase 2: Medium-Term (3–5 Election Cycles)"
+                title="A Culture of Problem-Solving"
                 points={[
-                  "Sitting representatives adopt more moderate, consensus-oriented approaches to avoid electoral challenges.",
-                  "More qualified, non-traditional candidates are attracted to run as more seats become genuinely competitive.",
-                  "Legislative focus begins to shift from partisan messaging to addressing key national issues.",
+                  "Sitting members adopt more moderate, constituent-focused approaches to avoid losing their seats.",
+                  "More qualified, non-traditional candidates are drawn to run as seats become genuinely competitive.",
+                  "Legislative focus begins shifting from partisan messaging bills to addressing real national priorities.",
                 ]}
               />
               <OutcomePhase
                 phase="Phase 3: Long-Term (5+ Election Cycles)"
-                title="A System Aligned with the People"
+                title="A System Aligned With Its People"
                 points={[
-                  "A 'new normal' is established where every seat is considered contestable, ensuring constant responsiveness.",
-                  "Congress becomes a more dynamic and effective institution capable of tackling long-term challenges.",
-                  "Public trust in the legislative branch begins to recover as its performance improves the lives of Americans.",
+                  "A new normal is established where every seat is contestable—ensuring permanent responsiveness rather than permanent incumbency.",
+                  "Congress becomes a more dynamic, effective institution capable of tackling long-term national challenges.",
+                  "Public trust in the legislative branch begins recovering as performance improves and constituents feel heard.",
                 ]}
               />
             </div>
@@ -123,25 +125,25 @@ export default function SolutionPage() {
               <div className="section-card">
                 <h3 className="text-xl font-semibold mb-4">Phase A: Mobilize</h3>
                 <ul className="list-disc pl-5 text-muted-foreground space-y-2 leading-relaxed">
-                  <li>Pledge capture and reminder workflow</li>
-                  <li>District-focused share kits</li>
-                  <li>Volunteer onboarding</li>
+                  <li>Pledge capture, confirmation, and reminder workflow</li>
+                  <li>District-focused share kits and talking points</li>
+                  <li>Volunteer onboarding and local captain recruitment</li>
                 </ul>
               </div>
               <div className="section-card">
                 <h3 className="text-xl font-semibold mb-4">Phase B: Target</h3>
                 <ul className="list-disc pl-5 text-muted-foreground space-y-2 leading-relaxed">
-                  <li>Primary calendar map and turnout goals</li>
-                  <li>Incumbent risk score (beta)</li>
-                  <li>Localized messaging</li>
+                  <li>Primary calendar map with district-level turnout goals</li>
+                  <li>Incumbent risk scoring based on margin and pledge density</li>
+                  <li>Localized messaging for each district's specific race</li>
                 </ul>
               </div>
               <div className="section-card">
                 <h3 className="text-xl font-semibold mb-4">Phase C: Execute</h3>
                 <ul className="list-disc pl-5 text-muted-foreground space-y-2 leading-relaxed">
-                  <li>Vote reminders and early-vote prompts</li>
-                  <li>Field reports and rapid adjustments</li>
-                  <li>Post-election analysis and debrief</li>
+                  <li>Vote reminders, early-vote prompts, and ride coordination</li>
+                  <li>Real-time field reports and rapid tactical adjustments</li>
+                  <li>Post-election analysis, accountability reporting, and debrief</li>
                 </ul>
               </div>
             </div>
@@ -161,8 +163,10 @@ export default function SolutionPage() {
                   Doesn't this risk replacing experienced legislators with unqualified amateurs?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
-                  The data shows that the "experience" of the current Congress has produced legislative paralysis and record-low public
-                  trust. The expertise acquired is often in navigating D.C. fundraising, not effective governance. New members bring fresh perspectives and a direct connection to the voters who just elected them.
+                  The "experience" of the current Congress has produced record-low public trust and near-historic
+                  legislative inaction. The expertise incumbents accumulate is largely in navigating D.C. fundraising
+                  networks, not effective governance. New members arrive with direct accountability to the voters who
+                  just elected them—and that accountability is exactly what's been missing.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-2">
@@ -170,15 +174,21 @@ export default function SolutionPage() {
                   What if the challenger is an extremist or holds dangerous views?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
-                  Fresh 535 is an instruction to vote against the incumbent, not an endorsement of the challenger. As districts become more competitive, more qualified candidates are incentivized to run. The risk of electing a poor challenger is outweighed by the certainty of continued institutional failure under the status quo.
+                  Fresh 535 is a vote against the incumbent, not an endorsement of the challenger. As districts become
+                  genuinely competitive, higher-quality candidates are drawn to run. The risk of electing a weak
+                  challenger in one race is far outweighed by the certainty of continued institutional failure if the
+                  status quo remains unchallenged.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-3">
                 <AccordionTrigger className="text-lg">
-                  Will this weaken Congress relative to the executive branch?
+                  Will high turnover weaken Congress relative to the executive branch?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
-                  Institutional knowledge resides not just in members, but in professional committee staff and the Congressional Research Service. High turnover breaks up entrenched power structures that contribute to gridlock. A more responsive Congress is a stronger check on executive power than a paralyzed but experienced one.
+                  Institutional knowledge lives primarily in professional committee staff and the Congressional Research
+                  Service—not in individual members. High turnover breaks up the entrenched power structures and
+                  donor dependencies that cause gridlock. A responsive, accountable Congress is a far stronger check
+                  on executive power than a paralyzed, self-preserving one.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
