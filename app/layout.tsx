@@ -12,6 +12,7 @@ import { CookieConsent } from "@/components/cookie-consent"
 import { GoogleAnalyticsLoader } from "@/components/google-analytics-loader"
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://fresh535.org"),
   title: "Fresh 535 — A Movement for Congressional Accountability",
   description:
     "A non-partisan civic movement to restore functional governance by replacing all 535 members of Congress with new, uncaptured representatives.",
