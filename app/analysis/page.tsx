@@ -15,12 +15,12 @@ export default function AnalysisPage() {
         <div className="max-w-5xl mx-auto">
           <div className="page-header">
             <h1>
-              Academic Evidence: The Case for Complete Congressional Replacement
+              The Evidence: Why Congress Fails You
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed max-w-4xl mx-auto">
-              Peer-reviewed research from Harvard University and UC Berkeley demonstrates that incumbency advantage has
-              systematically destroyed electoral accountability, creating an unresponsive system that requires complete
-              replacement to restore democratic function.
+              Decades of academic research prove what you already feel: Congress does not represent you. Structural 
+              advantages have created a permanent political class immune to voter pressure. The data shows exactly 
+              how this happened—and why coordinated action is the only solution.
             </p>
           </div>
 
@@ -70,39 +70,39 @@ export default function AnalysisPage() {
             <div className="bg-card border-l-4 border-destructive p-8 rounded-r-xl shadow-sm">
               <h2 className="text-3xl font-bold text-foreground mb-6 flex items-center">
                 <FileText className="h-8 w-8 mr-3 text-destructive" />
-                Current Crisis: 2025 Data
+                The Numbers Do Not Lie
               </h2>
 
               <div className="prose prose-lg max-w-none text-muted-foreground">
                 <p>
-                  The King-Gelman research predicted exactly what we see today: a Congress completely disconnected from
-                  public will. Current metrics confirm the complete breakdown of electoral accountability:
+                  While you struggle with rising costs and stagnant wages, Congress enjoys near-total job security 
+                  regardless of performance. These numbers reveal a system designed to protect the powerful, not serve the public:
                 </p>
                 <div className="grid md:grid-cols-2 gap-6 my-6">
                   <div className="bg-background p-5 rounded-xl border">
-                    <h4 className="font-bold text-destructive">Performance Metrics</h4>
+                    <h4 className="font-bold text-destructive">What They Have Failed to Fix</h4>
                     <ul className="text-sm space-y-1.5 mt-2">
-                      <li>• Congressional approval: 18% (Gallup 2024)</li>
-                      <li>• Bills passed 2023: 27 (lowest since 1995)</li>
-                      <li>• National debt: $34.5 trillion (+$7.8T under current Congress)</li>
                       <li>• Healthcare costs: +158% since 2000</li>
                       <li>• Housing prices: +47% since 2020</li>
+                      <li>• National debt: $34.5 trillion and growing</li>
+                      <li>• Bills passed in 2023: 27 (lowest in decades)</li>
+                      <li>• Congressional approval: 18% (historic low)</li>
                     </ul>
                   </div>
                   <div className="bg-background p-5 rounded-xl border">
-                    <h4 className="font-bold text-chart-2">Job Security Metrics</h4>
+                    <h4 className="font-bold text-chart-2">Their Job Security Anyway</h4>
                     <ul className="text-sm space-y-1.5 mt-2">
-                      <li>• House incumbent reelection: 95% (2022)</li>
-                      <li>• Senate incumbent reelection: 84% (2022)</li>
-                      <li>• Primary challenge success: &lt;5%</li>
-                      <li>• Average tenure: 9.7 years House, 11.2 years Senate</li>
-                      <li>• Fundraising advantage: 3:1 over challengers</li>
+                      <li>• House reelection rate: 95%</li>
+                      <li>• Senate reelection rate: 84%</li>
+                      <li>• Primary challenge success: under 5%</li>
+                      <li>• Average tenure: nearly a decade</li>
+                      <li>• Fundraising advantage: 3x over challengers</li>
                     </ul>
                   </div>
                 </div>
                 <p className="font-semibold">
-                  This data confirms the King-Gelman prediction: when incumbency advantage reaches extreme levels, the
-                  electoral system ceases to function as an accountability mechanism.
+                  Any employee with an 18% approval rating would be fired. Members of Congress get promoted. 
+                  This is not accountability—this is aristocracy with extra steps.
                 </p>
               </div>
             </div>
@@ -186,27 +186,26 @@ export default function AnalysisPage() {
             <div className="bg-destructive/10 border-l-4 border-destructive p-8 rounded-r-xl">
               <h2 className="text-3xl font-bold text-destructive mb-6 flex items-center">
                 <AlertTriangle className="h-8 w-8 mr-3" />
-                Part II: Democratic Collapse Risk
+                Part II: The Real-World Consequences
               </h2>
               <div className="prose prose-lg max-w-none text-muted-foreground">
                 <p>
-                  King-Gelman research identified a critical threshold: when incumbency advantage exceeds 10% and
-                  electoral responsiveness falls below 1.5, democratic accountability effectively ceases. We have
-                  crossed both thresholds.
+                  When representatives face no electoral consequences, they stop representing you. They represent 
+                  donors, lobbyists, and party leadership instead. The results are visible everywhere:
                 </p>
                 <p>
-                  <strong>Current Threat Assessment:</strong> Organized anti-democratic movements have prepared
-                  comprehensive plans (Project 2025, etc.) to exploit this institutional failure. When mainstream
-                  institutions cannot channel legitimate public frustration, extremist ideologies fill the vacuum.
+                  <strong>Policy Paralysis:</strong> Immigration, healthcare, housing, climate—the major issues 
+                  Americans agree need action remain unaddressed for decades. Safe seats mean no incentive to 
+                  compromise or solve problems. Performative outrage generates donations; governing does not.
                 </p>
                 <p>
-                  <strong>Mathematical Reality:</strong> A Congress with 95% incumbent retention and 18% approval cannot
-                  defend democratic institutions. The legislative branch's failure to govern creates the conditions for
-                  authoritarian capture of executive and judicial branches.
+                  <strong>Institutional Erosion:</strong> When Congress fails to function, power flows elsewhere.
+                  Executive overreach, judicial activism, and bureaucratic rule-making fill the vacuum left by 
+                  a legislature too secure to legislate.
                 </p>
                 <p className="font-semibold">
-                  Academic research proves: without electoral accountability, democratic institutions cannot
-                  self-correct or resist authoritarian pressure.
+                  This is not about left vs. right. It is about a ruling class vs. everyone else. Fresh 535 
+                  unites voters across the political spectrum around one shared interest: accountability.
                 </p>
               </div>
             </div>
@@ -214,21 +213,22 @@ export default function AnalysisPage() {
 
           {/* Part III: The Solution */}
           <section className="text-center bg-primary text-primary-foreground p-12 rounded-xl">
-            <h2 className="text-3xl font-bold mb-6">Part III: Mathematical Solution</h2>
+            <h2 className="text-3xl font-bold mb-6">Part III: The Path Forward</h2>
             <p className="text-xl mb-4 max-w-3xl mx-auto">
-              King-Gelman research proves that removing incumbency advantage restores electoral responsiveness. Complete
-              replacement is the only method that eliminates structural advantages simultaneously.
+              The same low turnout that protects incumbents is their vulnerability. Primary elections typically 
+              see 15-25% participation. A coordinated bloc of anti-incumbent voters can decide almost any race.
             </p>
             <p className="text-lg mb-8 max-w-3xl mx-auto opacity-90">
-              Primary turnout: 15-25%. Coordinated 20% bloc vote defeats 95% of incumbents mathematically. No
-              constitutional amendment required. Immediate restoration of electoral accountability.
+              No constitutional amendment needed. No third party required. Just voters agreeing to one simple 
+              action: vote against the incumbent in primaries. When enough of us commit, the math changes—and 
+              so does Congress.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" variant="secondary" className="text-lg px-8 py-4">
                 <Link href="/pledge">
                   <Target className="h-5 w-5 mr-2" />
-                  Take the Pledge
+                  Join the Movement
                 </Link>
               </Button>
               <Button
@@ -239,7 +239,7 @@ export default function AnalysisPage() {
               >
                 <Link href="/solution">
                   <FileText className="h-5 w-5 mr-2" />
-                  Read the Strategy
+                  See How It Works
                 </Link>
               </Button>
             </div>

@@ -19,25 +19,25 @@ import { HistoricalReelectionChart } from "@/components/charts/historical-reelec
 import { CongressionalApprovalChart } from "@/components/charts/congressional-approval-chart"
 
 const stats = [
-  { value: "95%", label: "Incumbent reelection", detail: "Name ID + donor networks keep them safe" },
-  { value: "18%", label: "Public approval", detail: "Congress keeps winning while legitimacy collapses" },
-  { value: "20%", label: "Voters needed", detail: "Coordinated primary turnout to retire all 535" },
+  { value: "95%", label: "Incumbent reelection rate", detail: "Structural advantages like gerrymandering and donor networks insulate them from accountability" },
+  { value: "18%", label: "Public approval rating", detail: "Historic low that should end careers, yet they keep winning anyway" },
+  { value: "~20%", label: "Primary turnout", detail: "Low participation means a coordinated minority can decide every race" },
 ]
 
 const playbook = [
   {
-    title: "Data-first targeting",
-    description: "Live pledge ledger, district intel, and turnout goals so every action ladders up to a winnable number.",
+    title: "Track every commitment",
+    description: "Our pledge ledger maps voter intent by district. When we hit critical mass, incumbents face real electoral pressure for the first time.",
     icon: BarChart3,
   },
   {
-    title: "Field operations",
-    description: "Local captains mobilize neighbors, share scripts, and schedule rides so turnout happens automatically.",
+    title: "Mobilize at the local level",
+    description: "Primaries are won on the ground. Local captains coordinate rides, share talking points, and turn pledges into votes on election day.",
     icon: Activity,
   },
   {
-    title: "Accountability loop",
-    description: "Transparent progress dashboards and weekly briefings keep volunteers and donors aligned on results.",
+    title: "Transparent accountability",
+    description: "Real-time dashboards show progress district-by-district. No backroom deals. Every action visible. Every result measurable.",
     icon: ShieldCheck,
   },
 ]
@@ -45,26 +45,26 @@ const playbook = [
 const actionCards = [
   {
     title: "Take the pledge",
-    description: "Add your name to the nationwide ledger and prove demand in your district.",
+    description: "Commit to voting against your incumbent in 2026. Your pledge signals demand and builds momentum.",
     href: "/pledge",
     icon: Target,
   },
   {
-    title: "Audit your district",
-    description: "See tenure, margins, and how many votes we actually need to flip it.",
+    title: "Know your district",
+    description: "See how long your rep has held power, their voting record, and how many pledges we need to flip the seat.",
     href: "/my-district",
     icon: MapPin,
   },
   {
-    title: "Study the plan",
-    description: "Read the full playbook and see how we coordinate primaries and generals.",
+    title: "Understand the strategy",
+    description: "Learn why coordinated primary voting is the most effective path to forcing Congress to actually represent us.",
     href: "/solution",
     icon: Globe,
   },
   {
-    title: "Share the data",
-    description: "Use charts and one-pagers to persuade neighbors that change is possible.",
-    href: "/data",
+    title: "Spread the word",
+    description: "Download shareable graphics and talking points to bring your friends and family into the movement.",
+    href: "/resources",
     icon: Sparkles,
   },
 ]
@@ -89,13 +89,13 @@ export default function HomePage() {
                 </span>
               </div>
               <div className="space-y-4">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
-                  A professional plan to retire every incumbent—on purpose.
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white text-balance">
+                  Congress ignores you because they know you cannot coordinate.
                 </h1>
                 <p className="text-lg md:text-xl text-slate-200 leading-relaxed max-w-3xl">
-                  Congress keeps winning with 18% approval because nobody coordinates voters. Fresh 535 is a disciplined,
-                  data-backed operation: we track commitments, set district-level turnout goals, and move people to the polls
-                  together.
+                  With 18% approval and 95% reelection, they have no reason to listen. Fresh 535 changes that equation.
+                  We track voter commitments district-by-district and turn scattered frustration into coordinated 
+                  primary turnout that forces real accountability.
                 </p>
               </div>
               <div className="grid sm:grid-cols-3 gap-4">
@@ -208,72 +208,72 @@ export default function HomePage() {
       <section className="section-padding bg-background">
         <div className="container mx-auto container-padding">
           <div className="text-center max-w-4xl mx-auto mb-12">
-            <h2 className="text-3xl md:text-4xl mb-4">Why They Ignore You</h2>
+            <h2 className="text-3xl md:text-4xl mb-4 text-balance">A Rigged System That Rewards Failure</h2>
             <div className="section-divider mb-6" />
             <p className="text-lg text-muted-foreground leading-relaxed">
-              They know they&apos;ll win. Incumbents combine name recognition, gerrymandered districts, and donor networks
-              to secure 95% reelection—even while only 18% of Americans approve of their performance. Coordinated voter
-              action is the only unlock.
+              Healthcare costs have risen 158% since 2000. Housing is up 47% since 2020. Congress passed just 27 bills
+              in 2023. Yet incumbents still win 95% of races. The system is not broken—it is working exactly as designed
+              to protect those in power.
             </p>
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8 items-stretch">
             <div className="section-card h-full space-y-6">
-              <p className="text-sm font-semibold uppercase tracking-[0.15em] text-primary">System advantages</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.15em] text-destructive">Why they always win</p>
               <ul className="space-y-4 text-muted-foreground">
                 <li className="flex gap-3">
-                  <CheckCircle2 className="h-5 w-5 text-destructive mt-0.5" />
+                  <CheckCircle2 className="h-5 w-5 text-destructive mt-0.5 shrink-0" />
                   <div>
-                    <p className="font-semibold text-foreground">Name ID and donor insulation</p>
-                    <p className="text-sm leading-relaxed">Incumbents start with cash and recognition challengers can&apos;t match.</p>
+                    <p className="font-semibold text-foreground">Gerrymandered safe seats</p>
+                    <p className="text-sm leading-relaxed">Districts drawn to guarantee outcomes. In most races, the winner is decided before a single vote is cast.</p>
                   </div>
                 </li>
                 <li className="flex gap-3">
-                  <CheckCircle2 className="h-5 w-5 text-destructive mt-0.5" />
+                  <CheckCircle2 className="h-5 w-5 text-destructive mt-0.5 shrink-0" />
                   <div>
-                    <p className="font-semibold text-foreground">Low-turnout primaries</p>
-                    <p className="text-sm leading-relaxed">15–25% of voters decide primaries. We only need a precise 20% to flip results.</p>
+                    <p className="font-semibold text-foreground">3:1 fundraising advantage</p>
+                    <p className="text-sm leading-relaxed">Incumbents outspend challengers by millions thanks to PACs, lobbyists, and corporate donors who expect favors in return.</p>
                   </div>
                 </li>
                 <li className="flex gap-3">
-                  <CheckCircle2 className="h-5 w-5 text-destructive mt-0.5" />
+                  <CheckCircle2 className="h-5 w-5 text-destructive mt-0.5 shrink-0" />
                   <div>
-                    <p className="font-semibold text-foreground">Fragmented outrage</p>
-                    <p className="text-sm leading-relaxed">People are angry in isolation. We convert that energy into coordinated action.</p>
+                    <p className="font-semibold text-foreground">Voter apathy is their shield</p>
+                    <p className="text-sm leading-relaxed">Only 15-25% vote in primaries. Incumbents count on you staying home. We are changing that calculation.</p>
                   </div>
                 </li>
               </ul>
-              <div className="rounded-xl border border-dashed border-primary/30 bg-primary/5 p-4 text-sm text-foreground">
-                We treat this like a national product launch: clear metrics, consistent messaging, and a go-to-market plan
-                for every district.
+              <div className="rounded-xl border border-destructive/30 bg-destructive/5 p-4 text-sm text-foreground">
+                <span className="font-semibold">The opportunity:</span> Low primary turnout means a coordinated minority 
+                can defeat any incumbent. We are building that minority.
               </div>
             </div>
 
             <div className="section-card h-full space-y-4">
               <div className="flex items-center justify-between">
-                <p className="text-sm font-semibold text-muted-foreground">Approval is collapsing</p>
+                <p className="text-sm font-semibold text-muted-foreground">Record-low approval</p>
                 <span className="rounded-full bg-red-100 text-red-700 text-xs font-semibold px-3 py-1">18% approval</span>
               </div>
               <div className="h-80 rounded-xl border bg-white p-4 shadow-sm">
                 <CongressionalApprovalChart />
               </div>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                The mandate is gone. We translate that frustration into a disciplined turnout machine instead of sporadic outrage.
+                Congress has lower approval than root canals and traffic jams. In any functioning democracy, this would end careers. Here, it changes nothing—unless we act.
               </p>
             </div>
 
             <div className="section-card h-full space-y-4">
               <div className="flex items-center justify-between">
-                <p className="text-sm font-semibold text-muted-foreground">Reelection math</p>
+                <p className="text-sm font-semibold text-muted-foreground">Near-guaranteed reelection</p>
                 <span className="rounded-full bg-emerald-100 text-emerald-700 text-xs font-semibold px-3 py-1">
-                  95% reelection
+                  95% win rate
                 </span>
               </div>
               <div className="h-80 rounded-xl border bg-white p-4 shadow-sm">
                 <HistoricalReelectionChart />
               </div>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                The data is clear: until a coordinated bloc shows up, incumbents never feel pressure. We are that bloc.
+                More secure than Soviet Politburo seats. This is not democracy—it is theater. Fresh 535 introduces real electoral consequences.
               </p>
             </div>
           </div>
@@ -284,11 +284,11 @@ export default function HomePage() {
       <section className="section-padding bg-secondary/50">
         <div className="container mx-auto container-padding">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl md:text-4xl mb-4">Our Full-Stack Playbook</h2>
+            <h2 className="text-3xl md:text-4xl mb-4 text-balance">A Coordinated Strategy to Force Accountability</h2>
             <div className="section-divider mb-6" />
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Primary turnout averages 15–25%. We only need a disciplined 20% to force every incumbent into retirement. Here
-              is how we marshal people, data, and money to get there.
+              Incumbents survive because voter opposition is scattered. Fresh 535 concentrates that opposition where it
+              matters most: in primaries, where turnout is low enough that a committed bloc of voters can decide every race.
             </p>
           </div>
 
@@ -331,18 +331,19 @@ export default function HomePage() {
         <div className="container mx-auto container-padding text-center">
           <div className="max-w-4xl mx-auto">
             <div className="inline-block text-sm font-semibold tracking-widest uppercase text-red-200 mb-4 border border-red-200/40 rounded-full px-4 py-1.5 bg-white/5">
-              Vote in a Fresh 535
+              2026 Primary Elections
             </div>
-            <h2 className="text-3xl md:text-4xl mb-6 text-white">The movement is growing. Help us finish the build.</h2>
+            <h2 className="text-3xl md:text-4xl mb-6 text-white text-balance">Every pledge brings us closer to a Congress that actually works.</h2>
             <p className="text-lg text-slate-200 mb-8 leading-relaxed max-w-2xl mx-auto">
-              Every day more voters realize their representatives don&apos;t represent them. Fresh 535 gives them a path to
-              act together: pledge, recruit, and show up. When we do, the math flips.
+              We are not asking you to vote for a specific candidate or party. We are asking you to commit to one simple
+              action: vote against the incumbent in your primary. When enough voters make that commitment, the math changes
+              and accountability returns.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" variant="destructive" className="btn-professional">
                 <Link href="/pledge">
                   <Users className="h-5 w-5 mr-2" />
-                  Take the Fresh 535 Pledge
+                  Add Your Name
                 </Link>
               </Button>
               <Button
@@ -351,8 +352,8 @@ export default function HomePage() {
                 variant="outline"
                 className="bg-transparent text-white border-white/30 hover:bg-white hover:text-brand-navy btn-professional"
               >
-                <Link href="/resources">
-                  Share the toolkit
+                <Link href="/analysis">
+                  See the Evidence
                   <ArrowRight className="h-5 w-5 ml-2" />
                 </Link>
               </Button>

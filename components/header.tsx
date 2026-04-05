@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
-import { Menu, X, Heart, Users, LogIn } from "lucide-react"
+import { Menu, X, Heart, Users } from "lucide-react"
 import { Button } from "./ui/button"
 
 export function Header() {
@@ -65,12 +65,6 @@ export function Header() {
           </div>
 
           <div className="hidden lg:flex items-center space-x-2">
-            <Button variant="ghost" size="sm" asChild className="text-muted-foreground hover:text-primary">
-              <Link href="/login">
-                <LogIn className="h-4 w-4 mr-1.5" />
-                Admin
-              </Link>
-            </Button>
             <Button variant="outline" size="sm" asChild className="bg-transparent btn-professional">
               <Link href="/donate">
                 <Heart className="h-4 w-4 mr-1.5" />
@@ -113,12 +107,6 @@ export function Header() {
               </Link>
             ))}
             <div className="flex flex-col space-y-2.5 pt-4 mt-2 border-t">
-              <Button variant="ghost" className="w-full" asChild>
-                <Link href="/login">
-                  <LogIn className="h-4 w-4 mr-1.5" />
-                  Admin Login
-                </Link>
-              </Button>
               <Button variant="outline" className="w-full bg-transparent btn-professional" asChild>
                 <Link href="/donate">
                   <Heart className="h-4 w-4 mr-1.5" />
