@@ -26,18 +26,18 @@ const stats = [
 
 const playbook = [
   {
-    title: "Track every commitment",
-    description: "Our pledge ledger maps voter intent by district. When we hit critical mass, incumbents face real electoral pressure for the first time.",
+    title: "Make the commitment public",
+    description: "When you pledge, you add your name to a growing count in your district. That number is visible to your neighbors, your community, and your incumbent.",
     icon: BarChart3,
   },
   {
-    title: "Mobilize at the local level",
-    description: "Primaries are won on the ground. Local captains coordinate rides, share talking points, and turn pledges into votes on election day.",
+    title: "Show up to the primary",
+    description: "Most congressional primaries are decided by fewer than 30,000 votes. You do not need a majority of America. You need your neighbors to vote.",
     icon: Activity,
   },
   {
-    title: "Transparent accountability",
-    description: "Real-time dashboards show progress district-by-district. No backroom deals. Every action visible. Every result measurable.",
+    title: "Vote for the challenger",
+    description: "The specific challenger is secondary. The act of voting out the incumbent is the message. When enough districts do it, every remaining member gets the message too.",
     icon: ShieldCheck,
   },
 ]
@@ -45,25 +45,25 @@ const playbook = [
 const actionCards = [
   {
     title: "Take the pledge",
-    description: "Commit to voting against your incumbent in 2026. Your pledge signals demand and builds momentum.",
+    description: "Add your name. Commit to voting against your incumbent in 2026. That is step one.",
     href: "/pledge",
     icon: Target,
   },
   {
-    title: "Know your district",
-    description: "See how long your rep has held power, their voting record, and how many pledges we need to flip the seat.",
+    title: "Find your incumbent",
+    description: "See who currently holds your seat and how long they have been there.",
     href: "/my-district",
     icon: MapPin,
   },
   {
-    title: "Understand the strategy",
-    description: "Learn why coordinated primary voting is the most effective path to forcing Congress to actually represent us.",
+    title: "Read the strategy",
+    description: "Understand why the primary is the most important vote you will cast and how this works at scale.",
     href: "/solution",
     icon: Globe,
   },
   {
-    title: "Spread the word",
-    description: "Download shareable graphics and talking points to bring your friends and family into the movement.",
+    title: "Tell someone",
+    description: "Share this with five people you know. That is how every real movement has ever started.",
     href: "/resources",
     icon: Sparkles,
   },
@@ -79,23 +79,19 @@ export default function HomePage() {
         <div className="container mx-auto container-padding relative">
           <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-12 items-center">
             <div className="space-y-8 animate-in fade-in slide-in-from-left-8 duration-1000">
-              <div className="flex flex-wrap items-center gap-3">
-                <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs uppercase tracking-[0.2em]">
-                  Full-stack civic reset
-                </span>
-                <span className="inline-flex items-center gap-2 text-sm text-slate-200">
-                  <CheckCircle2 className="h-4 w-4 text-destructive" />
-                  Data + field + accountability
-                </span>
-              </div>
               <div className="space-y-4">
+                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-red-300">2026 Primary Elections</p>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white text-balance">
-                  Congress ignores you because they know you cannot coordinate.
+                  If they are in, they are out.
                 </h1>
-                <p className="text-lg md:text-xl text-slate-200 leading-relaxed max-w-3xl">
-                  With 18% approval and 95% reelection, they have no reason to listen. Fresh 535 changes that equation.
-                  We track voter commitments district-by-district and turn scattered frustration into coordinated 
-                  primary turnout that forces real accountability.
+                <p className="text-xl md:text-2xl font-semibold text-red-200 text-balance">
+                  Vote in a Fresh 535.
+                </p>
+                <p className="text-lg text-slate-300 leading-relaxed max-w-2xl">
+                  Every sitting member of Congress — all 435 Representatives and all 100 Senators — is up for a
+                  challenge. Not because they are all villains, but because a system where incumbents never lose
+                  is a system that stopped working for you a long time ago. The rule is simple: whoever holds the
+                  seat right now does not get to keep it unopposed.
                 </p>
               </div>
               <div className="grid sm:grid-cols-3 gap-4">
@@ -113,8 +109,8 @@ export default function HomePage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button asChild size="lg" variant="destructive" className="btn-professional shadow-lg shadow-red-500/20">
                   <Link href="/pledge">
-                    <Target className="h-5 w-5 mr-2" />
-                    Join the Movement
+                    <Users className="h-5 w-5 mr-2" />
+                    Take the Pledge
                   </Link>
                 </Button>
                 <Button
@@ -124,24 +120,10 @@ export default function HomePage() {
                   className="bg-transparent text-white border-white/30 hover:bg-white hover:text-brand-navy btn-professional"
                 >
                   <Link href="/solution">
-                    See How We Win
+                    How It Works
                     <ArrowRight className="h-5 w-5 ml-2" />
                   </Link>
                 </Button>
-              </div>
-              <div className="flex flex-wrap items-center gap-4 text-sm text-slate-200">
-                <span className="inline-flex items-center gap-2">
-                  <ShieldCheck className="h-4 w-4 text-destructive" />
-                  Verified, secure pledge tracking
-                </span>
-                <span className="inline-flex items-center gap-2">
-                  <Sparkles className="h-4 w-4 text-destructive" />
-                  Modern UX built for voters, not insiders
-                </span>
-                <span className="inline-flex items-center gap-2">
-                  <Users className="h-4 w-4 text-destructive" />
-                  Local captains in every district
-                </span>
               </div>
             </div>
 
@@ -150,24 +132,24 @@ export default function HomePage() {
                 <div className="flex items-center gap-3">
                   <Image src="/brand-logo.png" alt="Fresh 535 Logo" width={48} height={48} className="drop-shadow-md" />
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-navy">Launch readiness</p>
-                    <p className="text-lg font-bold text-brand-charcoal">District Control Center</p>
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-navy">The mission</p>
+                    <p className="text-lg font-bold text-brand-charcoal">Replace All 535</p>
                   </div>
                 </div>
                 <p className="text-sm leading-relaxed text-slate-700">
-                  Track pledge velocity, see which counties need a push, and download scripts for your next phone bank.
-                  Every widget stays synced with the same ledger powering our API.
+                  There are 435 seats in the House and 100 in the Senate. Every single one is held by someone who
+                  has had their chance. In 2026, we vote in a fresh set — all 535 of them.
                 </p>
                 <div className="grid grid-cols-2 gap-3">
                   <div className="rounded-xl border border-slate-200 p-3">
-                    <p className="text-xs text-muted-foreground">Live pledges</p>
-                    <p className="text-2xl font-bold text-brand-navy">142,311</p>
-                    <p className="text-xs text-emerald-600 font-semibold mt-1">+3,912 this week</p>
+                    <p className="text-xs text-muted-foreground">Average tenure</p>
+                    <p className="text-2xl font-bold text-brand-navy">16 yrs</p>
+                    <p className="text-xs text-slate-500 mt-1">Their grip. Your vote.</p>
                   </div>
                   <div className="rounded-xl border border-slate-200 p-3">
-                    <p className="text-xs text-muted-foreground">Avg. tenure</p>
-                    <p className="text-2xl font-bold text-brand-navy">16 yrs</p>
-                    <p className="text-xs text-slate-500 mt-1">Time to retire them.</p>
+                    <p className="text-xs text-muted-foreground">Primary turnout</p>
+                    <p className="text-2xl font-bold text-brand-navy">~20%</p>
+                    <p className="text-xs text-emerald-600 font-semibold mt-1">The opening we need.</p>
                   </div>
                 </div>
                 <div className="flex flex-col gap-3">
@@ -176,26 +158,21 @@ export default function HomePage() {
                     className="inline-flex items-center justify-between rounded-xl border border-brand-navy/15 bg-brand-navy/5 px-4 py-3 text-brand-navy hover:bg-brand-navy/10 transition-colors"
                   >
                     <div>
-                      <p className="text-sm font-semibold">Audit my district</p>
-                      <p className="text-xs text-slate-600">See incumbency length, margins, and turnout gaps.</p>
+                      <p className="text-sm font-semibold">Look up your district</p>
+                      <p className="text-xs text-slate-600">Find your incumbent. See how long they have been there.</p>
                     </div>
                     <ArrowRight className="h-4 w-4" />
                   </Link>
-                  <div className="grid sm:grid-cols-2 gap-3">
-                    {actionCards.slice(0, 2).map((action) => (
-                      <Link
-                        key={action.href}
-                        href={action.href}
-                        className="flex items-start gap-3 rounded-xl border border-slate-200 px-4 py-3 hover:border-brand-navy/40 transition-colors"
-                      >
-                        <action.icon className="h-5 w-5 text-brand-navy mt-0.5" />
-                        <div>
-                          <p className="text-sm font-semibold text-brand-charcoal">{action.title}</p>
-                          <p className="text-xs text-slate-600 leading-relaxed">{action.description}</p>
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
+                  <Link
+                    href="/solution"
+                    className="inline-flex items-center justify-between rounded-xl border border-brand-navy/15 bg-brand-navy/5 px-4 py-3 text-brand-navy hover:bg-brand-navy/10 transition-colors"
+                  >
+                    <div>
+                      <p className="text-sm font-semibold">Understand the strategy</p>
+                      <p className="text-xs text-slate-600">Why the primary is the most powerful vote you can cast.</p>
+                    </div>
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
                 </div>
               </div>
               <div className="absolute -inset-10 -z-10 bg-red-500/15 blur-3xl rounded-full opacity-70" />
@@ -284,11 +261,11 @@ export default function HomePage() {
       <section className="section-padding bg-secondary/50">
         <div className="container mx-auto container-padding">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl md:text-4xl mb-4 text-balance">A Coordinated Strategy to Force Accountability</h2>
+            <h2 className="text-3xl md:text-4xl mb-4 text-balance">Three things. That is all this takes.</h2>
             <div className="section-divider mb-6" />
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Incumbents survive because voter opposition is scattered. Fresh 535 concentrates that opposition where it
-              matters most: in primaries, where turnout is low enough that a committed bloc of voters can decide every race.
+              You do not need a campaign. You do not need money. You need to pledge, show your neighbors, and vote in
+              the primary. That is the whole strategy. It works because incumbents have never faced it before.
             </p>
           </div>
 
