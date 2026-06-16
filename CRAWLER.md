@@ -22,13 +22,13 @@ The crawler can be used to:
 
 Crawl the local development server:
 
-```bash
+\`\`\`bash
 npm run crawl http://localhost:3000
-```
+\`\`\`
 
 ### Advanced Options
 
-```bash
+\`\`\`bash
 # Crawl with custom depth
 npm run crawl http://localhost:3000 -- --max-depth 2
 
@@ -40,7 +40,7 @@ npm run crawl http://localhost:3000 -- --output urls
 
 # Crawl with a delay between requests (respectful crawling)
 npm run crawl http://localhost:3000 -- --delay 2000 --max-pages 50
-```
+\`\`\`
 
 ### Command Line Options
 
@@ -54,7 +54,7 @@ npm run crawl http://localhost:3000 -- --delay 2000 --max-pages 50
 
 You can also use the crawler programmatically in your code:
 
-```typescript
+\`\`\`typescript
 import { WebCrawler, crawlWebsite } from '@/lib/crawler'
 
 // Simple usage
@@ -74,7 +74,7 @@ const crawler = new WebCrawler({
 const results = await crawler.crawl('http://localhost:3000')
 const sitemap = crawler.generateSitemap()
 const urls = crawler.getVisitedUrls()
-```
+\`\`\`
 
 ## Robots.txt
 
@@ -97,21 +97,21 @@ This aligns with the agent firewall configuration in `lib/firewall/`.
 
 ### Generate a Sitemap
 
-```bash
+\`\`\`bash
 npm run crawl http://localhost:3000 -- --output sitemap > public/sitemap.xml
-```
+\`\`\`
 
 ### Check for Broken Links
 
-```bash
+\`\`\`bash
 npm run crawl https://yoursite.com -- --output urls | grep "✗"
-```
+\`\`\`
 
 ### Quick Site Structure Check
 
-```bash
+\`\`\`bash
 npm run crawl http://localhost:3000 -- --max-depth 1 --output urls
-```
+\`\`\`
 
 ## Integration with Agent Firewall
 

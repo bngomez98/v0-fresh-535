@@ -7,25 +7,25 @@ A modern Next.js application for tracking political engagement and pledges.
 ### Local Development
 
 1. **Clone the repository**
-   ```bash
+   \`\`\`bash
    git clone https://github.com/bngomez98/v0-fresh-535.git
    cd v0-fresh-535
-   ```
+   \`\`\`
 
 2. **Install dependencies**
-   ```bash
+   \`\`\`bash
    npm install --legacy-peer-deps
-   ```
+   \`\`\`
 
 3. **Start development server**
-   ```bash
+   \`\`\`bash
    npm run dev
-   ```
+   \`\`\`
 
 4. **Open in browser**
-   ```
+   \`\`\`
    http://localhost:3000
-   ```
+   \`\`\`
 
 ## 📦 Deployment
 
@@ -40,12 +40,12 @@ A modern Next.js application for tracking political engagement and pledges.
 
 ## 🛠️ Available Scripts
 
-```bash
+\`\`\`bash
 npm run dev      # Start development server
 npm run build    # Build for production
 npm run start    # Start production server
 npm run lint     # Run ESLint
-```
+\`\`\`
 
 ## 🏗️ Tech Stack
 
@@ -58,7 +58,7 @@ npm run lint     # Run ESLint
 
 ## 📁 Project Structure
 
-```
+\`\`\`
 ├── app/              # Next.js app router pages
 ├── components/       # React components
 ├── lib/             # Utility functions
@@ -66,7 +66,7 @@ npm run lint     # Run ESLint
 ├── public/          # Static assets
 ├── styles/          # Global styles
 └── middleware.ts    # Edge middleware
-```
+\`\`\`
 
 ## 🔒 Security Features
 

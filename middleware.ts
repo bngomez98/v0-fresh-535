@@ -1,16 +1,17 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 import { evaluateRequest } from '@/lib/firewall/firewall'
-import { verifySession } from '@/lib/auth'
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
 
   // --- Admin Route Protection ---
   if (pathname.startsWith('/admin')) {
-    const sessionValid = await verifySession(request)
-    if (!sessionValid) {
-      const loginUrl = new URL('/login', request.url)
+    // Check for Better Auth session cookie
+    const sessionToken = request.cookies.get('better-auth.session_token')?.value
+      ?? request.cookies.get('__Secure-better-auth.session_token')?.value
+    if (!sessionToken) {
+      const loginUrl = new URL('/sign-in', request.url)
       loginUrl.searchParams.set('redirect', pathname)
       return NextResponse.redirect(loginUrl)
     }

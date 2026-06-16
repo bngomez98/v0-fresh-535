@@ -1,67 +1,26 @@
 "use client"
 
-import type React from "react"
-
 import { useState } from "react"
+import { submitPledge } from "@/app/actions/pledge"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { CheckCircle, Loader2 } from "lucide-react"
+import { CheckCircle2, Loader2, Share2 } from "lucide-react"
+import Link from "next/link"
 
 const US_STATES = [
-  "Alabama",
-  "Alaska",
-  "Arizona",
-  "Arkansas",
-  "California",
-  "Colorado",
-  "Connecticut",
-  "Delaware",
-  "Florida",
-  "Georgia",
-  "Hawaii",
-  "Idaho",
-  "Illinois",
-  "Indiana",
-  "Iowa",
-  "Kansas",
-  "Kentucky",
-  "Louisiana",
-  "Maine",
-  "Maryland",
-  "Massachusetts",
-  "Michigan",
-  "Minnesota",
-  "Mississippi",
-  "Missouri",
-  "Montana",
-  "Nebraska",
-  "Nevada",
-  "New Hampshire",
-  "New Jersey",
-  "New Mexico",
-  "New York",
-  "North Carolina",
-  "North Dakota",
-  "Ohio",
-  "Oklahoma",
-  "Oregon",
-  "Pennsylvania",
-  "Rhode Island",
-  "South Carolina",
-  "South Dakota",
-  "Tennessee",
-  "Texas",
-  "Utah",
-  "Vermont",
-  "Virginia",
-  "Washington",
-  "West Virginia",
-  "Wisconsin",
-  "Wyoming",
+  "Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut",
+  "Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa",
+  "Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan",
+  "Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire",
+  "New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio",
+  "Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota",
+  "Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia",
+  "Wisconsin","Wyoming",
 ]
+
+const PARTIES = ["Independent / No affiliation", "Democrat", "Republican", "Libertarian", "Green", "Other"]
 
 export function PledgeForm() {
   const [formData, setFormData] = useState({
@@ -69,203 +28,180 @@ export function PledgeForm() {
     lastName: "",
     email: "",
     state: "",
-    zipCode: "",
-    comments: "",
+    district: "",
+    party: "",
+    message: "",
+    sharePublicly: false,
+    emailUpdates: true,
   })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [submitted, setSubmitted] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const target = e.target
+    const value = target instanceof HTMLInputElement && target.type === "checkbox"
+      ? target.checked
+      : target.value
+    setFormData((prev) => ({ ...prev, [target.name]: value }))
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setIsSubmitting(true)
-
+    setError(null)
+    setLoading(true)
     try {
-      const response = await fetch("/api/pledge", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      })
-
-      if (response.ok) {
-        setIsSubmitted(true)
-        setFormData({
-          firstName: "",
-          lastName: "",
-          email: "",
-          state: "",
-          zipCode: "",
-          comments: "",
-        })
+      const result = await submitPledge(formData)
+      if (!result.success) {
+        setError(result.error ?? "Something went wrong. Please try again.")
+      } else {
+        setSubmitted(true)
       }
-    } catch (error) {
-      console.error("Error submitting pledge:", error)
+    } catch {
+      setError("An unexpected error occurred. Please try again.")
     } finally {
-      setIsSubmitting(false)
+      setLoading(false)
     }
   }
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }))
-  }
-
-  if (isSubmitted) {
+  if (submitted) {
     return (
-      <Card className="border-2 border-green-200 bg-green-50">
-        <CardHeader className="text-center">
-          <CheckCircle className="h-16 w-16 text-green-600 mx-auto mb-4" />
-          <CardTitle className="text-2xl text-green-900">Thank You for Taking the Pledge!</CardTitle>
-        </CardHeader>
-        <CardContent className="text-center">
-          <p className="text-lg text-green-800 mb-4">
-            You've joined thousands of Americans committed to restoring congressional accountability.
+      <div className="text-center space-y-6 py-8">
+        <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100">
+          <CheckCircle2 className="h-8 w-8 text-green-600" />
+        </div>
+        <div className="space-y-2">
+          <h3 className="text-2xl font-bold text-foreground">Thank you, {formData.firstName}!</h3>
+          <p className="text-muted-foreground leading-relaxed max-w-sm mx-auto">
+            Your pledge has been recorded. You&apos;ve joined the movement to restore congressional accountability.
           </p>
-          <p className="text-green-700">
-            We'll keep you informed about elections in your area and provide resources to help you make informed
-            decisions.
+        </div>
+        {formData.emailUpdates && (
+          <p className="text-sm text-muted-foreground">
+            We&apos;ll send election reminders and movement updates to <strong>{formData.email}</strong>.
           </p>
-        </CardContent>
-      </Card>
+        )}
+        <div className="flex flex-col sm:flex-row gap-3 justify-center pt-2">
+          <Button asChild variant="outline" size="sm">
+            <Link href="/resources">Download toolkit</Link>
+          </Button>
+          <Button
+            size="sm"
+            onClick={() => {
+              const text = `I just took the Fresh 535 pledge — I'll vote out every incumbent until Congress works for the people. Join me at fresh535.org #Fresh535`
+              window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`, "_blank")
+            }}
+          >
+            <Share2 className="h-4 w-4 mr-2" />
+            Share on X
+          </Button>
+        </div>
+      </div>
     )
   }
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-      <div className="grid md:grid-cols-2 gap-6">
-        <div>
-          <Label htmlFor="firstName" className="text-sm font-medium text-foreground">
-            First Name *
-          </Label>
-          <Input
-            id="firstName"
-            name="firstName"
-            type="text"
-            required
-            value={formData.firstName}
-            onChange={handleChange}
-            className="mt-1.5"
-            placeholder="Enter your first name"
-          />
+      <div className="grid sm:grid-cols-2 gap-4">
+        <div className="space-y-1.5">
+          <Label htmlFor="firstName">First name <span className="text-destructive">*</span></Label>
+          <Input id="firstName" name="firstName" value={formData.firstName} onChange={handleChange} placeholder="Jane" required disabled={loading} />
         </div>
-
-        <div>
-          <Label htmlFor="lastName" className="text-sm font-medium text-foreground">
-            Last Name *
-          </Label>
-          <Input
-            id="lastName"
-            name="lastName"
-            type="text"
-            required
-            value={formData.lastName}
-            onChange={handleChange}
-            className="mt-1.5"
-            placeholder="Enter your last name"
-          />
+        <div className="space-y-1.5">
+          <Label htmlFor="lastName">Last name <span className="text-destructive">*</span></Label>
+          <Input id="lastName" name="lastName" value={formData.lastName} onChange={handleChange} placeholder="Smith" required disabled={loading} />
         </div>
       </div>
 
-      <div>
-        <Label htmlFor="email" className="text-sm font-medium text-foreground">
-          Email Address *
-        </Label>
-        <Input
-          id="email"
-          name="email"
-          type="email"
-          required
-          value={formData.email}
-          onChange={handleChange}
-          className="mt-1.5"
-          placeholder="Enter your email address"
-        />
-        <p className="text-xs text-muted-foreground mt-1.5">
-          We'll use this to send you election reminders and voter resources.
-        </p>
+      <div className="space-y-1.5">
+        <Label htmlFor="email">Email address <span className="text-destructive">*</span></Label>
+        <Input id="email" name="email" type="email" value={formData.email} onChange={handleChange} placeholder="you@example.com" required disabled={loading} />
+        <p className="text-xs text-muted-foreground">Used for election reminders. Never shared or sold.</p>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-6">
-        <div>
-          <Label htmlFor="state" className="text-sm font-medium text-foreground">
-            State *
-          </Label>
+      <div className="grid sm:grid-cols-2 gap-4">
+        <div className="space-y-1.5">
+          <Label htmlFor="state">State <span className="text-destructive">*</span></Label>
           <select
-            id="state"
-            name="state"
-            required
-            value={formData.state}
-            onChange={handleChange}
-            className="mt-1.5 block w-full px-3 py-2 border border-input rounded-md bg-background text-foreground shadow-sm focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 transition-colors"
+            id="state" name="state" required value={formData.state} onChange={handleChange} disabled={loading}
+            className="w-full px-3 py-2 text-sm border border-input rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-ring transition-colors"
           >
             <option value="">Select your state</option>
-            {US_STATES.map((state) => (
-              <option key={state} value={state}>
-                {state}
-              </option>
-            ))}
+            {US_STATES.map((s) => <option key={s} value={s}>{s}</option>)}
           </select>
         </div>
-
-        <div>
-          <Label htmlFor="zipCode" className="text-sm font-medium text-foreground">
-            ZIP Code *
-          </Label>
-          <Input
-            id="zipCode"
-            name="zipCode"
-            type="text"
-            required
-            value={formData.zipCode}
-            onChange={handleChange}
-            className="mt-1.5"
-            placeholder="Enter your ZIP code"
-            pattern="[0-9]{5}(-[0-9]{4})?"
-          />
+        <div className="space-y-1.5">
+          <Label htmlFor="district">Congressional district <span className="text-muted-foreground text-xs">(optional)</span></Label>
+          <Input id="district" name="district" value={formData.district} onChange={handleChange} placeholder="e.g. CA-12" disabled={loading} />
         </div>
       </div>
 
-      <div>
-        <Label htmlFor="comments" className="text-sm font-medium text-foreground">
-          Comments (Optional)
-        </Label>
-        <Textarea
-          id="comments"
-          name="comments"
-          value={formData.comments}
-          onChange={handleChange}
-          className="mt-1.5"
-          placeholder="Tell us why you're taking the pledge..."
-          rows={4}
-        />
+      <div className="space-y-1.5">
+        <Label htmlFor="party">Political affiliation <span className="text-muted-foreground text-xs">(optional)</span></Label>
+        <select
+          id="party" name="party" value={formData.party} onChange={handleChange} disabled={loading}
+          className="w-full px-3 py-2 text-sm border border-input rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-ring transition-colors"
+        >
+          <option value="">Prefer not to say</option>
+          {PARTIES.map((p) => <option key={p} value={p}>{p}</option>)}
+        </select>
       </div>
 
-      <div className="bg-primary/5 p-5 rounded-xl border border-primary/15">
-        <h3 className="font-semibold text-primary mb-2">Your Pledge:</h3>
+      <div className="space-y-1.5">
+        <Label htmlFor="message">Why are you taking the pledge? <span className="text-muted-foreground text-xs">(optional)</span></Label>
+        <Textarea id="message" name="message" value={formData.message} onChange={handleChange} placeholder="Share your reason..." rows={3} disabled={loading} />
+      </div>
+
+      {/* Pledge text */}
+      <div className="bg-primary/5 border border-primary/15 rounded-xl p-5">
+        <p className="text-xs font-semibold uppercase tracking-wider text-primary mb-2">Your pledge</p>
         <p className="text-sm text-foreground/80 italic leading-relaxed">
-          "I pledge to vote against every incumbent member of Congress in every election until we achieve complete
-          congressional turnover. I will vote for any qualified challenger over any incumbent, regardless of party
-          affiliation, because accountability matters more than ideology."
+          &ldquo;I pledge to vote against every incumbent member of Congress in every election until we achieve complete
+          congressional turnover — regardless of party affiliation, because accountability matters more than ideology.&rdquo;
         </p>
       </div>
 
-      <Button type="submit" className="w-full text-lg py-3" disabled={isSubmitting}>
-        {isSubmitting ? (
-          <>
-            <Loader2 className="h-5 w-5 mr-2 animate-spin" />
-            Submitting Pledge...
-          </>
+      {/* Checkboxes */}
+      <div className="space-y-3">
+        <label className="flex items-start gap-3 cursor-pointer">
+          <input
+            type="checkbox" name="emailUpdates" checked={formData.emailUpdates}
+            onChange={handleChange} className="mt-0.5 h-4 w-4 rounded border-input accent-primary"
+          />
+          <span className="text-sm text-muted-foreground">
+            Send me election reminders and movement updates.
+          </span>
+        </label>
+        <label className="flex items-start gap-3 cursor-pointer">
+          <input
+            type="checkbox" name="sharePublicly" checked={formData.sharePublicly}
+            onChange={handleChange} className="mt-0.5 h-4 w-4 rounded border-input accent-primary"
+          />
+          <span className="text-sm text-muted-foreground">
+            Show my first name and state on the public pledge counter.
+          </span>
+        </label>
+      </div>
+
+      {error && (
+        <p className="text-sm text-destructive bg-destructive/8 border border-destructive/20 rounded-lg px-4 py-3">
+          {error}
+        </p>
+      )}
+
+      <Button type="submit" className="w-full" size="lg" disabled={loading}>
+        {loading ? (
+          <><Loader2 className="h-4 w-4 mr-2 animate-spin" />Recording your pledge...</>
         ) : (
           "Take the Fresh 535 Pledge"
         )}
       </Button>
 
       <p className="text-xs text-muted-foreground text-center">
-        By submitting this form, you agree to receive election reminders and movement updates. You can unsubscribe at
-        any time. We will never sell or share your information.
+        By submitting, you agree to our{" "}
+        <Link href="/terms" className="underline underline-offset-4">Terms</Link>
+        {" "}and{" "}
+        <Link href="/privacy" className="underline underline-offset-4">Privacy Policy</Link>.
       </p>
     </form>
   )
